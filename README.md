@@ -13584,7 +13584,7 @@ fn main() {
 
 Function ini bisa mengambil apapun yang memiliki trait `Display`, sehingga kita membarikannya `&str` dan selanjutnya `f64`, dan kita pun tidak mendapatkan masalah. Namun compiler tidak melihat ke generic, karena ia tidak ingin melakukan apapun di saat runtime (perlu diingat kembali, compiler harus mengetahui typenya di saat compile time). Compiler ingin membuat program yang bisa berjalan dengan sendirinya secepat mungkin. Sehingga di saat compiler melihat `"Windy"`, ia tidak melihat functionnya sebagai `fn print_and_return_thing<T: Display>(input: T) -> T`. Ia akan meliha function tersebut seperti `fn print_and_return_thing(input: &str) -> &str`. Dan selanjutnya compiler akan melihat functionnya seperti `fn print_and_return_thing(input: f64) -> f64`. Semua pemeriksaan mengenai trait dan lainnya diselesaikan saat compile time. Ini sebabnya mengapa generic memakan waktu yang lebih lama untuk di-compile, karena ia perlu mengetahui semua posibilitas type yang digunakan, dan membuatnya menjadi concrete.
 
-Satu hal lagi: Rust di 2020 sedang berupaya keras untuk mengupgrade compile time, karena bagian inilah yang memakan waktu paling lama. Setiap version di Rust menjadi sedikit lebih cepat saat melakukan compiling, dan ada beberapa rencana lain untuk mempercepatnya. Untuk saat ini, inilah yang harus Anda ketahui:
+Satu hal lagi: Rust di tahun 2020 berupaya keras untuk mengupgrade compile time, karena bagian inilah yang memakan waktu paling lama. Setiap version di Rust menjadi sedikit lebih cepat saat melakukan compiling, dan ada beberapa rencana lain untuk mempercepatnya. Terlepas dari hal itu, untuk saat ini, inilah yang harus Anda ketahui:
 
 - `cargo build` akan mem-build program Anda, sehingga Anda bisa menjalankannya
 - `cargo run` akan mem-build program Anda dan menjalankannya sekaligus
@@ -13595,7 +13595,7 @@ Ah ya, `--release` adalah bagian dari perintah yang biasa disebut dengan `flag`.
 
 Hal-hal lain yang perlu Anda ketahui adalah:
 
-- `cargo new`. Anda menggunakan ini untuk membuat project Rust yang baru. Setelah `new`, tuliskany nama projectnya dan `cargo` akan membuat folder dan semua file yang Anda perlukan.
+- `cargo new`. Anda menggunakan ini untuk membuat project Rust yang baru. Setelah `new`, tuliskan nama projectnya dan `cargo` akan membuat folder dan semua file yang Anda perlukan.
 - `cargo clean`. Di saat Anda menambahkan crate pada `Cargo.toml`, computer akan men-download semua file yang diperlukan dan crate-crate ini akan memakan banyak space di harddisk Anda. Jika Anda tidak menginginkan crate-crate itu lagi pada komputer Anda, tuliskan perintah `cargo clean`.
 
 Satu hal lagi tentang compiler: ia hanya membutuhkan waktu paling lama di saat Anda menggunakan `cargo build` atau `cargo run` untuk pertama kalinya. Setelah itu compilernya akan mengingatnya, dan selanjutnya ia akan melakukan compile dengan cepat lagi. Namun jika Anda menggunakan `cargo clean` dan kemudian menggunakan perintah `cargo build`, ia akan sekali lagi melakukan compile dengan lambat.
@@ -13641,7 +13641,7 @@ x
 You wrote x
 ```
 
-Ia mengambil input yang kita berikan dan mengembalikannya, dan ia pun tahu bahwa kita menuliskan `x`. Hanya saja, ia tidak keluar dari programnya. Cara stu-satunya untuk keluar dari program tersebut adalah dengan menggunakan menutup window dimana Terminalnya terbuka, atau menggunakan Ctrl+c. Mari kita ubah `{}` menjadi `{:?}` di `println!` untuk mendapatkan informasi (atau Anda bisa menggunakan `dbg!(&input_string)` jika Anda menyukai macro tersebut). Sekarang outputnya menjadi seperti ini:
+Ia mengambil input yang kita berikan dan mengembalikannya, dan ia pun tahu bahwa kita menuliskan `x`. Hanya saja, ia tidak keluar dari programnya. Cara satu-satunya untuk keluar dari program tersebut adalah dengan menutup window dimana Terminalnya terbuka, atau menggunakan Ctrl+c. Mari kita ubah `{}` menjadi `{:?}` di `println!` untuk mendapatkan informasi (atau Anda bisa menggunakan `dbg!(&input_string)` jika Anda menyukai macro tersebut). Sekarang outputnya menjadi seperti ini:
 
 ```text
 Please type something, or x to escape:
@@ -13657,7 +13657,7 @@ You wrote "x\r\n"
 
 
 
-Ini dikarenakan inputan dari keyboard sebenarnya tidak hanya mendapatkan tulisan `something`. Ia sebenarnya mendapatkan tulisan `something` dan juga `Enter`. Ada method yang mudah digunakan yang digunakan untuk memperbaiki hal ini, namanya adalah `.trim()`, yang mana akan menghapus semua whitespace. Whitespace, adalah semua [karakter yang terdaftar di sini](https://doc.rust-lang.org/reference/whitespace.html):
+Ini dikarenakan inputan dari keyboard sebenarnya tidak hanya mendapatkan tulisan `something`. Ia sebenarnya mendapatkan tulisan `something` dan juga `Enter`. Ada method yang mudah digunakan yang berguna untuk memperbaiki hal ini, namanya adalah `.trim()`, yang mana akan menghapus semua whitespace. Whitespace, adalah semua [karakter yang terdaftar di sini](https://doc.rust-lang.org/reference/whitespace.html):
 
 ```text
 U+0009 (horizontal tab, '\t')
@@ -14030,7 +14030,7 @@ Ini memanglah tidak terlalu berguna di saat kita menggunakan `.parse()`, namun i
 If you get an `Err`, it will get the inner error. Then `?` does a conversion using `From`. With that it can change specialized errors to more general ones. The error it gets is then returned.
 ```
 
-Artinya, "Jika Anda mendapatkan `Err` ia akan mendapatkan inner error. Kemudian `?` melakukan konversi menggunakan `From`. Dengan itu ia bisa mengubah error yang spesifik menjadi error yang umum. Error yang didapatkan tersebut kemudian dikembalikan."
+Artinya, "Jika Anda mendapatkan `Err`, ia akan mendapatkan inner error. Kemudian `?` melakukan konversi menggunakan `From`. Dengan itu ia bisa mengubah error yang spesifik menjadi error yang umum. Error yang didapatkan tersebut kemudian dikembalikan."
 
 Juga, Rust memiliki type `Result` di saat menggunakan `File` atau hal semacamnya. Ia biasa disebut `std::io::Result`, dan ini adalah apa yang biasanya Anda lihat di dalam `main()` saat Anda menggunakan `?` untuk membuka dan melakukan sesuatu terhadap file. Itu sebenarnya adalah type alias. Ia terlihat seperti berikut:
 
@@ -14099,7 +14099,7 @@ Jadi, itu merupakan file yang akan kita gunakan. Isinya adalah percakapan antara
 
 
 
-Membuka file sama mudahnya dengan membuatnya. Anda cukup menggunakan `open()`. Setelah itu (jika filenya ditemukan), Anda bisa melakukan sesuatu seperti `read_to_string()`. Untuk melakukan itu Anda bisa membuat sebuah `String` yang mutable dan membaca filenya di dalam situ. Codenya menjadi seperti ini:
+Membuka file sama mudahnya seperti membuat file. Anda cukup menggunakan `open()`. Setelah itu (jika filenya ditemukan), Anda bisa melakukan sesuatu seperti `read_to_string()`. Untuk melakukan itu Anda bisa membuat sebuah `String` yang mutable dan membaca filenya di dalam situ. Codenya menjadi seperti ini:
 
 ```rust
 use std::fs;
@@ -14182,7 +14182,7 @@ Pertama-tama, kita membuat sebuah `OpenOptions` menggunakan `new` (selalu dimula
 Error: Os { code: 80, kind: AlreadyExists, message: "The file exists." }
 ```
 
-Mari kita coba menggunakan `.append()` untuk menuliskan sesuatu ke dalam file yang sudah ada itu. Untuk menulis ke dalam file, kita bisa menggunakan `.write_all()`, yang mana itu adalah method yang mencoba menuliskan apapun yang inputan kita berikan.
+Mari kita coba menggunakan `.append()` untuk menuliskan sesuatu ke dalam file yang sudah ada itu. Untuk menulis ke dalam file, kita bisa menggunakan `.write_all()`, yang mana itu adalah method yang mencoba menuliskan apapun inputan yang kita berikan.
 
 Dan juga, kita akan menggunakan macro `write!` untuk melakukan hal yang sama. Anda akan mengingat macro ini dari saat kita menggunakan `impl Display` untuk struct yang kita buat. Kali ini kita menggunakannya pada file.
 
