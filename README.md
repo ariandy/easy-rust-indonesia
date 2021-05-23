@@ -1030,7 +1030,7 @@ Ini adalah hasil cetakannya:
 The hashtag #IceToSeeYou had become very popular.
 "You don't have to type ### to use a hashtag. You can just use #."
 ```
------ ----- {materi video}
+
 `r#` memiliki kegunaan lainnya: dengan ini Anda bisa menggunakan keyword (seperti `let`, `fn`, dsb.) sebagai nama variable.
 
 ```rust
@@ -1289,7 +1289,7 @@ And 'Adrian Fahrenheit Țepeș' is 25 bytes. It is not Sized.
 
 Ini sebabnya kita membutuhkan &, karena `&` menghasilkan pointer, dan Rust tahu ukuran dari pointer. Sehingga pointer ditaruh di stack. Jika kita menulis `str` saja, Rust tidak tahu apa yang harus dilakukan karena ia tidak tahu ukurannya.
 
------ ----- {proof read}
+
 
 Ada banyak cara untuk membuat `String`. Ini adalah beberapa caranya:
 
