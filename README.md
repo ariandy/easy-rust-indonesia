@@ -855,7 +855,7 @@ fn main() {
 }
 ```
 
-Tanpa shadowing, kita harus memikirkan nama yang berbeda-beda, meskipun anda tidak peduli dengan x:
+Tanpa shadowing, kita harus memikirkan nama yang berbeda-beda, meskipun kita tidak peduli dengan x:
 
 ```rust
 fn times_two(number: i32) -> i32 {
@@ -881,7 +881,7 @@ Intinya, kita bisa melihat shadowing di Rust pada kasus ini. Ia digunakan dimana
 
 Stack, heap, dan pointer sangatlah penting di Rust.
 
-Stack dan heap adalah 2 tempat untuk menyimpan memori di komputer. Perbedaannya yang menonjol adalah sebagai berikut:
+Stack dan heap adalah 2 tempat penyimpanan di komputer. Perbedaannya yang menonjol adalah sebagai berikut:
 
 - Stack sangat cepat, sedangkan heap tidak terlalu cepat. Bukan berarti heap terlalu lambat, hanya saja stack selalu lebih cepat. Sayangnya, kita kita tidak bisa hanya menggunakan stack setiap saat, karena:
 - Rust perlu untuk mengetahui ukuran sebuah variabel pada saat compile time. Sehingga variabel sederhana seperti `i32` akan ditaruh di stack, karena kita tahu berapa ukuran mereka secara tepat. Anda pasti mengetahui bahwa sebuah `i32` akan menggunakan 4 bytes, karena 32 bits = 4 byte. Jadinya `i32` bisa selalu ditaruh pada stack.
@@ -902,7 +902,7 @@ Chapter 4: My family            30
 Chapter 5: Future plans         43
 ```
 
-Jadi, buku di atas tersebut seakan memiliki 5 buah pointer. Anda bisa membaca mereka dan mencari informasi yang mereka tuliskan pada halaman tersebut. Ada dimanakah chapter tentang "My life"? Ia ada di halaman 1 (it *points*/*mengarahkan* to page 1). Ada dimanakah chapter tentang "My job?" Ia ada di halaman 23.
+Jadi, buku di atas seakan memiliki 5 buah pointer. Anda bisa membaca mereka dan mencari informasi yang mereka tuliskan pada halaman tersebut. Ada dimanakah chapter tentang "My life"? Ia ada di halaman 1 (it *points*/*mengarahkan* to page 1). Ada dimanakah chapter tentang "My job?" Ia ada di halaman 23.
 
 Pointer yang biasa Anda lihat pada Rust biasa disebut sebagai **reference**. Ini adalah bagian terpenting untuk diketahui: sebuah reference akan mengarahkan kita ke memori dari sebuah value/nilai. Reference artinya kita *borrow*/*meminjam* value, tapi kita tidak memilikinya. Ini persis sama seperti buku yang kita bayangkan sebelumnya: daftar isi tidak memiliki informasi apapun. Setiap chapterlah yang justru memiliki informasi. Pada Rust, reference menggunakan tanda `&` di bagian depannya. Sehingga:
 
@@ -913,7 +913,7 @@ Anda bisa membaca `my_reference = &my_variable` seperti berikut: "my_reference a
 
 Ini berarti bahwa `my_reference` hanya sekedar melihat data dari `my_variable`. `my_variable` tetap menjadi pemilik atas data tersebut.
 
-Anda juga bisa memiliki sebuah reference ke sebuah reference, ataupun ke sejumlah reference.
+Anda juga bisa memiliki sebuah reference yang merujuk ke sebuah reference, ataupun ke sejumlah reference.
 
 ```rust
 fn main() {
@@ -924,11 +924,11 @@ fn main() {
 }
 ```
 
-Kesemuanya itu adalah type yang berbeda. Jika dianalogikan, ini mirip seperti -> "teman dari temannya si X" berbeda dengan "temannya si X".
+Kesemuanya itu adalah type yang berbeda. Jika dianalogikan, ini mirip seperti "teman dari temannya si X". Dan itu berbeda dengan "temannya si X", juga berbeda dengan "teman dari temannya dari temannya dari temannya si X".
 
 ## More about printing
 
-Di Rust, Anda bisa mem-print sesuatu dengan cara apapun yang Anda inginkan. Ini adalah yang harusnya diketahui tentang printing.
+Di Rust, Anda bisa mem-print sesuatu dengan cara apapun yang Anda inginkan. Ini adalah hal yang seharusnya diketahui mengenai printing.
 
 Menambahkan `\n` akan membuat sebuah new line, dan `\t` akan membuat sebuah tab:
 
