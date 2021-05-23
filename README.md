@@ -28,7 +28,7 @@ Saya adalah seorang berkebangsaan Canada yang tinggal di Korea, dan Saya menulis
 Hai, saya adalah [Ariandy](https://github.com/ariandy)/[1kb](https://1kilobyte.github.io/). Translasi ini saya lakukan dari tanggal 15 April 2021 s/d 23 Mei 2021.
 Meskipun translasi ini telah rampung, namun bisa saja ada kesalahan disana-sini, entah mungkin karena ada typo, translasi yang kurang cocok (atau bahkan mungkin salah translasi), ataupun tulisan yang tidak sesuai dengan EYD. Oleh karenanya, saya ingin memberitahukan bahwa hasil translasi ini masih ditahap proofreading.
 
-Jika Anda menemukan kesalahan-kesalahan tersebut, Anda bisa menghubungi saya via [LinkedIn](https://www.linkedin.com/in/ariandy-noviar-a126a5188/).
+Jika Anda menemukan kesalahan-kesalahan tersebut, Anda bisa menghubungi saya via [LinkedIn](https://www.linkedin.com/in/ariandy-noviar-a126a5188/) atau langsung melakukan PR ke [repositori Github dari project ini](https://github.com/ariandy/easy-rust-indonesia).
 
 ### Saran
 - Saya menyarankan Anda untuk sambil menonton video di [kanal YouTube](https://www.youtube.com/playlist?list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) yang disediakan oleh [Dave MacLeod](https://www.linkedin.com/in/davemacleod) karena banyak detil-detil penting di video-video tersebut yang tidak tertulis di buku ini. Videonya merupakan suplemen yang baik untuk mendapatkan pemahaman yang lebih baik tentang Rust.
@@ -1129,7 +1129,7 @@ fn main() {
 }
 ```
 
-Program di atas akan mencetak `0xe2bc0ffcfc` atau alamat yang lain. Resultnya akan selalu berbeda setiap saat, tergantung dimana komputer Anda menyimpannya.
+Program di atas akan mencetak `0xe2bc0ffcfc` atau alamat yang lain. Hasilnya akan selalu berbeda setiap saat, tergantung dimana komputer Anda menyimpannya.
 
 Anda juga bisa mencetak biner, hexadesimal dan oktal seperti berikut:
 
@@ -1701,7 +1701,7 @@ fn main() {
 }
 ```
 
-Dan tentu saja, jika `String` sangat besar, `.clone()` bisa menggunakan banyak memory. Satu `String` bisa saja panjangnya sama seperti isi buku, dan setiap kita menggunakan `.clone()`, ia akan menyalin buku tersebut. Jadi, menggunakan `&` untuk membuat reference jauh lebih cepat, kalau memang bisa dilakukan. Contohnya, code di bawah akan melakukan `.push_str()` sebuah `&str` ke dalam `String` dan kemudian membuat clone setiap ia digunakan oleh function:
+Dan tentu saja, jika `String` sangat besar, `.clone()` bisa menggunakan banyak memory. Satu `String` bisa saja panjangnya sama seperti isi dari sebuah buku yang tebal, dan setiap kita menggunakan `.clone()`, ia akan menyalin buku tersebut. Jadi, menggunakan `&` untuk membuat reference jauh lebih cepat, kalau memang memungkinkan untuk dilakukan. Contohnya, code di bawah akan melakukan `.push_str()` terhadap sebuah `&str` ke dalam `String` dan kemudian membuat clone setiap ia digunakan oleh function:
 
 ```rust
 fn get_length(input: String) { // mengambil ownership dari String
@@ -1717,7 +1717,7 @@ fn main() {
 }
 ```
 
-It prints:
+Hasil cetaknya adalah:
 
 ```text
 It's 5 words long.
@@ -1742,7 +1742,7 @@ fn main() {
 }
 ```
 
-Alih-alih membuat 50 clone seperti cara sebelumnya, code yang ini justru sama sekalitidak perlu melakukan salinan.
+Alih-alih membuat 50 clone seperti cara sebelumnya, code yang ini justru sama sekali tidak perlu membuat salinan (menyalinnya berkali kali seperti pada `.clone()`).
 
 
 
@@ -1758,7 +1758,7 @@ fn main() {
 
 Namun Anda tidak bisa menggunakannya untuk saat ini, dan Rust tidak bisa meng-compilenya apabila ada sesuatu yang uninitialized.
 
-Tapi terkadang mereka sangat berguna. Contohnya adalah di saat Anda menemukan kasus seperti:
+Tapi terkadang variabel yang tidak diinisialisasi ini sangat berguna. Contohnya adalah di saat Anda menemukan kasus seperti:
 
 - Anda memiliki code block dan di dalam code block tersebut terdapat variabel yang memiliki value, dan
 - Variabel tersebut perlu untuk tetap hidup di luar dari code block.
@@ -1794,7 +1794,7 @@ fn main() {
 
 Maka program tersebut akan mencetak `100`.
 
-Anda bisa melihat bahwa `my_number` dideklarasikan di dalam fungsi `main()`, jadinya ia akan tetap hidup sampai akhir program. Akan tetapi, ia mengambil valuenya dari dalam loop. Namun, value tersebut (hasil dari fungsi loop) akan tetap hidup selama `my_number` juga tetap hidup, karena `my_number` yang memiliki valuenya. Dan jika Anda justru menulis `let my_number = loop_then_return(number)` di dalam block tersebut, maka valuenya akan mati (hangus).
+Anda bisa melihat bahwa `my_number` dideklarasikan di dalam fungsi `main()`, jadinya ia akan tetap hidup sampai bagian akhir program. Akan tetapi, ia mengambil valuenya dari dalam loop. Namun, value tersebut (hasil dari fungsi loop) akan tetap hidup selama `my_number` juga tetap hidup, karena `my_number` yang memiliki valuenya. Dan jika Anda justru menulis `let my_number = loop_then_return(number)` di dalam block tersebut, maka valuenya akan mati (hangus).
 
 Untuk membantu mempermudah Anda membayangkannya, kita buat satu contoh kasus lagi. Kita sama-sama tahu bahwa`loop_then_return(number)` memberikan result 100, jadi kitaa hapus saja fungsi tersebut dan kita ganti menjadi `100`. Juga, sekarang kita tidak memerlukan `number` jadinya kita hapus juga variabelnya. Maka, sekarang codenya akan terlihat seperti ini:
 
