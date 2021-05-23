@@ -38,7 +38,7 @@ Jika Anda menemukan kesalahan-kesalahan tersebut, Anda bisa menghubungi saya via
 ### Catatan lain
 - Proses translasi yang saya lakukan benar-benar spontan, sehingga ada beberapa terjemahan yang sifatnya tidak konsisten. Contohnya, terkadang saya membiarkan "return" tidak diterjemahkan. Sedangkan di tempat lainnya saya terjemahkan menjadi "kembalian". Begitu juga dengan "print". Di beberapa tulisan, saya biarkan ia tetap tertulis "print", namun di tulisan yang lain, saya menerjemahkannya dengan "cetak". Saya masih memikirkan apakah ke depannya ini perlu diseragamkan (jika diterjemahkan, semuanya ikut diterjemahkan, dan sebaliknya), ataukah tetap dibiarkan seperti itu saja.
 - Karena saya menerjemahkannya dan menuliskannya secara spontan pula, banyak penulisan yang melanggar kaidah EYD. Contohnya, ada beberapa bagian saya menulis "di" yang semestinya dipisah menjadi "di" yang disambung . Hal ini pun akan saya perbaiki.
-- Judul dari setiap bab akan saya biarkan dalam bahasa Inggris
+- Judul dari setiap bab untuk sementara ini akan saya biarkan dalam bahasa Inggris (kecuali judul untuk bab ini).
 
 Selamat membaca!
 
