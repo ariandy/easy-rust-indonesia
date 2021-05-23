@@ -17,7 +17,7 @@
 
 Rust adalah bahasa baru yang telah memiliki textbook yang mumpuni. Namun terkadang textbooknya sendiri cukup sulit untuk dipahami karena textbook tersebut ditulis untuk native-English speaker. Sekarang, beberapa perusahaan dan individu mempelajari Rust, dan mereka mungkin saja mempelajarinya lebih cepat dengan textbook yang bahasa Inggrisnya lebih mudah. Untuk itulah textbook ini diperuntukkan bagi mereka yang ingin mempelajari Rust dengan bahasa Inggris yang sederhana.
 
-Rust merupakan bahasa pemrograman yang tergolong baru, namun sudah sangat populer. Ia populer karena memberikan Anda kecepatan dan kontrol sebagaimana C atau C++ namun juga memberikan keamanan memori sebagaimana seperti pemrograman yang baru seperti Python. Ia juga hadir dengan idea yang baru, yang mana terkadang berbeda dari bahasa pemrograman lainnya. Yang artinya ada hal-hal yang baru yang mesti dipelajari dan anda tidak bisa begitu saja "memahaminya sambil berjalan" (tidak seperti bahasa Python atau JS yang mana kita bisa dengan mudah memahaminya sambil mengerjakan project-project hands-on). Rust adalah bahasa yang harus Anda pikirkan sejenak untuk dipahami. Tetapi masih terlihat cukup familiar jika Anda tahu bahasa lain dan hal itu dibuat untuk membantu Anda menulis kode yang baik.
+Rust merupakan bahasa pemrograman yang tergolong baru, namun sudah sangat populer. Ia populer karena memberikan Anda kecepatan dan kontrol sebagaimana C atau C++ namun juga memberikan keamanan memori sebagaimana seperti pemrograman yang baru seperti Python (namun dengan cara yang berbeda). Ia juga hadir dengan idea yang baru, yang mana terkadang berbeda dari bahasa pemrograman lainnya. Yang artinya ada hal-hal yang baru yang mesti dipelajari dan anda tidak bisa begitu saja "memahaminya sambil berjalan" (tidak seperti bahasa Python atau JS yang mana kita bisa dengan mudah memahaminya sambil mengerjakan project-project hands-on). Rust adalah bahasa yang harus Anda pikirkan sejenak untuk dipahami. Tetapi masih terlihat cukup familiar jika Anda tahu bahasa lain, dan hal itu dibuat untuk membantu Anda menulis kode dengan baik.
 
 ## Who am I?
 
@@ -203,7 +203,7 @@ fn main() {
 
 Apabila anda menjalankan code tersebut, compiler akan mengabaikan apapun yang tertulis setelah `//`. 
 
-Adapula cara berbeda untuk menulis komentar, yaitu dengan cara menulis `/*` pada bagian awalnya dan `*/` pada bagian akhirnya. Cara menulis komentar seperti ini sangat berguna apabila kita ingin menulis komentar pada bagian tengah dari code anda.
+Ada pula cara berbeda untuk menulis komentar, yaitu dengan cara menulis `/*` pada bagian awalnya dan `*/` pada bagian akhirnya. Cara menulis komentar seperti ini sangat berguna apabila kita ingin menulis komentar pada bagian tengah dari baris code anda.
 
 ```rust
 fn main() {
@@ -231,7 +231,7 @@ fn main() {
 
 ## Types
 
-Rust memiliki beberapa type, entah berupa angka, karakter, dan yang lainnya. Beberapanya sederhana, sedangkan yang lainnya lebih kompleks, dan bahkan anda bisa membuat type anda sendiri.
+Rust memiliki beberapa type, entah berupa angka, karakter, dan yang lainnya. Beberapanya sederhana, sedangkan yang lainnya lebih rumit. Dan Anda juga bisa membuat type anda sendiri.
 
 ### Primitive types
 **[See this chapter on YouTube](https://youtu.be/OxTPU5UGMhs)**
@@ -321,7 +321,7 @@ Jadi Rust menggunakan, `usize` sehingga nantinya biarkan komputer kita yang mene
 
 Mari kita pelajari lebih lanjut tentang `char`. Kita bisa lihat bahwa `char` selalu berisi hanya 1 karakter, dan menggunakan `''`, bukan `""`.
 
-Semua `chars` menggunakn 4 byte memori, karena sejauh ini 4 bytes cukup untuk menampung hampir semua karakter apapun yang ada sekarang.:
+Semua `chars` menggunakan 4 byte memori, karena sejauh ini 4 bytes cukup untuk menampung hampir semua karakter apapun yang ada sekarang.:
 - Huruf-huruf dasar dan simbol biasanya memerlukan 1 dari 4 byte: `a b 1 2 + - = $ @`
 - Aksara lainnya seperti German Umlauts memerlukan 2 dari 4 byte: `ä ö ü ß è é à ñ`
 - Aksara Korea, Jepang atau Mandarin memerlukan 3 atau 4 byte: `国 안 녕`
@@ -394,7 +394,7 @@ Slice2 is 7 bytes but only 3 characters.
 
 Type inference artinya adalah, jika anda tidak memberitahukan type yang anda gunakan, tapi compiler bisa memilihkannya, maka compiler yang nantinya akan memilihkan typenya. Compiler Rust selalu perlu mengetahui type dari sebuah variabel, namun anda tidak selalu perlu untuk memberitahukannya. Dan sebenarnya, biasanya anda memang tidak perlu memberitahukannya. Sebagai contoh, pada chapter sebelumnya, untuk `let my_number = 8`, `my_number` akan menjadi `i32`. Ini dikarenakan compiler secara default akan memilih i32 untuk integer jika anda tidak memberitahukannya. Namun jika anda memberitahukannya, seperti `let my_number: u8 = 8`, maka itu akan membuat `my_number` bertype `u8`, karena anda memberitahu ke compiler untuk menggunakan type `u8`.
 
-Jadi, sebenarnya compiler bisa memilihkan typenya untuk kita. Tapi terkadang kita perlu memberitahukannya ke compiler, karena 2 alasan berikut:
+Jadi, sebenarnya compiler bisa memilihkan type untuk kita. Tapi terkadang kita perlu memberitahukannya ke compiler, karena 2 alasan berikut:
 
 1) Kita membuat sesuatu yang lumayan kompleks dan compiler tidak tahu type yang kita inginkan.
 2) Kita menginginkan type yang berbeda (contohnya, anda ingin `i128`, bukan `i32`).
