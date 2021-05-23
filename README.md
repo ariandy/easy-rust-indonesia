@@ -998,7 +998,7 @@ fn main() {
 }
 ```
 
-Keduanya akan mencetak keluaran yangsama, namun dengan menggunakan `r#` membuat codenya menjadi lebih mudah dibaca oleh kita.
+Keduanya akan mencetak kembalian yang sama, namun dengan menggunakan `r#` membuat codenya menjadi lebih mudah dibaca oleh kita.
 
 ```text
 He said, "You can find the file at c:\files\my_documents\file.txt." Then I found the file.
@@ -1031,7 +1031,7 @@ The hashtag #IceToSeeYou had become very popular.
 "You don't have to type ### to use a hashtag. You can just use #."
 ```
 
-`r#` memiliki kegunaan lainnya: dengan ini Anda bisa menggunakan keyword (seperti `let`, `fn`, dsb.) sebagai nama variable.
+`r#` memiliki kegunaan lainnya: dengan ini Anda bisa menggunakan keyword (seperti `let`, `fn`, dsb.) sebagai nama variabel.
 
 ```rust
 fn main() {
@@ -1251,7 +1251,7 @@ fn main() {
 
 Anda bisa melihat pada `String::from("Adrian Fahrenheit Țepeș")` bahwa sangatlah mudah membuat sebuah `String` dari `&str`. Kedua type ini sangat erat terkait satu sama lain, meskipun keduanya berbeda.
 
-Bahkan kita juga bisa menuliskan emoji, thanks to UTF-8.
+Bahkan kita juga bisa menuliskan emoji. Berterima kasihlah pada UTF-8. :D
 
 ```rust
 fn main() {
@@ -1330,7 +1330,7 @@ error[E0282]: type annotations needed
   |         ^^^^^^^^^ consider giving `my_string` a type
 ```
 
-Untuk menyelesaikan error tersebut, Anda bisa menggunakan cara seperti ini:
+Untuk menghilangkan error tersebut, Anda bisa menggunakan cara seperti ini:
 
 ```rust
 fn main() {
@@ -1343,12 +1343,12 @@ Voila! Akhirnya anda bisa membuat String menggunakan `.into()`.
 ## const and static
 **[See this chapter on YouTube](https://youtu.be/Ky3HqkWUcI0)**
 
-Ada 2 cara lain untuk mendeklarasikan variabel, tidak hanya dengan `let`. Yaitu dengan menggunakan `const` dan `static`. Juga, Rust tidak akan menggunakan type inference untuk kedua cara ini: Anda perlu menulis type untuk keduanya. Pendeklarasian dengan cara ini berguna untuk mendeklarasikan variabel yang nilainya tidak berubah (`const` artinya constant/konstanta). Yang membuat keduanya berbeda adalah:
+Ada 2 cara lain untuk mendeklarasikan variabel, tidak hanya dengan `let`. Yaitu dengan menggunakan `const` dan `static`. Juga, Rust tidak akan menggunakan type inference untuk kedua cara ini: Anda perlu menuliskan type untuk keduanya. Pendeklarasian dengan cara ini berguna untuk mendeklarasikan variabel yang nilainya tidak berubah (`const` artinya constant/konstanta). Yang membuat keduanya berbeda adalah:
 
 - `const` mirip seperti `let`, hanya saja valuenya yang tidak berubah,
 - `static` sama seperti `const`, akan tetapi ia memiliki lokasi memori yang tetap (fixed) dan bisa berlaku sebagai global variable.
 
-Jadi, bisa dibilang bahwa keduanya hampir sama. Meskipun Rust programmers hampir sering menggunkana `const`.
+Jadi, bisa dibilang bahwa keduanya hampir sama. Meskipun programmer Rust lebih sering menggunakan `const`.
 
 Keduanya ditulis dengan HURUF_KAPITAL, dan biasanya ditulis di luar `main`, sehingga mereka tidak hangus diseluruh bagian code program.
 
@@ -1357,7 +1357,7 @@ Baginilah contohnya: `const NUMBER_OF_MONTHS: u32 = 12;` dan `static SEASONS: [&
 ## More on references
 **[See this chapter on YouTube](https://youtu.be/R13sQ8SNoEQ)**
 
-Reference sangat penting di Rust. Rust menggunakan reference untuk memastikan bahwa semua akses ke memori bebanr-benar aman. Kita tahu bahwa kita menggunakan `&` untuk membuat reference:
+Reference sangat penting di Rust. Rust menggunakan reference untuk memastikan bahwa semua akses ke memori benar-benar aman. Kita tahu bahwa kita menggunakan `&` untuk membuat reference:
 
 ```rust
 fn main() {
@@ -1405,7 +1405,7 @@ fn main() {
 
 Jadi, apa type dari kedua variabel tersebut? `my_number` menggunakan type `i32`, dan `num_ref` bertype `&mut i32` (kita bisa menyebutnya "mutable reference ke sebuah type`i32`").
 
-Mari kita gunakan num_ref untuk menambahkan 10 ke my_number. Tapi Anda tidak bisa menulis `num_ref += 10`, karena value dari `num_ref` tidak bertype `i32`, melainkan `&i32`. Value yang asli, ia berada pada `i32`. Untuk mengakses tempat dimana value aslinya tersimpan, kita menggunakan `*`. `*`, yang berarti "Saya tidak mau referencenya, yang saya inginkan adalah value aslinya". Dengan kata lain, setiap `*` adalah lawan dari `&`. Dan juga, setiap penggunaan `*` akan menghapus sebuah `&`.
+Mari kita gunakan `num_ref` untuk menambahkan 10 ke `my_number`. Tapi Anda tidak bisa menulis `num_ref += 10`, karena value dari `num_ref` tidak bertype `i32`, melainkan `&i32`. Value yang asli, ia berada pada `i32`. Untuk mengakses tempat dimana value aslinya tersimpan, kita menggunakan `*`. `*`, yang berarti "Saya tidak mau referencenya, yang saya inginkan adalah value aslinya". Dengan kata lain, setiap `*` adalah lawan dari `&`. Dan juga, setiap penggunaan `*` akan menghapus sebuah `&`.
 
 ```rust
 fn main() {
@@ -1490,9 +1490,9 @@ fn main() {
 }
 ```
 
-Dan tercetak `20` tanpa ada problem apapun. Ini bisa bekerja karena compiler cukup cerdas untuk mengerti code yang kita tulis. It knows that we used `number_change` to change `number`, but didn't use it again. So here there is no problem. We are not using immutable and mutable references together.
+Dan tercetak `20` tanpa ada problem apapun. Ini bisa bekerja karena compiler cukup cerdas untuk mengerti code yang kita tulis. Compiler tahu bahwa kita menggunakan `number_change` untuk mengubah `number`, namun kita tidak menggunakan `number_change` itu lagi setelahnya. Sehingga hal seperti ini bisa ditolerir dan tidak bermasalah. Kita tidak menggunakan immutable reference dan mutable references secara bersamaan.
 
-Pada versi awal Rust, code seperti ini akan menghasilkan error, namun sekarang ini compiler Rust jauh lebih cerdas. Ia tidak hanya memahami apa yang kita tuliskan, tapi juga paham bagaimana kita menuliskannya secara keseluruhan.
+Pada versi awal Rust, code seperti ini akan menghasilkan error, namun sekarang ini compiler Rust jauh lebih cerdas. Ia tidak hanya memahami apa yang kita tuliskan, tapi juga paham bagaimana kita menuliskan codenya secara keseluruhan.
 
 ### Shadowing again
 
