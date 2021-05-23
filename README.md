@@ -184,7 +184,7 @@ Jika Anda ingin menginstall Rust, silahkan ke [https://www.rust-lang.org/tools/i
 
 ## 🚧 and ⚠️
 
-Terkadang code yang menjadi contoh pada textbook ini tidak berjalan. Jika code tersebut tidak berjalan, ia akan menunjukkan tanda 🚧 atau ⚠️ di Playground tersebut. 🚧 itu seperti "under construction": yang berarti bahwa code yang ditulis tidak lengkap. Rust memerlukan sebuah `fn main()` (main function) untuk berjalan, tapi terkadang kita merasa hanya perlu untuk menuliskan bagian kecil dari code sehingga beranggapan bahwa kita tidak memerlukan `fn main()`. Code seperti itu memanglah benar, tapi tentu saja tetap memerlukan sebuah `fn main()` untuk menjalankannya. Dan beberapa contoh code menujukkan sebuah problem yang mana akan kita perbaiki. Untuk code yang mungkin telah memiliki `fn main()` namun menghasilkan error, maka ia akan menggunakan simbol ⚠️.
+Terkadang, Anda akan menemukan beberapa code yang menjadi contoh pada textbook ini tidak berfungsi/berjalan. Jika code tersebut tidak berfungsi, ia akan ditandai dengan tanda 🚧 atau ⚠️. 🚧 itu seperti "under construction": yang berarti bahwa code yang ditulis sebenarnya tidaklah lengkap. Rust memerlukan sebuah `fn main()` (main function) untuk menjalankan programnya. Tapi terkadang kita merasa hanya perlu untuk menuliskan bagian kecil dari code tersebut sehingga beranggapan bahwa kita tidak lagi memerlukan `fn main()`. Code seperti itu memanglah benar, tapi tentu saja tetap memerlukan sebuah `fn main()` untuk menjalankannya. Dan beberapa contoh code memperlihatkan sebuah problem yang mana akan kita perbaiki perlahan-lahan. Untuk code yang mungkin telah memiliki `fn main()` namun tetap menghasilkan error, maka akan ditandai dengan menggunakan simbol ⚠️.
 
 ## Comments
 **[See this chapter on YouTube](https://youtu.be/fJ7jBZG_Rpo)**
@@ -688,7 +688,7 @@ Lantas, mengapa kita menuliskan `{:?}` dan bukan `{}`? Saatnya kita pelajari ten
 
 Variabel sederhana di Rust bisa di-print/dicetak menggunakan `{}` di dalam `println!`. Namun beberapa variabel tidak bisa, dan Anda perlu menggunakan **debug print**. Debug print adalah print untuk keperluan si programmer, karena debug print biasanya memunculkan lebih banyak informasi. Terkadang debug terlihat tidak nyaman dipandang, namun itu dikarenakan ia memiliki informasi ekstra untuk membantu Anda.
 
-Bagaimana kita mengetahui jika kita membutuhkan `{:?}` dan bukan `{}`? Compiler akan memberi tahukannya untuk Anda. Sebagai contoh:
+Bagaimana kita mengetahui jika kita membutuhkan `{:?}`, bukan `{}`? Compiler akan memberi tahukannya untuk Anda. Sebagai contoh:
 
 ```rust
 fn main() {
