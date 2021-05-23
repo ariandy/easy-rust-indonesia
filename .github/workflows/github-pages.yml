@@ -30,4 +30,4 @@ jobs:
           external_repository: ariandy/ariandy.github.io
           publish_branch: master
           publish_dir: ./book
-          destination_dir: easy_rust_indonesia
+          destination_dir: easy-rust-indonesia
