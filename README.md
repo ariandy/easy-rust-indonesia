@@ -1403,7 +1403,7 @@ fn main() {
 }
 ```
 
-Jadi, apa type keduanya? `my_number` menggunakan type `i32`, dan `num_ref` bertype `&mut i32` (kita bisa menyebutnya "mutable reference ke sebuah type`i32`").
+Jadi, apa type dari kedua variabel tersebut? `my_number` menggunakan type `i32`, dan `num_ref` bertype `&mut i32` (kita bisa menyebutnya "mutable reference ke sebuah type`i32`").
 
 Mari kita gunakan num_ref untuk menambahkan 10 ke my_number. Tapi Anda tidak bisa menulis `num_ref += 10`, karena value dari `num_ref` tidak bertype `i32`, melainkan `&i32`. Value yang asli, ia berada pada `i32`. Untuk mengakses tempat dimana value aslinya tersimpan, kita menggunakan `*`. `*`, yang berarti "Saya tidak mau referencenya, yang saya inginkan adalah value aslinya". Dengan kata lain, setiap `*` adalah lawan dari `&`. Dan juga, setiap penggunaan `*` akan menghapus sebuah `&`.
 
@@ -1441,7 +1441,7 @@ Cara yang baik untuk memahami hal ini adalah dengan cara membayangkan tentang pr
 
 Situasi pertama ini adalah tentang kasus **hanya 1 mutable reference**.
 
-Situasi pertama: Seorang pegawai sedang membuat presentasi Powerpoint. Ia ingin Managernya membantunya untuk membuatnya. Pegawai tersebut memberikan memberikan informasi login komputernya ke Managernya, dan meminta bantuan pada Manager tersebut untuk mengedit presentasinya. Sekarang Managernya memiliki sebuah "mutable reference" yang merujuk kepada presentasi si pegawai. Si Manager bisa membuat perubahan yang dia inginkan di presentasi tersebut, dan logout dari komputer tersebut setelahnya. Hal ini boleh dilakukan, karena tidak ada orang lain yang sedang melihat presentasi tersebut.
+Situasi pertama: Seorang pegawai sedang membuat presentasi Powerpoint. Ia ingin Managernya membantunya untuk membuatnya. Pegawai tersebut memberikan informasi login komputernya ke Managernya, dan meminta bantuan pada Manager tersebut untuk mengedit presentasinya. Sekarang Managernya memiliki sebuah "mutable reference" yang merujuk kepada presentasi si pegawai. Si Manager bisa membuat perubahan yang dia inginkan di presentasi tersebut, dan logout dari komputer tersebut setelahnya. Hal ini boleh dilakukan, karena tidak ada orang lain yang sedang melihat presentasi tersebut.
 
 Situasi kedua ini adalah tentang kasus **yang ada hanya immutable references**.
 
