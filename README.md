@@ -9559,7 +9559,7 @@ Anda bisa melihat attribute-attribute lainnya [disini](https://doc.rust-lang.org
 
 ## Box
 
-`Box` adalah type yang cukup membantu di Rust. Jika kita menggunakan `Box`, kita bisa memasukkan type ke dalam heap, alih-alih menempatkannya pada stack. Untuk membuat `Box`, cukup tulisknya `Box::new()` dan letakkan item di dalamnya.
+`Box` adalah type yang cukup membantu di Rust. Jika kita menggunakan `Box`, kita bisa memasukkan type ke dalam heap, alih-alih menempatkannya pada stack. Untuk membuat `Box`, cukup tuliskan `Box::new()` dan letakkan item di dalamnya.
 
 ```rust
 fn just_takes_a_variable<T>(item: T) {} // Ambil parameter dari type apapun dan lakukan drop.
