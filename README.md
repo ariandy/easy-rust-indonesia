@@ -555,7 +555,7 @@ fn main() {
 
 Maka tercetak `Hello, worlds number 8 and 9!`.
 
-Sekarang, ayo membuat sebuah fungsi.
+Sekarang, kita akan membuat sebuah fungsi.
 
 ```rust
 fn number() -> i32 {
@@ -597,10 +597,10 @@ Ini artinya "kamu beri tahu saya bahwa `number()` akan mengembalikan `i32`, tapi
 
 Kita juga bisa menulis `return 8;` tapi di Rust adalah normal untuk menghapus `;` dan juga `return`.
 
-Apabila Anda ingin memasukkan variabel ke dalam sebuah fungsi, letakkan ia di dalam `()`. Anda perlu memberi variabel tersebut sebuah nama dan juga menuliskan typenya.
+Apabila Anda ingin memasukkan variabel ke dalam sebuah function, letakkan ia di dalam `()`. Anda perlu memberi variabel tersebut sebuah nama dan juga menuliskan typenya.
 
 ```rust
-fn multiply(number_one: i32, number_two: i32) { // Dua buah i32 akan masuk ke fungsi. Kita akan menyebutnya sebagai number_one dan number_two.
+fn multiply(number_one: i32, number_two: i32) { // Dua buah i32 akan dimasukkan ke function. Kita akan menyebutnya sebagai number_one dan number_two.
     let result = number_one * number_two;
     println!("{} times {} is {}", number_one, number_two, result);
 }
@@ -609,7 +609,7 @@ fn main() {
     multiply(8, 9); // Kita bisa memberikan angkanya secara langsung
     let some_number = 10; // Atau kita bisa mendeklarasikan 2 variabel
     let some_other_number = 2;
-    multiply(some_number, some_other_number); // dan kita masukkan keduanya ke dalam fungsi
+    multiply(some_number, some_other_number); // dan kita masukkan keduanya ke dalam function
 }
 ```
 
@@ -659,7 +659,7 @@ fn main() {
     let my_number = {
     let second_number = 8;
         second_number + 9 // Tidak ada semicolon, sehingga code block me-return 8 + 9.
-                          // Ini bekernya mirip seperti sebuah fungsi
+                          // Ini bekerja mirip seperti sebuah function
     };
 
     println!("My number is: {}", my_number);
