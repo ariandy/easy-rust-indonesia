@@ -14337,3 +14337,4 @@ main
 ## The end?
 
 Ini adalah bagian akhir dari (terjemahan) "Rust in Easy English". But I am still here, dan Anda bisa memberitahu saya jika Anda memiliki pertanyaan. Silakan [hubungi saya di Twitter](https://twitter.com/mithridates) atau tambahkan pull request, issue, dll. Anda juga bisa memberi tahu saya jika ada bagian yang sulit untuk dipahami. "Rust in Easy English" haruslah sangat mudah dipahami, jadi tolong beri tahu saya jika penjelasan dalam bahasa Inggrisnya terlalu sulit dipahami. Tentu saja, Rust itu sendiri mungkin sulit untuk dipahami, tapi setidaknya kita dapat memastikan bahwa penjelasannya dalam bahasa Inggris mudah dimengerti.
+.
