@@ -1,13 +1,13 @@
 ## Update
 ![example workflow name](https://github.com/Dhghomon/easy_rust/workflows/github%20pages/badge.svg)
 
-2 April 2021: [Added BuyMeACoffee link](https://www.buymeacoffee.com/mithridates) for those who would like to buy me a coffee.
+2 April 2021: [Menambahkan link BuyMeACoffee](https://www.buymeacoffee.com/mithridates) untuk siapapun yang ingin "mentraktir kopi" untuk saya.
 
 1 February 2021: [Sekarang bisa dilihat di YouTube!](https://www.youtube.com/playlist?list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) 2 bulan kemudian: semua video selesai pada 1 April 2021, dengan total sebanyak 186 video (kurang lebih berdurasi total 23 jam).
 
 22 December 2020: mdBook bisa dilihat [di sini](https://dhghomon.github.io/easy_rust).
 
-28 November 2020: [Sekarang tersedia juga dalam bahasa simplified Chinese](https://github.com/kumakichi/easy_rust_chs) thanks to [kumakichi](https://github.com/kumakichi)!
+28 November 2020: [Sekarang tersedia juga dalam bahasa Chinese (simplified)](https://github.com/kumakichi/easy_rust_chs) Terima kasih untuk [kumakichi](https://github.com/kumakichi)!
 
 
 
@@ -21,7 +21,7 @@ Rust merupakan bahasa pemrograman yang tergolong baru, namun sudah sangat popule
 
 ## Who am I?
 
-Saya adalah seorang Canadian yang tinggal di Korea, dan Saya menulis Easy Rust sembari memikirkan bagaimana caranya membuat Rust menjadi mudah dipelajari untuk perusahaan-perusahaan yang baru mulai menggunakannya. Saya harap negara-negara lain yang tidak menggunakan bahasa Inggris sebagai bahasa utamanya juga bisa menggunakan textbook ini.
+Saya adalah seorang berkebangsaan Canada yang tinggal di Korea, dan Saya menulis Easy Rust sembari memikirkan bagaimana caranya membuat Rust menjadi mudah dipelajari untuk perusahaan-perusahaan yang baru mulai menggunakannya. Saya harap negara-negara lain yang tidak menggunakan bahasa Inggris sebagai bahasa utamanya juga bisa menggunakan textbook ini.
 
 ## Catatan dari translator
 
@@ -368,7 +368,7 @@ Slice is 6 bytes.
 Slice2 is 7 bytes.
 ```
 
-`slice` memiliki 6 panjang 6 karakter dan memerlukan 6 byte, namun `slice2` memiliki panjang 3 karakter dan memerlukan 7 byte.
+`slice` memiliki panjang 6 karakter dan memerlukan 6 byte, namun `slice2` memiliki panjang 3 karakter dan memerlukan 7 byte.
 
 Jika `.len()` memberikan informasi tentang size dalam satuan byte, bagaimana tentang ukuran dalam satuan panjang karakter? Kita akan mempelajari tentang method ini nanti, tapi Anda bisa mengingat bahwa method `.chars().count()` bisa digunakan untuk itu. `.chars().count()` menjadikan apa yang kita tulis menjadi karakter dan menghitung berapa banyak karakternya.
 
@@ -527,7 +527,7 @@ fn main() {
 ```
 
 - `fn` artinya adalah function/fungsi,
-- `main` adalah fungsi yang memulai sebuah program,
+- `main` adalah function yang memulai sebuah program,
 - `()` artinya adalah, kita tidak memberikan variabel apapun ke fungsi untuk memulai program.
 
 `{}` disebut sebagai **code block**. Ini adalah tempat dimana code akan ditulis.
