@@ -25,7 +25,7 @@ Saya adalah seorang Canadian yang tinggal di Korea, dan Saya menulis Easy Rust s
 
 ## Catatan dari translator
 
-Hai, saya adalah [Ariandy](https://github.com/ariandy)/[1kb](https://1kilobyte.github.io/). Translasi ini saya lakukan dari tanggal 15 April 2021 s/d 23 May 2021.
+Hai, saya adalah [Ariandy](https://github.com/ariandy)/[1kb](https://1kilobyte.github.io/). Translasi ini saya lakukan dari tanggal 15 April 2021 s/d 23 Mei 2021.
 Meskipun translasi ini telah rampung, namun bisa saja ada kesalahan disana-sini, entah mungkin karena ada typo, translasi yang kurang cocok (atau bahkan mungkin salah translasi), ataupun tulisan yang tidak sesuai dengan EYD. Oleh karenanya, saya ingin memberitahukan bahwa hasil translasi ini masih ditahap proofreading.
 
 Jika Anda menemukan kesalahan-kesalahan tersebut, Anda bisa menghubungi saya via [LinkedIn](https://www.linkedin.com/in/ariandy-noviar-a126a5188/).
