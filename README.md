@@ -169,13 +169,13 @@ Buku ini memiliki 2 bagian. Di Part 1, Anda akan mempelajari Rust dengan browser
 ## Rust Playground
 **[See this chapter on YouTube](https://youtu.be/-lYeJeQ11OI)**
 
-Mungkin Anda tidak ingin menginstall Rust sekarang, dan itu tidak apa. Anda bisa ke [https://play.rust-lang.org/](https://play.rust-lang.org/) dan mulai menulis Rust hanya dengan sebuah browser. Anda bisa menuliskan code disitu dan meng-klik Run untuk melihat hasilnya. Anda bisa menjalankan hampir semua contoh code di buku ini di dalam Playground yang Anda buka di browser. Hanya pada bagian menjelang akhir, Anda akan melihat beberapa contoh code yang tidak bisa dijalankan di Playground (seperti membuka files).
+Mungkin Anda tidak ingin menginstall Rust sekarang, dan itu tidak apa. Anda bisa ke [https://play.rust-lang.org/](https://play.rust-lang.org/) dan mulai menulis Rust hanya dengan sebuah browser. Anda bisa menuliskan code anda di laman itu dan meng-klik Run untuk melihat hasilnya. Anda bisa menjalankan hampir semua contoh code di buku ini di dalam Playground yang Anda buka di browser. Hanya pada bagian menjelang akhir, Anda akan melihat beberapa contoh code yang tidak bisa dijalankan di Playground (seperti membuka files).
 
 Ini adalah beberapa tips di saat menggunakan Rust Playground:
 
 - Jalankan code menggunakan Run
 - Ubah Debug ke Release jika Anda menginginkan code anda menjadi lebih cepat. Debug: compile lebih cepat, run lebih lambat, dan menampilkan debug information. Release: compile lambat, run lebih cepat, debug information dihilangkan.
-- Klik Share untuk mendapatkan URL link. Anda bisa menggunakan itu untuk membagikan code Anda jika saja Anda memerlukan bantuan. Setelah Anda mengklik share, Anda bisa klik pada `Open a new thread in the Rust user forum` untuk menanyakan ke orang lain agar mendapatkan bantuan.
+- Klik Share untuk mendapatkan URL link. Anda dapat menggunakannya untuk membagikan code Anda jika saja Anda memerlukan bantuan. Setelah Anda mengklik share, Anda bisa klik pada `Open a new thread in the Rust user forum` untuk menanyakan ke orang lain agar mendapatkan bantuan.
 - Tools: Rustfmt akan memformat code Anda agar menjadi rapi.
 - Tools: Clippy akan memberi Anda informasi lanjutan tentang bagaimana untuk membuat code Anda menjadi lebih baik lagi.
 - Config: disini Anda bisa mengubah theme ke dark mode sehingga mata anda bisa bekerja dengan aman di malam hari, dan juga konfigurasi yang lainnya.
@@ -231,7 +231,7 @@ fn main() {
 
 ## Types
 
-Rust memiliki beberapa type, entah berupa angka, karakter, dan yang lainnya. Beberapanya sederhana, sedangkan yang lainnya lebih rumit. Dan Anda juga bisa membuat type anda sendiri.
+Rust memiliki beberapa type, entah berupa angka, karakter, dsb. Beberapa type tersebut tergolong sederhana, sedangkan yang lainnya tergolong lebih rumit. Anda juga bisa membuat type anda sendiri.
 
 ### Primitive types
 **[See this chapter on YouTube](https://youtu.be/OxTPU5UGMhs)**
@@ -241,16 +241,16 @@ Rust memiliki type sederhana yang biasanya disebut sebagai **primitive types** (
 - Signed integers (Integer bertanda),
 - Unsigned integers (Integer tidak bertanda).
 
-Bertanda artinya `+` (tanda tambah) dan `-` (tanda minus), maka integer bertanda bisa jadi positif atau negatif (contohnya, +8, -8). Namun, integer tidak bertanda hanyalah bilangan bulat positif, karena ia tidak memiliki tanda.
+Bertanda artinya `+` (tanda tambah) dan `-` (tanda minus), maka integer bertanda bisa jadi positif atau negatif (contohnya, +8, -8). Namun, integer tidak bertanda hanya dapat menyimpan bilangan bulat positif, karena ia tidak memiliki tanda.
 
-Ini adalah type-type integer bertanda: `i8`, `i16`, `i32`, `i64`, `i128`, dan `isize`.
+Type-type integer bertanda adalah sebagai berikut: `i8`, `i16`, `i32`, `i64`, `i128`, dan `isize`.
 Sedangkan ini adalah type-type integer tidak bertanda: `u8`, `u16`, `u32`, `u64`, `u128`, dan `usize`.
 
-Angka setelah i ataupun u adalah panjang bit yang digunakan untuk menyimpan bilangan, jadi semakin besar angkanya, semakin banyak pula bit yang digunakan. 8 bit = 1 byte, jadi `i8` adalah 1 byte, `i64` sama dengan 8 byte, dan seterusnya. Type dengan panjang bit yang lebih lebar bisa menyimpan angka yang lebih besar. Contohnya, `u8` bisa menyimpan sampai dengan 255, sedangakn `u16` bisa menyimpan sampai dengan 65535. Juga `u128` bisa menyimpan sampai dengan 340282366920938463463374607431768211455.
+Angka setelah i ataupun u adalah panjang bit yang digunakan untuk menyimpan bilangan, jadi semakin besar angkanya, semakin banyak pula bit yang digunakan. 8 bit = 1 byte, jadi `i8` adalah 1 byte, `i64` adalah 8 byte, dan seterusnya. Type dengan panjang bit yang lebih lebar bisa menyimpan angka yang lebih besar. Contohnya, `u8` bisa menyimpan sampai dengan 255, sedangakan `u16` bisa menyimpan sampai dengan 65535. Juga `u128` bisa menyimpan sampai dengan 340282366920938463463374607431768211455.
 
-Apa itu `isize` dan `usize`? Itu artinya compiler akan mencocokkan ukuran bit dengan arsitektur komputer anda. (Lebar bit pada komputer anda biasanya disebut sebagai **arsitektur**.) Jadinya `isize` dan `usize` pada komputer 32-bit adalah `i32` dan `u32`, juga `isize` dan `usize` pada komputer 64-bit adalah `i64` dan `u64`.
+Apa itu `isize` dan `usize`? Kedua type tersebut menandakan bahwa compiler akan mencocokkan ukuran bit dengan arsitektur komputer anda. (Jumlah bit pada komputer anda biasanya disebut sebagai **arsitektur**.) Jadinya `isize` dan `usize` pada komputer 32-bit adalah `i32` dan `u32`, juga `isize` dan `usize` pada komputer 64-bit adalah `i64` dan `u64`.
 
-Ada banyak alasan mengapa ada banyak sekali type dari integer. Salah satu alasanya adalah performa: angka yang menggunakan byte yang kecil lebih cepat untuk diproses. Contohnya, angka -10 pada `i8` representasi binernya adalah `11110110`, namun pada `i128` representasi binernya adalah `11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110110`. Selain itu, ini juga adalah alasan lainnya:
+Ada banyak alasan mengapa ada banyak sekali type dari integer. Salah satunya adalah performa: angka yang menggunakan byte yang kecil lebih cepat untuk diproses. Contohnya, angka -10 pada `i8` representasi binernya adalah `11110110`, namun pada `i128` representasi binernya adalah `11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110110`. Selain itu, ada juga beberapa kegunaan lainnya, seperti:
 
 Karakter di Rust disebut sebagai `char`. Setiap `char` memiliki angka: huruf `A` memiliki nilai 65, sedangkan karakter `友` ("kawan" dalam Bahasa Mandarin) memiliki nilai 21451. Angka-angka ini disebut sebagai "Unicode". Unicode yang menggunakan angka yang lebih kecil diperuntukkan bagi karakter yang sering digunakan, seperti A sampai Z, atau digit 0 sampai 9, maupun spasi.
 
@@ -258,14 +258,14 @@ Karakter di Rust disebut sebagai `char`. Setiap `char` memiliki angka: huruf `A`
 fn main() {
     let first_letter = 'A';
     let space = ' '; // Sebuah spasi di antara ' ' juga adalah sebuah char
-    let other_language_char = 'Ꮔ'; // Thanks to Unicode, bahasa lain seperti Cherokee juga tampil dengan baik
+    let other_language_char = 'Ꮔ'; // Berkat Unicode, bahasa lain seperti Cherokee juga tampil dengan baik
     let cat_face = '😺'; // Emojis juga adalah char
 }
 ```
 
-Karakter yang seringkali digunakan tersebut kebanyakan memiliki nilai dibawah dari 256. Dan ia cocok dan muat apabila disimpan ke dalam `u8`. Ingat, `u8` bisa menyimpan dari 0 sampai dengan 255, yang artinya, totalnya adalah 256. Ini artinya Rust bisa dengan aman melakukan **cast** dari `u8` ke `char`, menggunakan `as`. ("Cast `u8` ke `char`" artinya "perlakukan `u8` sebagai `char`")
+Karakter yang seringkali digunakan tersebut kebanyakan memiliki nilai dibawah dari 256. Maka, karakter-karakter tersebut muat jikalau disimpan didalam `u8`. Ingat, `u8` bisa menyimpan dari 0 sampai dengan 255, yang artinya, totalnya adalah 256. Ini berarti bahwa Rust bisa dengan aman melakukan **cast** dari `u8` ke `char`, menggunakan `as`. ("Cast `u8` ke `char`" artinya "perlakukan `u8` sebagai `char`")
 
-Melakukan Cast menggunakan `as` sangatlah berguna karena Rust benar-benar sangat ketat. Rust selalu perlu untuk mengetahui type yang digunakan dan tidak akan membiarkan kita menggunakan tipe data yang berbeda meskipun masih sama-sama integer. Pada contoh dibawah ini, codenya tidak akan berjalan:
+Melakukan Cast menggunakan `as` sangatlah berguna karena Rust benar-benar sangat ketat. Rust selalu perlu untuk mengetahui type yang digunakan dan tidak akan membiarkan kita menggunakan tipe data yang berbeda meskipun keduanya berupa integer. Pada contoh dibawah ini, code ini tidak akan berjalan:
 
 ```rust
 fn main() { // main() adalah dimana program Rust mulai berjalan. Sedangkan codenya dituliskan di dalam {} (curly brackets)
@@ -289,7 +289,7 @@ error[E0604]: only `u8` can be cast as `char`, not `i32`
   |                    ^^^^^^^^^^^^^^^^^
 ```
 
-Untungnya, kita bisa dengan mudah memperbaiki ini dengan `as`.Kita tidak bisa melakukan cast  `i32` sebagai `char`, tapi kita bisa cast `i32` sebagai `u8`. Dan karena itu, kita bisa melakukan yang sama pada `u8` ke `char`. Jadi pada satu baris kita menggunakan `as` untuk membuat my_number menjadi `u8`, dan kemudian mengubahnya lagi menjadi `char`. Compile code ini, dan ia akan berjalan:
+Untungnya, kita bisa dengan mudah memperbaiki ini dengan menggunakan `as`. Kita tidak bisa melakukan cast  `i32` sebagai `char`, tapi kita bisa cast `i32` sebagai `u8`. Dan karena itu, kita bisa melakukan yang sama pada `u8` ke `char`. Maka kita menggunakan `as` untuk membuat my_number menjadi `u8`, dan di baris baru, kemudian mengubahnya lagi menjadi `char`. Jalankan code ini:
 
 ```rust
 fn main() {
@@ -298,9 +298,9 @@ fn main() {
 }
 ```
 
-Ia akan mencetak `d`, karena itu merupakan `char` yang bernilai 100.
+Dan ia akan mencetak `d`, karena itu merupakan `char` yang bernilai 100.
 
-Atau bisa juga dengan cara yang lebih mudah, caranya, kita beri tahu saja ke Rust bahwa `my_number` itu adalah `u8`. Begini caranya:
+Cara yang lebih mudah adalah, kita beri tahu saja ke Rust bahwa `my_number` itu adalah `u8`. Begini caranya:
 
 ```rust
 fn main() {
@@ -309,21 +309,19 @@ fn main() {
 }
 ```
 
-Jadi, itu adalah 2 alasan mengapa ada banyak sekali type integer di Rust. Ini adalah alasan lainnya: `usize` adalah type dimana Rust menggunakannya untuk keperluan *indexing*. (Indexing artinya "yang mana item yang pertama", "yang mana item yang kedua", dan seterusnya.) `usize` adalah type yang cocok untuk indexing, karena:
+Itu merupakan 2 alasan mengapa ada banyak sekali type integer di Rust. Ini adalah alasan lainnya: `usize` adalah type yang digunakan Rust untuk keperluan *indexing*. (Indexing artinya "yang mana item yang pertama", "yang mana item yang kedua", dan seterusnya.) `usize` adalah type yang cocok untuk melakukan indexing, karena:
 
 - Sebuah index tidak bisa negatif, jadi yang diperlukan adalah bilangan tidak bertanda (u)
-- Ia harus berukuran besar, karena terkadang kita perlu untuk meng-index banyak hal, tapi
-- Kita tidak bisa menggunakan u64 dikarenakan komputer 32-bit tidak bisa menggunakan u64.
+- Integer yang digunakan harus berukuran besar, karena terkadang kita perlu untuk meng-index banyak hal, tapi
+- u64 tidak bisa digunakan dikarenakan komputer 32-bit tidak bisa menggunakan u64.
 
-Jadi Rust menggunakan, `usize` sehingga nantinya biarkan komputer kita yang menentukan integer terbesar yang mampu dijangkau oleh komputer kita.
+Jadi Rust menggunakan `usize` dan menyerahkan pada komputer kita untuk menentukan integer terbesar yang mampu dijangkau olehnya.
 
+Mari kita pelajari lebih lanjut tentang `char`. Dapat dilihat bahwa `char` selalu berisi hanya 1 karakter, dan menggunakan `''`, bukan `""`.
 
-
-Mari kita pelajari lebih lanjut tentang `char`. Kita bisa lihat bahwa `char` selalu berisi hanya 1 karakter, dan menggunakan `''`, bukan `""`.
-
-Semua `chars` menggunakan 4 byte memori, karena sejauh ini 4 bytes cukup untuk menampung hampir semua karakter apapun yang ada sekarang.:
+Semua `chars` menggunakan 4 byte memori, karena sejauh ini 4 bytes cukup untuk menampung hampir semua karakter apapun yang ada sekarang:
 - Huruf-huruf dasar dan simbol biasanya memerlukan 1 dari 4 byte: `a b 1 2 + - = $ @`
-- Aksara lainnya seperti German Umlauts memerlukan 2 dari 4 byte: `ä ö ü ß è é à ñ`
+- Aksara lainnya, seperti German Umlaut, memerlukan 2 dari 4 byte: `ä ö ü ß è é à ñ`
 - Aksara Korea, Jepang atau Mandarin memerlukan 3 atau 4 byte: `国 안 녕`
 
 Di saat menggunakan karakter sebagai bagian dari sebuah string, maka string akan di-encode untuk menggunakan sesedikit mungkin memori yang dibutuhkan untuk setiap karakter.
@@ -340,7 +338,7 @@ fn main() {
 }
 ```
 
-Ia akan mencetak:
+Program ini akan mencetak:
 
 ```text
 Size of a char: 4
@@ -350,7 +348,7 @@ Size of string containing '国': 3
 Size of string containing '𓅱': 4
 ```
 
-Anda bisa melihat bahwa `a` memerlukan 1 byte, aksara Jerman `ß` memerlukan 2 byte, aksara Jepang `国` memerlukan 3 byte, dan aksara Mesir kuno `𓅱` memerlukan 4 byte.
+Anda bisa melihat bahwa huruf `a` memerlukan 1 byte, aksara Jerman `ß` memerlukan 2 byte, aksara Jepang `国` memerlukan 3 byte, dan aksara Mesir kuno `𓅱` memerlukan 4 byte.
 
 ```rust
 fn main() {
@@ -361,7 +359,7 @@ fn main() {
 }
 ```
 
-Ia akan mencetak:
+Program ini akan mencetak:
 
 ```text
 Slice is 6 bytes.
@@ -370,7 +368,7 @@ Slice2 is 7 bytes.
 
 `slice` memiliki panjang 6 karakter dan memerlukan 6 byte, namun `slice2` memiliki panjang 3 karakter dan memerlukan 7 byte.
 
-Jika `.len()` memberikan informasi tentang size dalam satuan byte, bagaimana tentang ukuran dalam satuan panjang karakter? Kita akan mempelajari tentang method ini nanti, tapi Anda bisa mengingat bahwa method `.chars().count()` bisa digunakan untuk itu. `.chars().count()` menjadikan apa yang kita tulis menjadi karakter dan menghitung berapa banyak karakternya.
+Jika `.len()` memberikan informasi tentang size dalam satuan byte, bagaimana tentang ukuran dalam satuan panjang karakter? Kita akan mempelajari tentang method ini nanti, tapi Anda bisa mengingat bahwa method `.chars().count()` bisa digunakan untuk keperluan tersebut. `.chars().count()` merubah apa yang kita tulis menjadi karakter dan menghitung berapa banyak karakter yang terdapat dalam tulisan tersebut.
 
 
 ```rust
@@ -382,7 +380,7 @@ fn main() {
 }
 ```
 
-Ia akan mencetak:
+Program ini akan mencetak:
 
 ```text
 Slice is 6 bytes and also 6 characters.
