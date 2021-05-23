@@ -681,12 +681,12 @@ fn main() {
 }
 ```
 
-Lantas, mengapa kita menuliskan `{:?}` dan bukan `{}`? Saatnya kita membicarakan tentang itu.
+Lantas, mengapa kita menuliskan `{:?}` dan bukan `{}`? Saatnya kita pelajari tentang itu.
 
 ## Display and debug
 **[See this chapter on YouTube](https://youtu.be/jd3pC248c0o)**
 
-Variabel sederhana di Rust bisa di-print/dicetak menggunakan `{}` di dalam `println!`. Namun  beberapa variabel tidak bisa, dan Anda perlu menggunakan **debug print**. Debug print adalah print untuk keperluan si programmer, karena debug print biasanya memunculkan lebih banyak informasi. Terkadang Debug tidak terlihat indah ataupun rapi, karena ia memiliki informasi ekstra untuk membantu Anda.
+Variabel sederhana di Rust bisa di-print/dicetak menggunakan `{}` di dalam `println!`. Namun beberapa variabel tidak bisa, dan Anda perlu menggunakan **debug print**. Debug print adalah print untuk keperluan si programmer, karena debug print biasanya memunculkan lebih banyak informasi. Terkadang debug terlihat tidak nyaman dipandang, namun itu dikarenakan ia memiliki informasi ekstra untuk membantu Anda.
 
 Bagaimana kita mengetahui jika kita membutuhkan `{:?}` dan bukan `{}`? Compiler akan memberi tahukannya untuk Anda. Sebagai contoh:
 
@@ -712,11 +712,11 @@ error[E0277]: `()` doesn't implement `std::fmt::Display`
   = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)
 ```
 
-Banyak sekali informasi yang diberikan oleh compiler. Tapi bagian terpentingnya adalah: `you may be able to use {:?} (or {:#?} for pretty-print) instead`. Ini artinya anda bisa mencoba `{:?}`, dan juga `{:#?}`. `{:#?}` disebut juga sebagai "pretty printing". Ini seperti `{:?}` namun mencetak dengan format yang berbeda.
+Banyak sekali informasi yang diberikan oleh compiler. Tapi bagian terpentingnya adalah: `you may be able to use {:?} (or {:#?} for pretty-print) instead`. Ini artinya anda bisa mencoba `{:?}`, dan juga `{:#?}`. `{:#?}` disebut juga sebagai "pretty printing". "Pretty printing" ini mirip seperti `{:?}`, namun mencetak dengan format yang berbeda.
 
 Jadi, Display artinya mem-print/mencetak dengan `{}`, dan Debug artinya mem-print dengan `{:?}`.
 
-Satu hal lagi: Anda juga bisa menggunakan `print!` tanpa `ln` jika anda tidak menghendaki  new line/baris baru.
+Satu hal lagi: Anda juga bisa menggunakan `print!` tanpa `ln` jika anda tidak menghendaki new line/baris baru.
 
 ```rust
 fn main() {
@@ -1244,7 +1244,7 @@ Perlu dicatat bahwa `&str` memiliki `&` dibagian depannya karena Anda perlu sebu
 
 ```rust
 fn main() {
-    let name = "서태지"; // Ini adalah nama Korea. KArakter Korea muncul tanpa ada masalah, karena &str menggunakan UTF-8.
+    let name = "서태지"; // Ini adalah nama Korea. Karakter Korea muncul tanpa ada masalah, karena &str menggunakan UTF-8.
     let other_name = String::from("Adrian Fahrenheit Țepeș"); // Ț dan ș pun adalah UTF-8.
 }
 ```
