@@ -1913,7 +1913,7 @@ Anda juga bisa menggunakan range yang sifatnya **inklusif**, yang artinya ia aka
 ## Vectors
 **[See this chapter on YouTube](https://youtu.be/Eh-DsRnDKmw)**
 
-Sebagaimana kita memiliki `&str` dan `String`, kita pun memiliki array dan juga vector. Array lebih cepat namun dengan sedikit kegunaan, dan vector sangat lambat, tapi memiliki banyak kegunaan. (Tentu saja, Rust selalu sangat cepat, sehingga vector tidaklah lambat, hanya saja ia *lebih lambat* dibadingkan array.) Typenya adalah `Vec`, dan Anda bisa menyebutnya cukup dengan "vec".
+Sebagaimana kita memiliki `&str` dan `String`, kita pun memiliki array dan juga vector. Array lebih cepat namun kegunaannya sedikit. Sedangkan vector sangat lambat, tapi memiliki banyak kegunaan. (Tentu saja, Rust selalu sangat cepat, sehingga vector tidaklah lambat, hanya saja ia *lebih lambat* jika dibandingkan array.) Typenya adalah `Vec`, dan Anda bisa menyebutnya cukup dengan "vec".
 
 Ada 2 cara untuk mendeklarasikan vector. Yang pertama, mirip seperti `String` menggunakan `new`:
 
@@ -2112,7 +2112,7 @@ fn main() {
 }
 ```
 
-Hasil printnya adalah `"two"`, yang mana itu adalah isi dari `b`. Cara sepertin ini biasa dinamanakan sebagai *destructuring*. Karena variabel awalnya berada di dalam struktur, namun di saat kita memecahnya menjadi variabel `a`, `b`, dan `c`, variabel-variabel tersebut tidak lagi ada di dalam struktur tersebut.
+Hasil printnya adalah `"two"`, yang mana itu adalah isi dari variabel `b`. Cara seperti ini biasa dinamakan sebagai *destructuring*. Karena variabel awalnya berada di dalam struktur, namun di saat kita memecahnya menjadi variabel `a`, `b`, dan `c`, variabel-variabel tersebut tidak lagi ada di dalam struktur tersebut.
 
 Jika Anda perlu melakukan destructure tapi tidak menginginkan semua variabelnya, Anda bisa menggunakan `_`.
 
@@ -2142,7 +2142,7 @@ fn main() {
 }
 ```
 
-Juga perlu dicatat bahwa Anda menggunakan `==` dan bukan `=`. `==` digunakan untuk membandingkan, `=` digunakan untuk *assign* (memberikan value pada sebuah variabel). Perhatikan juga bahwa kita menuliskan `if my_number == 7` dan bukan `if (my_number == 7)`. Anda tidak memerlukan bracket untuk pengkondisian `if` di Rust.
+Juga perlu dicatat bahwa Anda menggunakan `==` dan bukan `=`. `==` digunakan untuk membandingkan, `=` digunakan untuk *assign* (memberikan value pada sebuah variabel). Perhatikan juga bahwa kita menuliskan `if my_number == 7` dan bukan `if (my_number == 7)`. Anda tidak memerlukan bracket (tanda kurung) untuk pengkondisian `if` di Rust.
 
 `else if` dan `else` akan memberikan Anda keleluasaan untuk membuat control flow yang lebih kompleks:
 
@@ -2496,7 +2496,7 @@ fn main() {
 }
 ```
 
-Apakah Anda sadar bahwa kita menuliskan sesuatu yang sama 2 kali? Kita menulis `population: population`, `capital: capital`, dan `leader_name: leader_name`. Sebenarnya, Anda tidak perlu melakukan hal seperti itu. Jika nama field dan nama variable adalah sama, maka Anda tidak perlu menuliskannya 2 kali.
+Apakah Anda menyadari bahwa kita menuliskan sesuatu yang sama 2 kali? Kita menulis `population: population`, `capital: capital`, dan `leader_name: leader_name`. Sebenarnya, Anda tidak perlu melakukan hal seperti itu. Jika nama field dan nama variablenya sama, maka Anda tidak perlu menuliskannya 2 kali.
 
 ```rust
 struct Country {
@@ -2908,7 +2908,7 @@ The next number is: 2
 The next number is: 3
 ```
 
-Perhatikan juga bahwa `number` menjadi nama variabel untuk 0..3. Kita beisa menyebutnya sebagai `n`, atau `i_loop`, atau apapun. Bahakn kita bisa menggunakan nama tersebut di dalam `println!`.
+Perhatikan juga bahwa `number` menjadi nama variabel untuk 0..3. Kita bisa menyebutnya sebagai `n`, atau `i_loop`, atau apapun. Bahkan kita bisa menggunakan nama tersebut di dalam `println!`.
 
 Jika Anda tidak memerlukan nama variabel, gunakan `_`.
 
@@ -2930,7 +2930,7 @@ Printing the same thing three times
 
 `_` karena kita tidak memerlukan angka untuk untuk diprint setiap saat.
 
-Dan sebenarnya, jika Anda memberikan nama variabel dan tidak menggunakannya, Rust akan memberitahumu:
+Dan sebenarnya, jika Anda memberikan nama variabel dan tidak menggunakannya, Rust akan memberitahu Anda:
 
 ```rust
 fn main() {
@@ -2940,7 +2940,7 @@ fn main() {
 }
 ```
 
-Ia akan mencetak hasil yang sama seperti pada program yang sebelumnya. Rus menjalankan programnya dengan baik, akan tetapi Rust akan mengingatkan Anda bahwa Anda tidak menggunakan `number`:
+Ia akan mencetak hasil yang sama seperti pada program yang sebelumnya. Rust menjalankan programnya dengan baik, akan tetapi Rust akan mengingatkan Anda bahwa Anda tidak menggunakan `number`:
 
 ```text
 warning: unused variable: `number`
@@ -3020,7 +3020,7 @@ Ini adalah dimana kita bisa mulai untuk memberikan *kekuatan* kepada structs dan
 - Regular methods: ia menggunakan **self** (atau **&self** atau juga **&mut self**). Regular methods menggunakan `.` (period/titik). `.clone()` adalah contoh dari sebuah regular method.
 - Associated methods (atau "static" methods): ia tidak menggunakan self. Associated berarti "berhubungan dengan". Ia ditulis dengan cara yang berbeda, yaitu menggunakan `::`. `String::from()` adalah contoh dari associated method, dan begitu juga dengan `Vec::new()`. Anda biasanya melihat associated methods digunakan untuk membuat variabel baru.
 
-Pada contoh yang kita gunakan ini kita akan membuat impl Animal dan membuatg hasil printnya.
+Pada contoh yang kita gunakan ini kita akan membuat impl Animal dan membuat hasil printnya.
 
 Untuk `struct` atau `enum` yang baru dibuat, Anda perlu memberikannya **Debug** jika Anda ingin menggunakan `{:?}` untuk mencetaknya. Jika kita menuliskan `#[derive(Debug)]` pada line sebelum ditulisnya struct atau enum, maka kita bisa mencetaknya dengan `{:?}`. Pesan yang ditulis dengan `#[]` disebut sebagai **attributes**. Kita terkadang bisa menggunakannya untuk memberitahukan compiler untuk memberikan kemampuan kepada struct agar bisa menggunakan `Debug`. Ada banyak sekali attribute dan kita akan mempelajarinya kemudian. Tapi, `derive` mungkin adalah attribute yang paling umum dan biasa Anda lihat pada bagian sebelum struct dan enum dideklarasikan.
 
@@ -3162,7 +3162,7 @@ Hasilnya adalah: `They call him Papa Doc but his real name is Clarence. He is 17
 
 Bisa kita lihat, kita menggunakan `let` secara terbalik. Pertama, kita menuliskan `let papa_doc = Person { fields }` untuk membuat sebuah struct. kemudian kita menuliskan `let Person { fields } = papa_doc` untuk melakukan destructure pada `papa_doc`.
 
-Anda tidak perlu menuliskan `name: a` - Anda cukup menuliskan `name`. Tapi disini kita menulis `name = a` karena kita ingin menggunakan variabel dengan nama `a`.
+Anda tidak perlu menuliskan `name: a` - Anda cukup menuliskan `name`. Tapi disini kita menulis `name: a` karena kita ingin menggunakan variabel dengan nama `a`.
 
 Kita masuk ke contoh yang lebih besar dari sebelumnya. Pada contoh kali ini kita memiliki struct `City`. Kita berikan implementasikan function `new` untuk membuatnya. Kemudian kita memiliki function `process_city_values` untuk melakukan sesuatu terhadap valuenya. Di dalam function tersebut, kita hanya membuat sebuah `Vec`, namun Anda bisa lihat bahwa kita bisa melakukan banyak hal setelah kita melakukan destructure kepada parameter `city`.
 
