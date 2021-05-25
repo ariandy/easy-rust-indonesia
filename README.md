@@ -15,9 +15,9 @@
 
 ## Introduction
 
-Rust adalah bahasa baru yang telah memiliki textbook yang mumpuni. Namun terkadang textbooknya sendiri cukup sulit untuk dipahami karena textbook tersebut ditulis untuk native-English speaker. Sekarang, beberapa perusahaan dan individu mempelajari Rust, dan mereka mungkin saja mempelajarinya lebih cepat dengan textbook yang bahasa Inggrisnya lebih mudah. Untuk itulah textbook ini diperuntukkan bagi mereka yang ingin mempelajari Rust dengan bahasa Inggris yang sederhana.
+Rust adalah bahasa baru yang telah memiliki textbook yang mumpuni. Namun terkadang textbooknya sendiri cukup sulit untuk dipahami karena textbook tersebut ditulis untuk native-English speaker. Sekarang, beberapa perusahaan dan individu mempelajari Rust, dan mungkin saja mereka bisa mempelajarinya lebih cepat apabila menggunakan textbook yang bahasa Inggrisnya lebih mudah. Untuk itulah textbook ini diperuntukkan bagi mereka yang ingin mempelajari Rust dengan bahasa Inggris yang sederhana (mudah dipahami).
 
-Rust merupakan bahasa pemrograman yang tergolong baru, namun sudah sangat populer. Ia populer karena memberikan Anda kecepatan dan kontrol sebagaimana C atau C++ namun juga memberikan keamanan memori sebagaimana seperti pemrograman yang baru seperti Python (namun dengan cara yang berbeda). Ia juga hadir dengan idea yang baru, yang mana terkadang berbeda dari bahasa pemrograman lainnya. Yang artinya ada hal-hal yang baru yang mesti dipelajari dan anda tidak bisa begitu saja "memahaminya sambil berjalan" (tidak seperti bahasa Python atau JS yang mana kita bisa dengan mudah memahaminya sambil mengerjakan project-project hands-on). Rust adalah bahasa yang harus Anda pikirkan sejenak untuk dipahami. Tetapi masih terlihat cukup familiar jika Anda tahu bahasa lain, dan hal itu dibuat untuk membantu Anda menulis kode dengan baik.
+Rust merupakan bahasa pemrograman yang tergolong baru, namun sudah sangat populer. Ia populer karena memberikan Anda kecepatan dan kontrol sebagaimana C atau C++, namun juga memberikan keamanan memori sebagaimana seperti pemrograman yang baru seperti Python (hanya saja dengan cara yang berbeda). Ia juga hadir dengan beberapa idea yang baru, yang mana berbeda dari bahasa pemrograman lainnya. Yang artinya ada hal-hal yang baru yang mesti dipelajari dan Anda tidak bisa begitu saja "memahaminya sambil berjalan" (tidak seperti bahasa Python atau JS yang mana kita bisa dengan mudah memahaminya sambil mengerjakan project-project hands-on). Rust adalah bahasa yang harus Anda pikirkan sejenak untuk dipahami. Tetapi Rust masih terlihat cukup familiar jika Anda mengetahu beberapa bahasa lain, dan ini membantu Anda menulis code dengan baik.
 
 ## Who am I?
 
@@ -164,21 +164,21 @@ Selamat membaca!
 
 # Part 1 - Rust in your browser
 
-Buku ini memiliki 2 bagian. Di Part 1, Anda akan mempelajari Rust dengan browser yang Anda miliki. Anda sebenarnya bisa mempelajari hampir semua yang perlu anda ketahui tanpa menginstall Rust, jadi Part 1 sangatlah panjang. Dan, bagian akhirnya adalah Part 2. Bagian ini jauh lebih pendek, dan bagian ini memerlukan Rust yang terinstall pada komputer. Bagian ini adalah dimana Anda akan mempelajari segala hal yang perlu Anda tahu, namun hanya bisa dipelajari setelah menginstall Rust di komputer anda. Contohnya: berurusan dengan file, mengambil input dari user, grafik, dan personal settings. Semoga dengan berakhirnya Part 1 Anda cukup tertarik untuk menginstall Rust di komputer Anda. Dan jika tidak, juga tidak masalah - karena Part 1 sudah memberikan Anda gambaran yang banyak dan cukup baik tentang Rust.
+Buku ini memiliki 2 bagian. Di Part 1, Anda akan mempelajari Rust dengan browser yang Anda miliki. Anda sebenarnya bisa mempelajari hampir semua yang perlu Anda ketahui tanpa menginstall Rust, jadi Part 1 sangatlah panjang. Dan, bagian akhirnya adalah Part 2. Bagian ini jauh lebih pendek, dan bagian ini memerlukan Rust yang terinstall pada komputer. Bagian ini adalah dimana Anda akan mempelajari segala hal yang perlu Anda tahu, namun hanya bisa dipelajari setelah menginstall Rust di komputer anda. Contohnya: berurusan dengan file, mengambil input dari user, grafik, dan personal settings. Semoga dengan berakhirnya Part 1 Anda cukup tertarik untuk menginstall Rust di komputer Anda. Dan jika Anda tidak tertarik, juga tidak masalah. Karena Part 1 sudah memberikan Anda gambaran yang banyak dan cukup baik tentang Rust.
 
 ## Rust Playground
 **[See this chapter on YouTube](https://youtu.be/-lYeJeQ11OI)**
 
-Mungkin Anda tidak ingin menginstall Rust sekarang, dan itu tidak apa. Anda bisa ke [https://play.rust-lang.org/](https://play.rust-lang.org/) dan mulai menulis Rust hanya dengan sebuah browser. Anda bisa menuliskan code anda di laman itu dan meng-klik Run untuk melihat hasilnya. Anda bisa menjalankan hampir semua contoh code di buku ini di dalam Playground yang Anda buka di browser. Hanya pada bagian menjelang akhir, Anda akan melihat beberapa contoh code yang tidak bisa dijalankan di Playground (seperti membuka files).
+Mungkin Anda tidak ingin menginstall Rust sekarang, dan itu tidak apa. Anda bisa ke [https://play.rust-lang.org/](https://play.rust-lang.org/) dan mulai menulis Rust hanya dengan sebuah browser. Anda bisa menuliskan code Anda di laman itu dan meng-klik Run untuk melihat hasilnya. Anda bisa menjalankan hampir semua contoh code di buku ini di dalam Playground yang Anda buka di browser. Hanya pada bagian menjelang akhir, Anda akan melihat beberapa contoh code yang tidak bisa dijalankan di Playground (seperti membuka files).
 
 Ini adalah beberapa tips di saat menggunakan Rust Playground:
 
 - Jalankan code menggunakan Run
-- Ubah Debug ke Release jika Anda menginginkan code anda menjadi lebih cepat. Debug: compile lebih cepat, run lebih lambat, dan menampilkan debug information. Release: compile lambat, run lebih cepat, debug information dihilangkan.
+- Ubah Debug ke Release jika Anda menginginkan code Anda menjadi lebih cepat. Debug: compile lebih cepat, run lebih lambat, dan menampilkan debug information. Release: compile lambat, run lebih cepat, debug information dihilangkan.
 - Klik Share untuk mendapatkan URL link. Anda dapat menggunakannya untuk membagikan code Anda jika saja Anda memerlukan bantuan. Setelah Anda mengklik share, Anda bisa klik pada `Open a new thread in the Rust user forum` untuk menanyakan ke orang lain agar mendapatkan bantuan.
 - Tools: Rustfmt akan memformat code Anda agar menjadi rapi.
 - Tools: Clippy akan memberi Anda informasi lanjutan tentang bagaimana untuk membuat code Anda menjadi lebih baik lagi.
-- Config: disini Anda bisa mengubah theme ke dark mode sehingga mata anda bisa bekerja dengan aman di malam hari, dan juga konfigurasi yang lainnya.
+- Config: disini Anda bisa mengubah theme ke dark mode sehingga mata Anda bisa bekerja dengan aman di malam hari, dan juga konfigurasi yang lainnya.
 
 Jika Anda ingin menginstall Rust, silahkan ke [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) dan ikuti instruksinya. Biasanya Anda akan menggunakan `rustup` untuk keperluan instalasi dan memperbarui Rust.
 
@@ -191,7 +191,7 @@ Terkadang, Anda akan menemukan beberapa code yang menjadi contoh pada textbook i
 
 Comments / Komentar berguna untuk dibaca oleh programmer, bukan untuk komputer. Adalah hal yang baik untuk menulis komentar agar orang lain menjadi mudah untuk membaca code yang telah dibuat. Hal ini juga bagus untuk membantu diri kita sendiri mengerti code yang telah kita buat. (Banyak orang yang sudah menulis code programnya dengan mantap, namun seiring waktu berjalan, dan dia mulai membaca lagi code yang sudah lama sudah tidak dia sentuh, mereka lupa mengapa mereka menulis bagian tersebut.)
 
-Untuk menulis komentar di Rust, anda biasanya menggunakan `//`:
+Untuk menulis komentar di Rust, Anda biasanya menggunakan `//`:
 
 ```rust
 fn main() {
@@ -201,7 +201,7 @@ fn main() {
 }
 ```
 
-Apabila anda menjalankan code tersebut, compiler akan mengabaikan apapun yang tertulis setelah `//`. 
+Apabila Anda menjalankan code tersebut, compiler akan mengabaikan apapun yang tertulis setelah `//`. 
 
 Ada pula cara berbeda untuk menulis komentar, yaitu dengan cara menulis `/*` pada bagian awalnya dan `*/` pada bagian akhirnya. Cara menulis komentar seperti ini sangat berguna apabila kita ingin menulis komentar pada bagian tengah dari baris code anda.
 
@@ -213,7 +213,7 @@ fn main() {
 
 Bagi compiler, `let some_number/*: i16*/ = 100;` terlihat sama dengan `let some_number = 100;`.
 
-Format `/* */` juga sangat berguna untuk komentar yang panjang (lebih dari 1 baris). Pada contoh ini, anda bisa melihat bahwa anda perlu menuliskan `//` untuk setiap baris. Namun jika anda menggunakan `/*`, apa yang ditulis setelahnya akan tetap dianggap komentar, sampai ia ditutup dengan `*/`.
+Format `/* */` juga sangat berguna untuk komentar yang panjang (lebih dari 1 baris). Pada contoh ini, Anda bisa melihat bahwa Anda perlu menuliskan `//` untuk setiap baris. Namun jika Anda menggunakan `/*`, apa yang ditulis setelahnya akan tetap dianggap komentar, sampai ia ditutup dengan `*/`.
 
 ```rust
 fn main() {
@@ -231,7 +231,7 @@ fn main() {
 
 ## Types
 
-Rust memiliki beberapa type, entah berupa angka, karakter, dsb. Beberapa type tersebut tergolong sederhana, sedangkan yang lainnya tergolong lebih rumit. Anda juga bisa membuat type anda sendiri.
+Rust memiliki beberapa type, entah berupa angka, karakter, dsb. Beberapa type tersebut tergolong sederhana, sedangkan yang lainnya tergolong lebih rumit. Anda juga bisa membuat type Anda sendiri.
 
 ### Primitive types
 **[See this chapter on YouTube](https://youtu.be/OxTPU5UGMhs)**
@@ -248,7 +248,7 @@ Sedangkan ini adalah type-type integer tidak bertanda: `u8`, `u16`, `u32`, `u64`
 
 Angka setelah i ataupun u adalah panjang bit yang digunakan untuk menyimpan bilangan, jadi semakin besar angkanya, semakin banyak pula bit yang digunakan. 8 bit = 1 byte, jadi `i8` adalah 1 byte, `i64` adalah 8 byte, dan seterusnya. Type dengan panjang bit yang lebih lebar bisa menyimpan angka yang lebih besar. Contohnya, `u8` bisa menyimpan sampai dengan 255, sedangakan `u16` bisa menyimpan sampai dengan 65535. Juga `u128` bisa menyimpan sampai dengan 340282366920938463463374607431768211455.
 
-Apa itu `isize` dan `usize`? Kedua type tersebut menandakan bahwa compiler akan mencocokkan ukuran bit dengan arsitektur komputer anda. (Jumlah bit pada komputer anda biasanya disebut sebagai **arsitektur**.) Jadinya `isize` dan `usize` pada komputer 32-bit adalah `i32` dan `u32`, juga `isize` dan `usize` pada komputer 64-bit adalah `i64` dan `u64`.
+Apa itu `isize` dan `usize`? Kedua type tersebut menandakan bahwa compiler akan mencocokkan ukuran bit dengan arsitektur komputer anda. (Jumlah bit pada komputer Anda biasanya disebut sebagai **arsitektur**.) Jadinya `isize` dan `usize` pada komputer 32-bit adalah `i32` dan `u32`, juga `isize` dan `usize` pada komputer 64-bit adalah `i64` dan `u64`.
 
 Ada banyak alasan mengapa ada banyak sekali type dari integer. Salah satunya adalah performa: angka yang menggunakan byte yang kecil lebih cepat untuk diproses. Contohnya, angka -10 pada `i8` representasi binernya adalah `11110110`, namun pada `i128` representasi binernya adalah `11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110110`. Selain itu, ada juga beberapa kegunaan lainnya, seperti:
 
@@ -390,14 +390,14 @@ Slice2 is 7 bytes but only 3 characters.
 ## Type inference
 **[See this chapter on YouTube](https://youtu.be/q1D2vpy3kEI)**
 
-Type inference artinya adalah, jika anda tidak memberitahukan type yang anda gunakan, tapi compiler bisa memilihkannya, maka compiler yang nantinya akan memilihkan typenya. Compiler Rust selalu perlu mengetahui type dari sebuah variabel, namun anda tidak selalu perlu untuk memberitahukannya. Dan sebenarnya, biasanya anda memang tidak perlu memberitahukannya. Sebagai contoh, pada chapter sebelumnya, untuk `let my_number = 8`, `my_number` akan menjadi `i32`. Ini dikarenakan compiler secara default akan memilih i32 untuk integer jika anda tidak memberitahukannya. Namun jika anda memberitahukannya, seperti `let my_number: u8 = 8`, maka itu akan membuat `my_number` bertype `u8`, karena anda memberitahu ke compiler untuk menggunakan type `u8`.
+Type inference artinya adalah, jika Anda tidak memberitahukan type yang Anda gunakan, tapi compiler bisa memilihkannya, maka compiler yang nantinya akan memilihkan typenya. Compiler Rust selalu perlu mengetahui type dari sebuah variabel, namun Anda tidak selalu perlu untuk memberitahukannya. Dan sebenarnya, biasanya Anda memang tidak perlu memberitahukannya. Sebagai contoh, pada chapter sebelumnya, untuk `let my_number = 8`, `my_number` akan menjadi `i32`. Ini dikarenakan compiler secara default akan memilih i32 untuk integer jika Anda tidak memberitahukannya. Namun jika Anda memberitahukannya, seperti `let my_number: u8 = 8`, maka itu akan membuat `my_number` bertype `u8`, karena Anda memberitahu ke compiler untuk menggunakan type `u8`.
 
 Jadi, sebenarnya compiler bisa memilihkan type untuk kita. Tapi terkadang kita perlu memberitahukannya ke compiler, karena 2 alasan berikut:
 
 1) Kita membuat sesuatu yang lumayan kompleks dan compiler tidak tahu type yang kita inginkan.
-2) Kita menginginkan type yang berbeda (contohnya, anda ingin `i128`, bukan `i32`).
+2) Kita menginginkan type yang berbeda (contohnya, Anda ingin `i128`, bukan `i32`).
 
-Untuk menambahkan type, tambahkan colon (titik dua) setelah nama variabel dan juga type yang anda perlukan.
+Untuk menambahkan type, tambahkan colon (titik dua) setelah nama variabel dan juga type yang Anda perlukan.
 
 ```rust
 fn main() {
@@ -405,7 +405,7 @@ fn main() {
 }
 ```
 
-Untuk angka, anda bisa menyebutkan typenya setelah angka. Anda sama sekali tidak memerlukan spasi. Cukup dituliskan tepat setelah angkanya.
+Untuk angka, Anda bisa menyebutkan typenya setelah angka. Anda sama sekali tidak memerlukan spasi. Cukup dituliskan tepat setelah angkanya.
 
 ```rust
 fn main() {
@@ -413,7 +413,7 @@ fn main() {
 }
 ```
 
-Anda juga bisa menambahkan `_` jika anda ingin membuat angkanya menjadi mudah untuk dibaca.
+Anda juga bisa menambahkan `_` jika Anda ingin membuat angkanya menjadi mudah untuk dibaca.
 
 ```rust
 fn main() {
@@ -444,7 +444,7 @@ fn main() {
 }
 ```
 
-Namun, di Rust type ini bukan disebut sebagai `float`, mereka disebut sebagai `f32` dan `f64`. Ini sama seperti integer, yaitu angka setelah `f` menunjukkan panjang bit yang digunakan. Jika anda tidak menuliskan typenya, Rust akan memilihkan `f64`.
+Namun, di Rust type ini bukan disebut sebagai `float`, mereka disebut sebagai `f32` dan `f64`. Ini sama seperti integer, yaitu angka setelah `f` menunjukkan panjang bit yang digunakan. Jika Anda tidak menuliskan typenya, Rust akan memilihkan `f64`.
 
 Tentu saja, hanya float dengan type yang sama yang bisa digunakan bersama-sama. Jadi kita tidak bisa menambahkan `f32` ke `f64`.
 
@@ -457,7 +457,7 @@ fn main() {
 }
 ```
 
-Jika anda coba untuk menjalankan ini, compiler Rust akan mengatakan:
+Jika Anda coba untuk menjalankan ini, compiler Rust akan mengatakan:
 
 ```text
 error[E0308]: mismatched types
@@ -467,7 +467,7 @@ error[E0308]: mismatched types
   |                                  ^^^^^^^^^^^^^^ expected `f64`, found `f32`
 ```
 
-Compiler memberitahukan "expected (type), found (type)" di saat Anda menggunakan type yang salah (tidak sesuai). Compiler akan memproses code anda seperti yang dituliskan pada komentar program dibawah ini:
+Compiler memberitahukan "expected (type), found (type)" di saat Anda menggunakan type yang salah (tidak sesuai). Compiler akan memproses code Anda seperti yang dituliskan pada komentar program dibawah ini:
 
 ```rust
 fn main() {
@@ -480,7 +480,7 @@ fn main() {
 
 Jadi, saat kita melihat "expected (type), found (type)", kita harus menemukan mengapa compiler berekspektasi/membutuhkan type yang berbeda.
 
-Tentu saja, dengan float yang sederhana, code tersebut akan mudah untuk diperbaiki. Anda bisa melakukan cast `f32` sebagai `f64` dengan menggunakan `as`:
+Tentu saja, dengan angka float yang sederhana, code tersebut akan mudah untuk diperbaiki. Anda bisa melakukan cast `f32` sebagai `f64` dengan menggunakan `as`:
 
 ```rust
 fn main() {
@@ -710,11 +710,11 @@ error[E0277]: `()` doesn't implement `std::fmt::Display`
   = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)
 ```
 
-Banyak sekali informasi yang diberikan oleh compiler. Tapi bagian terpentingnya adalah: `you may be able to use {:?} (or {:#?} for pretty-print) instead`. Ini artinya anda bisa mencoba `{:?}`, dan juga `{:#?}`. `{:#?}` disebut juga sebagai "pretty printing". "Pretty printing" ini mirip seperti `{:?}`, namun mencetak dengan format yang berbeda.
+Banyak sekali informasi yang diberikan oleh compiler. Tapi bagian terpentingnya adalah: `you may be able to use {:?} (or {:#?} for pretty-print) instead`. Ini artinya Anda bisa mencoba `{:?}`, dan juga `{:#?}`. `{:#?}` disebut juga sebagai "pretty printing". "Pretty printing" ini mirip seperti `{:?}`, namun mencetak dengan format yang berbeda.
 
 Jadi, Display artinya mem-print/mencetak dengan `{}`, dan Debug artinya mem-print dengan `{:?}`.
 
-Satu hal lagi: Anda juga bisa menggunakan `print!` tanpa `ln` jika anda tidak menghendaki new line/baris baru.
+Satu hal lagi: Anda juga bisa menggunakan `print!` tanpa `ln` jika Anda tidak menghendaki new line/baris baru.
 
 ```rust
 fn main() {
@@ -727,7 +727,7 @@ Maka hasilnya adalah `This will not print a new line so this will be on the same
 
 ### Smallest and largest numbers
 
-Jika Anda ingin melihat angka yang terkecil dan yang terbesar, Anda bisa menggunakan MIN dan MAX. `std` artinya "standard library" dan memiliki semua fungsi-fungsi yang umum digunakan di Rust. Kita akan mempelajari tentang standard library kemudian. Tapi untuk sekarang ini, Anda bisa mengingat bahwa inilah cara mendapatkan angka terkecil dan juga angka terbesar dari sebuah type.
+Jika Anda ingin melihat angka yang terkecil dan yang terbesar, Anda bisa menggunakan MIN dan MAX. `std` artinya "standard library" dan memiliki semua fungsi-fungsi yang umum digunakan di Rust. Nantinya, kita akan mempelajari tentang standard library. Tapi untuk sekarang ini, Anda bisa mengingat bahwa inilah cara mendapatkan angka terkecil dan juga angka terbesar dari sebuah type.
 
 ```rust
 fn main() {
@@ -776,7 +776,7 @@ fn main() {
 
 Compiler akan mengatakan: `error[E0384]: cannot assign twice to immutable variable my_number`. Ini dikarenakan variabelnya adalah immutable jika kita hanya menulis `let`.
 
-Tapi terkadang kita ingin mengganti value dari variabel yang kita gunakan. Untuk membuat variabel yang bisa kita ubah valuenya, tambahkan `mut` setelah `let`:
+Tapi terkadang kita ingin mengubah value dari variabel yang kita gunakan. Untuk membuat variabel yang bisa kita ubah valuenya, tambahkan `mut` setelah `let`:
 
 ```rust
 fn main() {
@@ -785,9 +785,9 @@ fn main() {
 }
 ```
 
-Dan sekarang menjadi tidak ada masalah.
+Dan sekarang programnya menjadi tidak ada masalah.
 
-Namun, kamu tidak bisa mengganti typenya: meskipun menggunakan `mut`, namun Rust tidak akan memperbolehkan Anda untuk melakukan hal tersebut. Sebagai contoh, code di bawah ini tidak akan berjalan:
+Namun, Anda tidak bisa mengganti typenya. Meskipun menggunakan `mut`, Rust tidak akan memperbolehkan Anda untuk melakukan pergantian type. Sebagai contoh, code di bawah ini tidak bisa dijalankan:
 
 ```rust
 fn main() {
@@ -801,7 +801,7 @@ Anda akan melihat pesan "expected" dari compiler: `expected integer, found &str`
 ### Shadowing
 **[See this chapter on YouTube](https://youtu.be/InULHyRGw7g)**
 
-Shadowing artinya menggunakan `let` untuk mendeklarasikan variabel baru dengan nama yang sama sebagai variabel yang berbeda. Hal ini terlihat seperti mutability (bisa diubah), tapi ini adalah hal yang sama sekali berbeda. Beginilah bentuk dari Shadowing:
+Shadowing artinya menggunakan `let` untuk mendeklarasikan variabel baru dengan nama yang sama sebagai variabel yang berbeda. Hal ini terlihat mirip seperti mutability (bisa diubah), tapi padahal ia adalah hal yang sama sekali berbeda. Beginilah bentuk dari Shadowing:
 
 ```rust
 fn main() {
@@ -814,7 +814,7 @@ fn main() {
 
 Kita bisa menyebutnya sebagai "shadowed"/"menyembunyikan" `my_number` dengan sebuah "let binding" yang baru.
 
-Lantas, apakah `my_number` yang ada di awal hangus/hancur? Tidak, namun di saat kita memanggil `my_number`, kita sekarang mendapatkan `my_number` yang bertype `f64`. Dan karena mereka berada pada scope block yang sama (`{}` yang sama), kita jadi sama sekali tidak bisa lagi melihat `my_number` yang pertama.
+Lantas, apakah `my_number` yang ada di awal menjadi hangus/hancur? Tidak, namun di saat kita memanggil `my_number`, kita sekarang mendapatkan `my_number` yang bertype `f64`. Dan karena mereka berada pada scope block yang sama (`{}` yang sama), kita jadi sama sekali tidak bisa lagi melihat `my_number` yang pertama.
 
 Tapi jika mereka ada di block yang berbeda, kita bisa melihat keduanya. Contohnya:
 
@@ -834,7 +834,7 @@ fn main() {
 
 Jadi, di saat Anda men-shadow sebuah variabel, Anda tidak menghancurkannya it. Lebih tepatnya, Anda mem**block**nya.
 
-Jadi, apa sebenarnya kegunaan dari shadowing? Shadowing tepat digunakan apabila anda perlu untuk mengubah sebuah variabel lebih sering. Bayangkan dimana anda ingin melakukan banyak operasi matematis menggunakan variabel:
+Jadi, apa sebenarnya kegunaan dari shadowing? Shadowing tepat digunakan apabila Anda perlu untuk mengubah sebuah variabel lebih sering. Bayangkan dimana Anda ingin melakukan banyak operasi matematis menggunakan variabel:
 
 ```rust
 fn times_two(number: i32) -> i32 {
@@ -973,7 +973,7 @@ If you forget to write
     will be added when you print.
 ```
 
-Jika anda ingin mencetak karakter seperti `\n` (biasa disebut dengan "escape characters"), Anda bisa menambahkan ekstra `\`:
+Jika Anda ingin mencetak karakter seperti `\n` (biasa disebut dengan "escape characters"), Anda bisa menambahkan ekstra `\`:
 
 ```rust
 fn main() {
@@ -1003,7 +1003,7 @@ He said, "You can find the file at c:\files\my_documents\file.txt." Then I found
 He said, "You can find the file at c:\files\my_documents\file.txt." Then I found the file.
 ```
 
-Jika anda perlu mencetak sebuah `#` di dalamnya, maka Anda bisa memulainya `r##` dan mengakhirinya dengan `##`. Dan jika Anda memerlukannya lebih dari 1, Anda bisa menambahkan 1 lagi # pada setiap sisinya.
+Jika Anda perlu mencetak sebuah `#` di dalamnya, maka Anda bisa memulainya `r##` dan mengakhirinya dengan `##`. Dan jika Anda memerlukannya lebih dari 1, Anda bisa menambahkan 1 lagi # pada setiap sisinya.
 
 Ini adalah 4 buah contoh yang kita buat:
 
@@ -1061,7 +1061,7 @@ Here is your number.
 8
 ```
 
-Bisa jadi Anda sama sekali tidak memerlukannya, namun jika anda benar-benar perlu untuk menggunakan sebuah keyword untuk menjadi sebuah variable maka Anda bisa menggunakan `r#`.
+Bisa jadi Anda sama sekali tidak memerlukannya, namun jika Anda benar-benar perlu untuk menggunakan sebuah keyword untuk menjadi sebuah variable maka Anda bisa menggunakan `r#`.
 
 
 
@@ -1151,7 +1151,7 @@ fn main() {
 }
 ```
 
-`father_name` ada pada posisi ke-0, `son_name` ada pada posisi ke-1, dan `family_name` ada pada posisi ke-2. Maka kode tersebut akan mencetak `This is Adrian Fahrenheit Țepeș, son of Vlad Țepeș`.
+`father_name` ada pada posisi ke-0, `son_name` ada pada posisi ke-1, dan `family_name` ada pada posisi ke-2. Maka code tersebut akan mencetak `This is Adrian Fahrenheit Țepeș, son of Vlad Țepeș`.
 
 
 Mungkin juga Anda memiliki sebuah string yang sangat rumit untuk dicetak dengan terlalu banyaknya variabel di dalam `{}`. Atau mungkin Anda perlu mencetak sebuah variabel lebih dari 1 kali. Itu bisa dilakukan dengan cara menambahkan nama ke dalam `{}`:
@@ -1238,7 +1238,7 @@ Rust memiliki 2 type strings yang umum: `String` dan `&str`. Apa perbedaannya?
 
 Perlu dicatat bahwa `&str` memiliki `&` dibagian depannya karena Anda perlu sebuah reference untuk menggunakan `str`. Hal itu dikarenakan oleh hal yang sebelumnya telah kita bahas:  stack perlu tahu ukuran dari data. Oleh karena itu, kita berikan ia `&` yang membuat ia tahu ukurannya, dan voila, semuanya baik-baik saja. Dan juga, karena kita menggunakan `&` untuk berinteraksi dengan `str`, **you don't own it** (Anda tidak bisa memiliki valuenya, melainkan hanya sekedar meminjam untuk melihat valuenya). Sedangkan `String` adalah ***owned* type**. Secepatnya kita akan mempelajari tentang mengapa hal ini sangatlah penting untuk diketahui.
 
-`&str` dan `String` keduanya menggunakan UTF-8. Sebagai contoh, anda bisa menulis:
+`&str` dan `String` keduanya menggunakan UTF-8. Sebagai contoh, Anda bisa menulis:
 
 ```rust
 fn main() {
@@ -1293,7 +1293,7 @@ Ada banyak cara untuk membuat `String`. Ini adalah beberapa caranya:
 
 - `String::from("This is the string text");` Ini adalah cara membuat String yang mana mengambil text (`&str`) dan membuatnya menjadi String.
 - `"This is the string text".to_string()`. Ini adalah cara lain untuk mengubah &str menjadi String.
-- Macro `format!`. Mirip seperti `println!`, hanya saja, yang berbeda adalah ia akan membuat String daripada melakukan printing. Jadi, anda bisa melakukan hal ini:
+- Macro `format!`. Mirip seperti `println!`, hanya saja, yang berbeda adalah ia akan membuat String daripada melakukan printing. Jadi, Anda bisa melakukan hal ini:
 
 ```rust
 fn main() {
@@ -1336,7 +1336,7 @@ fn main() {
 }
 ```
 
-Voila! Akhirnya anda bisa membuat String menggunakan `.into()`.
+Voila! Akhirnya Anda bisa membuat String menggunakan `.into()`.
 
 ## const and static
 **[See this chapter on YouTube](https://youtu.be/Ky3HqkWUcI0)**
@@ -1631,7 +1631,7 @@ Bagaimana kita bisa tahu jika sebuah type **mengimplementasikan** copy? (impleme
 
 [https://doc.rust-lang.org/std/primitive.char.html](https://doc.rust-lang.org/std/primitive.char.html)
 
-Pada bagian kiri dari dokumentasi tersebut, anda bisa menemukan section **Trait Implementations**. Di situ, Anda akan melihat contoh implementation seperti **Copy**, **Debug**, dan **Display**. Dari dokumentasi itu, kita jadi tahu bahwa `char`:
+Pada bagian kiri dari dokumentasi tersebut, Anda bisa menemukan section **Trait Implementations**. Di situ, Anda akan melihat contoh implementation seperti **Copy**, **Debug**, dan **Display**. Dari dokumentasi itu, kita jadi tahu bahwa `char`:
 
 - akan melakukan copy di saat Anda mengirimnya ke function (**Copy**)
 - bisa melakukan print dengan menggunakan `{}` (**Display**)
@@ -1655,7 +1655,7 @@ Tapi jika kita melihat dokumentasi dari String, ia bukanlah copy type.
 
 [https://doc.rust-lang.org/std/string/struct.String.html](https://doc.rust-lang.org/std/string/struct.String.html)
 
-Pada bagian kiri dari dokumentasi tersebut **Trait Implementations**, Anda bisa melihatnya secara alphabetical order. A, B, C... dan di sana tidak ada **Copy** di C. Yang ada di sana justru adalah **Clone**. **Clone** mirip dengan **Copy**, tapi biasanya memerlukan memori yang lebih. Juga, anda perlu memanggilnya menggunakan method `.clone()` - ia tidak akan melakukan clone dengan sendirinya.
+Pada bagian kiri dari dokumentasi tersebut **Trait Implementations**, Anda bisa melihatnya secara alphabetical order. A, B, C... dan di sana tidak ada **Copy** di C. Yang ada di sana justru adalah **Clone**. **Clone** mirip dengan **Copy**, tapi biasanya memerlukan memori yang lebih. Juga, Anda perlu memanggilnya menggunakan method `.clone()` - ia tidak akan melakukan clone dengan sendirinya.
 
 Di contoh ini, `prints_country()` akan mencetak nama negara, yang mana adalah sebuah `String`. Kita ingin mencetaknya 2 kali, tapi kita tidak bisa melakukannya:
 
@@ -2728,7 +2728,7 @@ What about DeadStar? It's the number 1001.
 
 ### Enums to use multiple types
 
-Kita mengetahui bahwa item di dalam `Vec`, array, dan yang lainnya, diisi dengan type yang sama (hanya tuples yang berbeda). Tapi sebenarnya Anda bisa menggunakan enum untuk dimasukkan type yang beragam. Bayangkan kita ingin memiliki sebuah `Vec` dengan type `u32` atau `i32`. Tentu saja, anda bisa membuat `Vec<(u32, i32)>` (vec dengan tuple `(u32, i32)`) namun kita hanya menginginkan salah satunya saja. Jadi disini Anda bisa menggunakan enum. Begini contohnya:
+Kita mengetahui bahwa item di dalam `Vec`, array, dan yang lainnya, diisi dengan type yang sama (hanya tuples yang berbeda). Tapi sebenarnya Anda bisa menggunakan enum untuk dimasukkan type yang beragam. Bayangkan kita ingin memiliki sebuah `Vec` dengan type `u32` atau `i32`. Tentu saja, Anda bisa membuat `Vec<(u32, i32)>` (vec dengan tuple `(u32, i32)`) namun kita hanya menginginkan salah satunya saja. Jadi disini Anda bisa menggunakan enum. Begini contohnya:
 
 ```rust
 enum Number {
@@ -3859,7 +3859,7 @@ fn main() {
 }
 ```
 
-Ini bagus, namun kita tidak melakukan apapun pada kondisi `None` karen kita tidak peduli pada case itu. Nah, kita bisa membuat codenya menjadi lebih singkat dengan menggunakan `if let`. `if let` artinya "lakukan sesuatu jika ia cocok, dan tidak usah lakukan apapun jika tidak cocok". `if let` digunakan apabila anda tidak merasa perlu untuk menuliskan apa yang harus dilakukan pada semua kondisi matching.
+Ini bagus, namun kita tidak melakukan apapun pada kondisi `None` karen kita tidak peduli pada case itu. Nah, kita bisa membuat codenya menjadi lebih singkat dengan menggunakan `if let`. `if let` artinya "lakukan sesuatu jika ia cocok, dan tidak usah lakukan apapun jika tidak cocok". `if let` digunakan apabila Anda tidak merasa perlu untuk menuliskan apa yang harus dilakukan pada semua kondisi matching.
 
 ```rust
 fn main() {
@@ -9406,7 +9406,7 @@ pub fn with_capacity(capacity: usize) -> String {
 }
 ```
 
-Menarik! Kita bisa melihat bahwa String ternyata adalah semacam `Vec`. Dan sebenarnya `String` memanglah vector dari type `u8`, yang mana ini sangat menarik untuk diketahui. Anda tidak perlu mengetahui hal itu hanya untuk menggunakan method `with_capacity`, sehingga Anda hanya bisa melihatnya apabila anda meng-klik [src]. Jadi, meng-klik [src] adalah ide yang bagus apabila dokumen tidak memiliki cukup detail atau Anda ingin mempelajarinya lebih lanjut.
+Menarik! Kita bisa melihat bahwa String ternyata adalah semacam `Vec`. Dan sebenarnya `String` memanglah vector dari type `u8`, yang mana ini sangat menarik untuk diketahui. Anda tidak perlu mengetahui hal itu hanya untuk menggunakan method `with_capacity`, sehingga Anda hanya bisa melihatnya apabila Anda meng-klik [src]. Jadi, meng-klik [src] adalah ide yang bagus apabila dokumen tidak memiliki cukup detail atau Anda ingin mempelajarinya lebih lanjut.
 
 ### Information on traits
 
@@ -11035,7 +11035,7 @@ mod tests {
 
 ### Test-driven development
 
-Anda mungkin pernah mendengar tentang "test-driven development" di saat membaca tentang Rust atau bahasa pemrograman yang lain. Itu adalah salah satu cara untuk menulis program, dan beberapa orang menyukainya, sedangkan beberapa lagi lebih menyukai cara lain. "Test-driven development" berarti "tulis testnya terlebih dahulu, lalu tulis codenya kemudian". Saat Anda menggunakan cara ini, Anda akan memiliki banyak test yang merepresentasikan apa yang Anda inginkan pada code yang Anda tuliskan nantinya. Kemudian Anda mulai menulis codenya, dan menjalankan testing untuk melihat apakah Anda melakukannya dengan benar. Kemudian test selalu ada untuk menunjukkan kepada Anda jika terjadi kesalahan saat Anda menambahkan dan menulis ulang kode Anda. Ini cukup mudah di Rust karena compiler memberikan banyak informasi tentang apa yang harus diperbaiki. Mari kita tulis contoh kecil test-driven development dan kita lihat seperti apa bentuk codenya.
+Anda mungkin pernah mendengar tentang "test-driven development" di saat membaca tentang Rust atau bahasa pemrograman yang lain. Itu adalah salah satu cara untuk menulis program, dan beberapa orang menyukainya, sedangkan beberapa lagi lebih menyukai cara lain. "Test-driven development" berarti "tulis testnya terlebih dahulu, lalu tulis codenya kemudian". Saat Anda menggunakan cara ini, Anda akan memiliki banyak test yang merepresentasikan apa yang Anda inginkan pada code yang Anda tuliskan nantinya. Kemudian Anda mulai menulis codenya, dan menjalankan testing untuk melihat apakah Anda melakukannya dengan benar. Kemudian test selalu ada untuk menunjukkan kepada Anda jika terjadi kesalahan saat Anda menambahkan dan menulis ulang code Anda. Ini cukup mudah di Rust karena compiler memberikan banyak informasi tentang apa yang harus diperbaiki. Mari kita tulis contoh kecil test-driven development dan kita lihat seperti apa bentuk codenya.
 
 Mari bayangkan sebuah calculator yang mengambil inputan dari user. Ia bisa melakukan penjumlahan (+) dan juga pengurangan (-). Jika user menuliskan "5 + 6" ia semestinya mengembalikan 11, jika user menuliskan "5 + 6 - 7" maka semestinya mengembalikan 4, dst. Jadi, kita akan mulai dengan function testnya. Anda juga bisa melihat bahwa nama function di dalam test biasanya lumayan panjang. Ini dikarenakan kita ingin menjalankan begitu banyak test, dan kita ingin mengetahui test yang mana saja yang gagal.
 
@@ -13915,9 +13915,9 @@ Jadi, `option_env!` akan selalu menjadi macro yang lebih aman untuk hal ini. `en
 
 ## Using files
 
-Sekarang setelah kita menggunakan Rust di komputer, kita dapat mulai bekerja dengan file. Anda akan melihat bahwa sekarang kita akan mulai melihat lebih banyak `Result` di dalam kode kita. Itu dikarenakan saat kita mulai bekerja dengan file dan hal semacamnya, besar kemungkinan kita melakukan kesalahan. Bisa saja mungkin filenya tidak ada di sana (tidak bisa mengaksesnya), atau bisa jadi juga mungkin komputer kita tidak dapat membacanya. 
+Sekarang setelah kita menggunakan Rust di komputer, kita bisa mulai melakukan sesuatu dengan file. Anda akan melihat bahwa sekarang kita akan mulai melihat lebih banyak `Result` di dalam code kita. Itu dikarenakan saat kita mulai bekerja dengan file dan hal semacamnya, besar kemungkinan kita melakukan kesalahan. Bisa saja mungkin filenya tidak ada di sana (tidak bisa mengaksesnya), atau bisa jadi juga mungkin komputer kita tidak dapat membacanya. 
 
-Anda mungkin masih ingat bahwa jika Anda menggunakan operator `?`, ia akan mengmbalikan `Result` pada function tempat ia berada. Jika Anda tidak bisa mengingat error typenya, anda bisa mengosongkannya (dengan `()`) dan biarkan compiler yang memberitahukannya kepada Anda. Mari kita coda dengan sebuah function yang mencoba untuk membuat sebuah angkan menggunakan method `.parse()`.
+Anda mungkin masih ingat bahwa jika Anda menggunakan operator `?`, ia akan mengmbalikan `Result` pada function tempat ia berada. Jika Anda tidak bisa mengingat error typenya, Anda bisa mengosongkannya (dengan `()`) dan biarkan compiler yang memberitahukannya kepada Anda. Mari kita coda dengan sebuah function yang mencoba untuk membuat sebuah angkan menggunakan method `.parse()`.
 
 ```rust
 // ⚠️
