@@ -530,7 +530,7 @@ fn main() {
 
 `{}` disebut sebagai **code block**. Ini adalah tempat dimana code akan ditulis.
 
-`println!` adalah sebuah **macro** yang akan melakukan print ke console. Sebuah **macro** sama seperti sebuah fungsi yang akan menuliskan code untuk kita. Macro memiliki `!` setelah nama macronya dituliskan. Kita akan mempelajari tentang membuat macro di chapter-chapter selanjutnya. Tapi untuk sekarang, cukup diingat bahwa `!` itu artinya adalah sebuah macro.
+`println!` adalah sebuah **macro** yang akan melakukan print ke console. Sebuah **macro** sama seperti sebuah fungsi yang akan menuliskan code untuk kita. Macro memiliki `!` setelah nama macronya dituliskan. Kita akan mempelajari tentang membuat macro di beberapa chapter selanjutnya. Tapi untuk sekarang, cukup diingat bahwa `!` itu artinya adalah sebuah macro.
 
 Untuk mempelajari tentang `;`, terlebih dahulu kita buat fungsi yang lain. Pertama, di dalam `main`, kita akan mencetak angka 8:
 
@@ -543,7 +543,7 @@ fn main() {
 `{}` pada `println!` artinya "letakkan variabelnya ke dalam sini". Maka dicetaklah `Hello, world number 8!`.
 
 
-Kita bisa meletakkan lebih banyak `{}`, seperti yang kita lakukan sebelumnya:
+Kita bisa menggunakan lebih banyak `{}`, seperti yang kita lakukan sebelumnya:
 
 ```rust
 fn main() {
@@ -593,7 +593,7 @@ fn number() -> i32 {
 
 Ini artinya "kamu beri tahu saya bahwa `number()` akan mengembalikan `i32`, tapi kamu tambahkan `;`, sehingga tidak bisa mengembalikan/me-return apapun". Oleh karena itu compiler menyarankan untuk menghapus semicolon/titik koma.
 
-Kita juga bisa menulis `return 8;` tapi di Rust adalah normal untuk menghapus `;` dan juga `return`.
+Kita juga bisa menulis `return 8;` tapi, sangatlah umum di Rust untuk menghapus `;` dan juga `return`.
 
 Apabila Anda ingin memasukkan variabel ke dalam sebuah function, letakkan ia di dalam `()`. Anda perlu memberi variabel tersebut sebuah nama dan juga menuliskan typenya.
 
@@ -937,7 +937,7 @@ fn main() {
 }
 ```
 
-Ini akan mem-print:
+Ia akan mem-print:
 
 ```text
          Start with a tab
@@ -1061,7 +1061,7 @@ Here is your number.
 8
 ```
 
-Bisa jadi Anda sama sekali tidak memerlukannya, namun jika Anda benar-benar perlu untuk menggunakan sebuah keyword untuk menjadi sebuah variable maka Anda bisa menggunakan `r#`.
+Bisa jadi Anda sama sekali tidak memerlukannya, namun jika Anda benar-benar perlu untuk menggunakan sebuah keyword untuk menjadi sebuah variabel, maka Anda bisa menggunakan `r#`.
 
 
 
@@ -1127,7 +1127,7 @@ fn main() {
 }
 ```
 
-Program di atas akan mencetak `0xe2bc0ffcfc` atau alamat yang lain. Hasilnya akan selalu berbeda setiap saat, tergantung dimana komputer Anda menyimpannya.
+Program di atas akan mencetak `0xe2bc0ffcfc` atau alamat yang lain. Hasilnya akan selalu berbeda setiap saat, tergantung dimana komputer Anda menyimpan data tersebut.
 
 Anda juga bisa mencetak biner, hexadesimal dan oktal seperti berikut:
 
