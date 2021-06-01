@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - run: sudo apt install git linuxbrew-wrapper
+      - run: sudo apt install linuxbrew-wrapper
       - run: brew install coreutils
       #- run: cargo install mdbook
       - run: chmod 777 -R ./
@@ -24,10 +24,7 @@ jobs:
       - run: mdbook build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3.7.3
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: ariandy/ariandy.github.io
-          publish_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book
-          destination_dir: easy-rust-indonesia
