@@ -1,6 +1,9 @@
 ## Update
 ![example workflow name](https://github.com/Dhghomon/easy_rust/workflows/github%20pages/badge.svg)
 
+
+23 May 2021: [Diterjemahkan ke bahasa Indonesia](https://github.com/ariandy/easy-rust-indonesia) oleh [Ariandy](https://github.com/ariandy)/[1kb](https://1kilobyte.github.io/).
+
 2 April 2021: [Menambahkan link BuyMeACoffee](https://www.buymeacoffee.com/mithridates) untuk siapapun yang ingin "mentraktir kopi" untuk saya.
 
 1 February 2021: [Sekarang bisa dilihat di YouTube!](https://www.youtube.com/playlist?list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) 2 bulan kemudian: semua video selesai pada 1 April 2021, dengan total sebanyak 186 video (kurang lebih berdurasi total 23 jam).
@@ -14335,5 +14338,3 @@ main
 ## The end?
 
 Ini adalah bagian akhir dari (terjemahan) "Rust in Easy English". But I am still here, dan Anda bisa memberitahu saya jika Anda memiliki pertanyaan. Silakan [hubungi saya di Twitter](https://twitter.com/mithridates) atau tambahkan pull request, issue, dll. Anda juga bisa memberi tahu saya jika ada bagian yang sulit untuk dipahami. "Rust in Easy English" haruslah sangat mudah dipahami, jadi tolong beri tahu saya jika penjelasan dalam bahasa Inggrisnya terlalu sulit dipahami. Tentu saja, Rust itu sendiri mungkin sulit untuk dipahami, tapi setidaknya kita dapat memastikan bahwa penjelasannya dalam bahasa Inggris mudah dimengerti.
-
-.
