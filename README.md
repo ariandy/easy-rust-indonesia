@@ -8,7 +8,7 @@
 
 1 February 2021: [Sekarang bisa dilihat di YouTube!](https://www.youtube.com/playlist?list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) 2 bulan kemudian: semua video selesai pada 1 April 2021, dengan total sebanyak 186 video (kurang lebih berdurasi total 23 jam).
 
-22 December 2020: mdBook bisa dilihat [di sini](https://dhghomon.github.io/easy_rust).
+22 December 2020: mdBook (berbahasa Inggris) bisa dilihat [di sini](https://dhghomon.github.io/easy_rust).
 
 28 November 2020: [Sekarang tersedia juga dalam bahasa Chinese (simplified)](https://github.com/kumakichi/easy_rust_chs) Terima kasih untuk [kumakichi](https://github.com/kumakichi)!
 
