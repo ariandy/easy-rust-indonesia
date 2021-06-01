@@ -28,6 +28,6 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: ariandy/ariandy.github.io
-          publish_branch: master
+          publish_branch: main
           publish_dir: ./book
           destination_dir: easy-rust-indonesia
