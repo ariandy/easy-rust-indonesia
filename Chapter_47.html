@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> Multiple threads - Easy Rust</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong> Update</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong> Who am I?</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong> Catatan dari translator</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong> Writing Rust in Easy English</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong> Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong> 🚧 and ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong> Comments</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong> Types</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong> Type inference</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong> Printing 'hello, world!'</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong> Display and debug</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong> Mutability (changing)</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong> The stack, the heap, and pointers</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong> More about printing</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong> Strings</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong> const and static</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong> More on references</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong> Mutable references</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong> Giving references to functions</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong> Copy types</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong> Collection types</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong> Vectors</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong> Structs</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong> Enums</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong> Loops</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong> Implementing structs and enums</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong> Destructuring</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong> References and the dot operator</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong> Generics</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong> Option and Result</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong> Other collections</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong> The ? operator</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong> Traits</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong> Chaining methods</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong> Closures</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong> The dbg! macro and .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong> Types of &amp;str</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong> Lifetimes</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong> Interior mutability</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong> Cow</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong> Type aliases</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong> The todo! macro</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong> Rc</a></li><li class="chapter-item expanded "><a href="Chapter_47.html" class="active"><strong aria-hidden="true">48.</strong> Multiple threads</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong> Closures in functions</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong> impl Trait</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong> Arc</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong> Channels</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong> Reading Rust documentation</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong> Box</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong> Box around traits</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong> Default and the builder pattern</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong> Deref and DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong> Crates and modules</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong> Testing</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong> External crates</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong> A tour of the standard library</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong> Writing macros</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong> cargo</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong> Taking user input</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong> Using files</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong> cargo doc</a></li><li class="chapter-item expanded "><a href="Chapter_67.html"><strong aria-hidden="true">68.</strong> The end?</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="multiple-threads"><a class="header" href="#multiple-threads">Multiple threads</a></h2>
+<p>Jika kita menggunakan multiple threads, Anda bisa melakukan banyak hal dalam waktu yang bersamaan. Komputer modern memiliki lebih dari satu core sehingga mereka bisa melakukan lebih dari satu task pada waktu yang bersamaan, dan Rust memungkinkan Anda untuk menggunakannya. Rust menggunakan threads yang biasa disebut dengan &quot;OS threads&quot;. OS thread artinya bahwa operating system membuat threadnya pada core yang berbeda. (Beberapa bahasa pemrograman lainnya menggunakan &quot;green threads&quot;, yang mana itu kurang begitu powerful)</p>
+<p>Kita membuat threadnya menggunakan <code>std::thread::spawn</code> dan kemudian menuliskan closure untuk memberitahu compiler tentang apa yang dilakukan oleh thread tersebut. Threads sangatlah menarik karena mereka berjalan pada waktu yang sama, dan Anda bisa mencobanya untuk melihat apa yang sebenarnya terjadi. Ini adalah contoh sederhananya:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    std::thread::spawn(|| {
+        println!(&quot;I am printing something&quot;);
+    });
+}
+</code></pre></pre>
+<p>Jika Anda menjalankan code di atas, ia akan berbeda-beda setiap saat. Terkadang ia mencetak hasilnya, dan terkadang juga tidak mencetak apapun (ini tergantung pada kecepatan komputer Anda). Ini karena terkadang <code>main()</code> selesai sebelum threadnya selesai. Dan jika <code>main()</code> selesai, tentunya program berakhir. Akan lebih mudah melihatnya apagila kita meletakkan threadnya di dalam <code>for</code> loop:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    for _ in 0..10 { // buat sebanyak 10 threads
+        std::thread::spawn(|| {
+            println!(&quot;I am printing something&quot;);
+        });
+    }   // Sekarang threadnya mulai berjalan.
+}       // Berapa banyak thread yang selesai dijalankan sebelum main() berakhir disini?
+</code></pre></pre>
+<p>Biasanya ada 4 thread yang melakukan print sebelum <code>main</code> berakhir, namun hasil ini akan selalu berbeda. Jika komputer Anda lebih cepat, maka mungkin thread tidak akan mencetak apapun. Juga, terkadang threadnya akan panic:</p>
+<pre><code class="language-text">thread 'thread 'I am printing something
+thread '&lt;unnamed&gt;&lt;unnamed&gt;thread '' panicked at '&lt;unnamed&gt;I am printing something
+' panicked at 'thread '&lt;unnamed&gt;cannot access stdout during shutdown' panicked at '&lt;unnamed&gt;thread 'cannot access stdout during
+shutdown
+</code></pre>
+<p>Ini adalah error saat thread mencoba untuk melakukan sesuatu tepat di saat program dimatikan.</p>
+<p>Anda bisa memberikan sesuatu kepada komputer agar programnya tidak langsung mati. Setidaknya kita membuat komputer menjadi sibuk, sehingga thread bisa menyelesaikan tugasnya:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    for _ in 0..10 {
+        std::thread::spawn(|| {
+            println!(&quot;I am printing something&quot;);
+        });
+    }
+    for _ in 0..1_000_000 { // buat program mendeklarasikan &quot;let x = 9&quot; sebanyak 1 juta kali
+                            // Program harus menyelesaikan ini sebelum akhirnya ia bisa keluar dari function main()
+        let _x = 9;
+    }
+}
+</code></pre></pre>
+<p>Tetapi, cara di atas itu adalah cara yang konyol silly way untuk memberikan waktu kepada threads untuk menyelesaikan task-tasknya. Cara yang agak lebih baik adalah mem-binding threads tersebut ke sebuah variable. Jika Anda menambahkan <code>let</code>, maka Anda akan membuat sesuatu yang bertype <code>JoinHandle</code>. Anda bisa melihat ini di dalam signature dari method <code>spawn</code>:</p>
+<pre><code class="language-text">pub fn spawn&lt;F, T&gt;(f: F) -&gt; JoinHandle&lt;T&gt;
+where
+    F: FnOnce() -&gt; T,
+    F: Send + 'static,
+    T: Send + 'static,
+</code></pre>
+<p>(<code>f</code> adalah closure - Nantinya kita akan mempelajari bagaimana untuk meletakkan closures ke dalam function yang kita buat)</p>
+<p>Sehingga sekarang kita memiliki <code>JoinHandle</code> setiap saat.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    for _ in 0..10 {
+        let handle = std::thread::spawn(|| {
+            println!(&quot;I am printing something&quot;);
+        });
+
+    }
+}
+</code></pre></pre>
+<p><code>handle</code> sekarang bertype <code>JoinHandle</code>. Apa yang akan kita lakukan dengan <code>JoinHandle</code>? Kita akan menggunakan method yang bernama <code>.join()</code>. Method ini berarti &quot;tunggu sampai semua threads selesai&quot; (ia akan menunggu thread untuk bergabung). Jadi sekarang kita hanya cukup menuliskan <code>handle.join()</code> dan ia akan menunggu setiap thread selesai dikerjakan.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    for _ in 0..10 {
+        let handle = std::thread::spawn(|| {
+            println!(&quot;I am printing something&quot;);
+        });
+
+        handle.join(); // tunggu semua thread selesai dikerjakan
+    }
+}
+</code></pre></pre>
+<p>Sekarang kita akan mempelajari tentang 3 type dari closure. Tiga type tersebut adalah:</p>
+<ul>
+<li><code>FnOnce</code>: mengambil valuenya</li>
+<li><code>FnMut</code>: mengambil mutable reference</li>
+<li><code>Fn</code>: mengambil regular reference</li>
+</ul>
+<p>Closure akan mencoba untuk mengambil <code>Fn</code> jika ia bisa. Tapi, jika ia perlu untuk mengganti valuenya, ia akan menggunakan <code>FnMut</code>, dan jika ia perlu untuk mengambil valuenya sepenuhnya, ia akan menggunakan <code>FnOnce</code>. <code>FnOnce</code> adalah nama yang bagus karena ia menjelaskan apa yang ia lakukan: ia mengambil valuenya sekali, dan kemudian tidak akan (dan juga tidak bisa) mengambilnya lagi.</p>
+<p>Ini adalah contohnya:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_string = String::from(&quot;I will go into the closure&quot;);
+    let my_closure = || println!(&quot;{}&quot;, my_string);
+    my_closure();
+    my_closure();
+}
+</code></pre></pre>
+<p><code>String</code> bukanlan <code>Copy</code>, sehingga <code>my_closure()</code> adalah <code>Fn</code>: ia mengambil referencenya.</p>
+<p>Jika melakukan perubahan pada <code>my_string</code>, ia akan menjadi <code>FnMut</code>.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_string = String::from(&quot;I will go into the closure&quot;);
+    let mut my_closure = || {
+        my_string.push_str(&quot; now&quot;);
+        println!(&quot;{}&quot;, my_string);
+    };
+    my_closure();
+    my_closure();
+}
+</code></pre></pre>
+<p>Hasil cetaknya adalah:</p>
+<pre><code class="language-text">I will go into the closure now
+I will go into the closure now now
+</code></pre>
+<p>Dan jika Anda mengambil valuenya, maka ia akan menjadi <code>FnOnce</code>.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_vec: Vec&lt;i32&gt; = vec![8, 9, 10];
+    let my_closure = || {
+        my_vec
+            .into_iter() // into_iter mengambil ownership
+            .map(|x| x as u8) // ubah setiap elementnya menjadi u8
+            .map(|x| x * 2) // kalikan dengan 2
+            .collect::&lt;Vec&lt;u8&gt;&gt;() // taruh semua hasilnya ke dalam Vec
+    };
+    let new_vec = my_closure();
+    println!(&quot;{:?}&quot;, new_vec);
+}
+</code></pre></pre>
+<p>Kita mengambil valuenya, sehingga kita tidak bisa menjalankan <code>my_closure()</code> lebih dari sekali. Dari sana nama <code>FnOnce</code> berasal.</p>
+<p>Jadi, sekarang kita kembali ke threads. Mari kita coba untuk menggunakan sebuah value dari luar thread:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_string = String::from(&quot;Can I go inside the thread?&quot;);
+
+    let handle = std::thread::spawn(|| {
+        println!(&quot;{}&quot;, my_string); // ⚠️
+    });
+
+    handle.join();
+}
+</code></pre></pre>
+<p>Compiler akan mengatakan bahwa ini tidak bekerja.</p>
+<pre><code class="language-text">error[E0373]: closure may outlive the current function, but it borrows `my_string`, which is owned by the current function
+  --&gt; src\main.rs:28:37
+   |
+28 |     let handle = std::thread::spawn(|| {
+   |                                     ^^ may outlive borrowed value `my_string`
+29 |         println!(&quot;{}&quot;, my_string);
+   |                        --------- `my_string` is borrowed here
+   |
+note: function requires argument type to outlive `'static`
+  --&gt; src\main.rs:28:18
+   |
+28 |       let handle = std::thread::spawn(|| {
+   |  __________________^
+29 | |         println!(&quot;{}&quot;, my_string);
+30 | |     });
+   | |______^
+help: to force the closure to take ownership of `my_string` (and any other referenced variables), use the `move` keyword
+   |
+28 |     let handle = std::thread::spawn(move || {
+   |                                     ^^^^^^^
+</code></pre>
+<p>Ini merupakan pesan error yang panjang, tetapi sangat membantu: ia menyarankan untuk <code>use the `move` keyword</code> (menggunakan keyword <code>move</code>). Masalahnya adalah kita bisa melakukan apapun terhadap <code>my_string</code> di saat thread sedang menggunakannya, namun tidak memiliki kepemilikan atas value tersebut. Hal seperti tentulah samas sekali tidak aman.</p>
+<p>Mari kita, lagi-lagi, membuat program yang tidak bisa dijalankan :D :</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_string = String::from(&quot;Can I go inside the thread?&quot;);
+
+    let handle = std::thread::spawn(|| {
+        println!(&quot;{}&quot;, my_string); // sekarang my_string digunakan sebagai reference
+    });
+
+    std::mem::drop(my_string);  // ⚠️ Kita mencoba untuk melakukan drop pada my_string disini. Namun threadnya masih memerlukan my_string.
+
+    handle.join();
+}
+</code></pre></pre>
+<p>Sehingga Anda perlu untuk mengambil valuenya menggunakan <code>move</code>. Dan sekarang programnya safe:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_string = String::from(&quot;Can I go inside the thread?&quot;);
+
+    let handle = std::thread::spawn(move|| {
+        println!(&quot;{}&quot;, my_string);
+    });
+
+    std::mem::drop(my_string);  // ⚠️ kita tidak bisa melakukan drop disini, karena variabel handle memilikinya. Jadi ini tidak akan berjalan
+
+    handle.join();
+}
+</code></pre></pre>
+<p>Jadinya kita hapuskan <code>std::mem::drop</code>, dan sekarang programnya berjalan. <code>handle</code> mengambil <code>my_string</code> dan code kita menjadi safe.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_string = String::from(&quot;Can I go inside the thread?&quot;);
+
+    let handle = std::thread::spawn(move|| {
+        println!(&quot;{}&quot;, my_string);
+    });
+
+    handle.join();
+}
+</code></pre></pre>
+<p>Jadi cukup diingat: jika Anda memiliki value di dalam thread yang berasal dari luar thread, Anda perlu menggunakan <code>move</code>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="Chapter_46.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="Chapter_48.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="Chapter_46.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="Chapter_48.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

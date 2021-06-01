@@ -1,0 +1,560 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> Lifetimes - Easy Rust</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong> Update</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong> Who am I?</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong> Catatan dari translator</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong> Writing Rust in Easy English</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong> Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong> 🚧 and ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong> Comments</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong> Types</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong> Type inference</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong> Printing 'hello, world!'</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong> Display and debug</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong> Mutability (changing)</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong> The stack, the heap, and pointers</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong> More about printing</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong> Strings</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong> const and static</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong> More on references</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong> Mutable references</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong> Giving references to functions</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong> Copy types</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong> Collection types</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong> Vectors</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong> Structs</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong> Enums</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong> Loops</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong> Implementing structs and enums</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong> Destructuring</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong> References and the dot operator</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong> Generics</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong> Option and Result</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong> Other collections</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong> The ? operator</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong> Traits</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong> Chaining methods</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong> Closures</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong> The dbg! macro and .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong> Types of &amp;str</a></li><li class="chapter-item expanded "><a href="Chapter_41.html" class="active"><strong aria-hidden="true">42.</strong> Lifetimes</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong> Interior mutability</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong> Cow</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong> Type aliases</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong> The todo! macro</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong> Rc</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong> Multiple threads</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong> Closures in functions</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong> impl Trait</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong> Arc</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong> Channels</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong> Reading Rust documentation</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong> Box</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong> Box around traits</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong> Default and the builder pattern</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong> Deref and DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong> Crates and modules</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong> Testing</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong> External crates</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong> A tour of the standard library</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong> Writing macros</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong> cargo</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong> Taking user input</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong> Using files</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong> cargo doc</a></li><li class="chapter-item expanded "><a href="Chapter_67.html"><strong aria-hidden="true">68.</strong> The end?</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="lifetimes"><a class="header" href="#lifetimes">Lifetimes</a></h2>
+<p>Lifetime berarti &quot;seberapa lama variabel akan hidup&quot;. Anda hanya perlu untuk memikirkan tentang lifetime jika kita berbicara soal reference. Ini karena reference tidak bisa hidup lebih lama daripada objek asalnya. Sebagai contoh, function ini tidak akan berjalan:</p>
+<pre><pre class="playground"><code class="language-rust">fn returns_reference() -&gt; &amp;str {
+    let my_string = String::from(&quot;I am a string&quot;);
+    &amp;my_string // ⚠️
+}
+
+fn main() {}
+</code></pre></pre>
+<p>Problem adalah bahwa <code>my_string</code> hanya hidup di dalam <code>returns_reference</code>. Kita coba untuk mengembalikan <code>&amp;my_string</code>, tetapi <code>&amp;my_string</code> tidak bisa exist tanpa <code>my_string</code>. Sehingga compiler akan mengatakan tidak.</p>
+<p>Code ini juga tidak akan bekerja:</p>
+<pre><pre class="playground"><code class="language-rust">fn returns_str() -&gt; &amp;str {
+    let my_string = String::from(&quot;I am a string&quot;);
+    &quot;I am a str&quot; // ⚠️
+}
+
+fn main() {
+    let my_str = returns_str();
+    println!(&quot;{}&quot;, my_str);
+}
+</code></pre></pre>
+<p>Tapi ia hampir berjalan. Compiler mengatakan:</p>
+<pre><code class="language-text">error[E0106]: missing lifetime specifier
+ --&gt; src\main.rs:6:21
+  |
+6 | fn returns_str() -&gt; &amp;str {
+  |                     ^ expected named lifetime parameter
+  |
+  = help: this function's return type contains a borrowed value, but there is no value for it to be borrowed from
+help: consider using the `'static` lifetime
+  |
+6 | fn returns_str() -&gt; &amp;'static str {
+  |                     ^^^^^^^^
+</code></pre>
+<p><code>missing lifetime specifier</code> artinya adalah kita perlu untuk menambahkan <code>'</code> dengan lifetime. Kemudian ia mengatakan bahwa ia <code>contains a borrowed value, but there is no value for it to be borrowed from</code>. Itu artinya adalah <code>I am a str</code> tidak  dipinjam (borrowed) dari manapun. Ia mengatakan <code>consider using the 'static lifetime</code> dengan  cara menuliskan <code>&amp;'static str</code>. Jadi menurut compiler, kita harus mencoba mengatakan bahwa ini adalah string literal.</p>
+<p>Sekarang codenya bekerja:</p>
+<pre><pre class="playground"><code class="language-rust">fn returns_str() -&gt; &amp;'static str {
+    let my_string = String::from(&quot;I am a string&quot;);
+    &quot;I am a str&quot;
+}
+
+fn main() {
+    let my_str = returns_str();
+    println!(&quot;{}&quot;, my_str);
+}
+</code></pre></pre>
+<p>Itu dikarenakan kita mengembalikan sebuah <code>&amp;str</code> menggunakan lifetime <code>static</code>. Sedangkan, <code>my_string</code> hanya bisa dikembalikan sebagai <code>String</code>: kita tidak bisa mengembalikan sebuah reference dari <code>String</code> tersebut karena ia akan hangus pada baris berikutnya.</p>
+<p>Jadi, <code>fn returns_str() -&gt; &amp;'static str</code> meberitahukan kepada Rust: &quot;Jangan khawatir, kita hanya akan mengembalikan sebuah string literal&quot;. String literals tetap hidup pada seluruh bagian program, sehingga Rust akan menerimanya. Anda akan menyadari bahwa lifetime sebenarnya mirip dengan generic. Saat kita memberitahukan compiler sesuatu seperti <code>&lt;T: Display&gt;</code>, kita membuat semacam janji kepada compiler bahwa kita hanya akan menggunakan inputan dengan trait <code>Display</code>. Lifetime juga sama: kita tidak mengubah lifetime dari variabel apapun. Kita hanya memberi tahu compiler bahwa akan menjadi seperti apa lifetime dari inputan tersebut.</p>
+<p>Namun <code>'static</code> bukanlah satu-satunya lifetime. Sebenarnya, setiap variabel memiliki lifetime, tapi biasanya kita tidak perlu untuk menuliskannya. Compiler Rust sangat cerdas dan biasanya bisa mengetahuinya sendiri. Kita hanya perlu menuliskan lifetimenya saat compiler tidak mengetahuinya.</p>
+<p>Ini adalah contoh lain dar lifetime. Bayangkan kita ingin membuat sebuah struct <code>City</code> dan memberikannya <code>&amp;str</code> untuk field name. Kita mungkin ingin melakukan hal seperti itu karena ingin memberikan performa yang lebih cepat daripada menggunakan <code>String</code>. Sehingga kita menuliskannya seperti ini, meskipun code dibawah ini tentunya tidak berhasil:</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City {
+    name: &amp;str, // ⚠️
+    date_founded: u32,
+}
+
+fn main() {
+    let my_city = City {
+        name: &quot;Ichinomiya&quot;,
+        date_founded: 1921,
+    };
+}
+</code></pre></pre>
+<p>Compiler akan mengatakan:</p>
+<pre><code class="language-text">error[E0106]: missing lifetime specifier
+ --&gt; src\main.rs:3:11
+  |
+3 |     name: &amp;str,
+  |           ^ expected named lifetime parameter
+  |
+help: consider introducing a named lifetime parameter
+  |
+2 | struct City&lt;'a&gt; {
+3 |     name: &amp;'a str,
+  |
+</code></pre>
+<p>Rust memerlukan lifetime untuk <code>&amp;str</code> karena <code>&amp;str</code> adalah sebuah reference. Apa yang terjadi apabila value yang merujuk kepada <code>name</code> menghilang/hangus/hancur? Tentu saja itu tidak aman (unsafe).</p>
+<p>Bagaimana tentang <code>'static</code>, apakah ia menjadi bisa dijalankan? Kita telah menggunakannya sebelumnya, oleh karenanya mari kita coba di contoh yang ini:</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City {
+    name: &amp;'static str, // ubah &amp;str ke &amp;'static str
+    date_founded: u32,
+}
+
+fn main() {
+    let my_city = City {
+        name: &quot;Ichinomiya&quot;,
+        date_founded: 1921,
+    };
+
+    println!(&quot;{} was founded in {}&quot;, my_city.name, my_city.date_founded);
+}
+</code></pre></pre>
+<p>Okay, programnya berjalan. Dan mungkin inilah yang Anda inginkan untuk struct. Namun, perhatikan bahwa kita hanya bisa mengambil &quot;string literals&quot;, bukan reference ke value tertentu. Sehingga code dibawah ini tidak akan bekerja:</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City {
+    name: &amp;'static str, // hidup di seluruh bagian program
+    date_founded: u32,
+}
+
+fn main() {
+    let city_names = vec![&quot;Ichinomiya&quot;.to_string(), &quot;Kurume&quot;.to_string()]; // city_names tidak hidup di seluruh program
+
+    let my_city = City {
+        name: &amp;city_names[0], // ⚠️ Ini adalah &amp;str, bukan &amp;'static str. Ini merupakan reference ke sebuah value di dalam city_names
+        date_founded: 1921,
+    };
+
+    println!(&quot;{} was founded in {}&quot;, my_city.name, my_city.date_founded);
+}
+</code></pre></pre>
+<p>Compiler akan mengatakan:</p>
+<pre><code class="language-text">error[E0597]: `city_names` does not live long enough
+  --&gt; src\main.rs:12:16
+   |
+12 |         name: &amp;city_names[0],
+   |                ^^^^^^^^^^
+   |                |
+   |                borrowed value does not live long enough
+   |                requires that `city_names` is borrowed for `'static`
+...
+18 | }
+   | - `city_names` dropped here while still borrowed
+</code></pre>
+<p>Hal ini sangatlah penting untuk dipahami, karena reference yang kita berikan itu sebenarnya memiliki masa hidup yang cukup lama. Tapi, kita berjanji kepada compiler bahwa kita hanya akan memberikan <code>&amp;'static str</code>, dan itulah letak masalahnya.</p>
+<p>Jadinya, sekarang kita ingin mencoba apa yang compiler sarankan sebelumnya. Ia menyarankan untuk menulis <code>struct City&lt;'a&gt;</code> dan <code>name: &amp;'a str</code>. Ini berarti bahwa compiler hanya akan mengambil reference untuk <code>name</code> jika ia hidup sama panjangnya dengan <code>City</code>.</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City&lt;'a&gt; { // City memiliki lifetime 'a
+    name: &amp;'a str, // dan name juga memiliki lifetime 'a.
+    date_founded: u32,
+}
+
+fn main() {
+    let city_names = vec![&quot;Ichinomiya&quot;.to_string(), &quot;Kurume&quot;.to_string()];
+
+    let my_city = City {
+        name: &amp;city_names[0],
+        date_founded: 1921,
+    };
+
+    println!(&quot;{} was founded in {}&quot;, my_city.name, my_city.date_founded);
+}
+</code></pre></pre>
+<p>Juga harus diingat bahwa kita bisa menuliskan apapun selain <code>'a</code> jika Anda mau. Ini sama seperti generic dimana kita menulis <code>T</code> dan <code>U</code>, namun sebenarnya bisa digantikan dengan apapun.</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City&lt;'city&gt; { // lifetimenya sekarang bernama 'city
+    name: &amp;'city str, // dan name sekarang memiliki lifetime 'city
+    date_founded: u32,
+}
+
+fn main() {}
+</code></pre></pre>
+<p>Jadi biasanya Anda akan menuliskan <code>'a, 'b, 'c</code>, dst. karena itu lebih cepat dan merupakan cara yang paling umum digunakan untuk menuliskannya. Tapi Anda selalu bisa menggantinya jika Anda ingin. Salah satu tips yang baik adalah mengubah lifetime menjadi nama yang &quot;human-readable&quot;, yang mana bisa membantu Anda membaca code jika code tersebut sangant rumit.</p>
+<p>Mari kita lihat lagi trait untuk generic. Contohnya:</p>
+<pre><pre class="playground"><code class="language-rust">use std::fmt::Display;
+
+fn prints&lt;T: Display&gt;(input: T) {
+    println!(&quot;T is {}&quot;, input);
+}
+
+fn main() {}
+</code></pre></pre>
+<p>Di saat Anda menuliskan <code>T: Display</code>, itu berarti &quot;tolong ambil T jika ia memiliki Display&quot;.
+Bukan berarti: &quot;Saya berikan trait Display ke T&quot;.</p>
+<p>Hal yang sama pula berlaku pada lifetimes. Di saat Anda menulis 'a pada program dibawah ini:</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct City&lt;'a&gt; {
+    name: &amp;'a str,
+    date_founded: u32,
+}
+
+fn main() {}
+</code></pre></pre>
+<p>Itu berarti &quot;tolong hanya ambil inputan dari <code>name</code> jika ia hidup setidaknya sepanjang <code>City</code>&quot;.
+Bukan berarti: &quot;Saya akan membuat inputan dari <code>name</code> sama panjangnya dengan <code>City</code>&quot;.</p>
+<p>Sekarang kita bisa mempelajari tentang <code>&lt;'_&gt;</code> yang kita lihat sebelumnya. Ini disebut dengan &quot;anonymous lifetime&quot; dan ini adalah indikator bahwa referencenya sedang digunakan. Sebagai contoh, Rust akan menyarankannya kepada Anda di saat Anda mengimplementasikan struct. Pada contoh di bawah ini, ada satu struct yang hampir bisa berjalan (dengan kata lain, belum bisa dijalankan):</p>
+<pre><pre class="playground"><code class="language-rust">    // ⚠️
+struct Adventurer&lt;'a&gt; {
+    name: &amp;'a str,
+    hit_points: u32,
+}
+
+impl Adventurer {
+    fn take_damage(&amp;mut self) {
+        self.hit_points -= 20;
+        println!(&quot;{} has {} hit points left!&quot;, self.name, self.hit_points);
+    }
+}
+
+fn main() {}
+</code></pre></pre>
+<p>Jadinya kita melakukan apa yang kita perlu lakukan untuk <code>struct</code>: Pertama-tama, kita mengatakan bahwa <code>name</code> datang dari <code>&amp;str</code>. Itu berarti kita perlu lifetime, jadi kita perlu memberikannya <code>&lt;'a&gt;</code>. Kemudian kita melakukan hal yang sama pada <code>struct</code> untuk menunjukkan bahwa mereka memiliki lifetime yang sama panjangnya. Tapi kemudian Rust memberi tahu kita untuk melakukan hal ini:</p>
+<pre><code class="language-text">error[E0726]: implicit elided lifetime not allowed here
+ --&gt; src\main.rs:6:6
+  |
+6 | impl Adventurer {
+  |      ^^^^^^^^^^- help: indicate the anonymous lifetime: `&lt;'_&gt;`
+</code></pre>
+<p>Ia ingin kita menambahkan anonymous lifetime untuk menunjukkan bahwa disitu ada reference yang sedang digunakan. Sehingga jika kita menuliskannya, compilernya berjalan dengan mulus:</p>
+<pre><pre class="playground"><code class="language-rust">struct Adventurer&lt;'a&gt; {
+    name: &amp;'a str,
+    hit_points: u32,
+}
+
+impl Adventurer&lt;'_&gt; {
+    fn take_damage(&amp;mut self) {
+        self.hit_points -= 20;
+        println!(&quot;{} has {} hit points left!&quot;, self.name, self.hit_points);
+    }
+}
+
+fn main() {}
+</code></pre></pre>
+<p>Anonymous lifetime dibuat agar Anda tidak selalu menuliskan hal-hal seperti <code>impl&lt;'a&gt; Adventurer&lt;'a&gt;</code>, karena structnya sendiri telah menunjukkan lifetimenya.</p>
+<p>Lifetime terkadang bisa menjadi sulit juga rumit di Rust, tapi berikut ini adalah beberapa tips untuk menghindari kebingungan di saat berurusan dengan lifetime:</p>
+<ul>
+<li>Anda tetap bisa menggunakan owned types, menggunakan clone dll. jika Anda ingin menghindarinya untuk saat ini. (melakukan refactor kemudian)</li>
+<li>Seringkali, di saat compiler menginginkan lifetime, Anda akan menuliskan &lt;'a&gt; &quot;dimana-mana&quot; dan kemudian codenya berjalan. Jangan bingung jika code Anda dipenuhi dengan <code>&lt;'a&gt;</code>. Itu hanya cara untuk mengatakan kepada compiler bahwa &quot;Jangan khawatir, Compiler, Saya tidak akan memberikan apapun yang masa hidupnya tidak cukup lama&quot;.</li>
+<li>Anda bisa mengeksplorasi mengenai lifetime sedikit demi sedikit. Tulis code menggunakan owned values, kemudian ubah ia menjadi reference. Compiler akan mulai menegur Anda, tapi juga memberikan beberapa saran. Dan jika dirasa terlalu rumit, maka cukup batalkan perubahan tersebut dan coba lagi di lain waktu.</li>
+</ul>
+<p>Mari lakukan ini pada code kita dan lihat apa yang compiler katakan. Pertama-tama, kita akan kembali ke awal dan membuang semua lifetimenya. Dan juga mengimplementasikan <code>Display</code>. <code>Display</code> hanya akan mencetak nama dari <code>Adventurer</code>.</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+struct Adventurer {
+    name: &amp;str,
+    hit_points: u32,
+}
+
+impl Adventurer {
+    fn take_damage(&amp;mut self) {
+        self.hit_points -= 20;
+        println!(&quot;{} has {} hit points left!&quot;, self.name, self.hit_points);
+    }
+}
+
+impl std::fmt::Display for Adventurer {
+        fn fmt(&amp;self, f: &amp;mut std::fmt::Formatter&lt;'_&gt;) -&gt; std::fmt::Result {
+            write!(f, &quot;{} has {} hit points.&quot;, self.name, self.hit_points)
+        }
+}
+
+fn main() {}
+</code></pre></pre>
+<p>Teguran pertama yang kita terima adalah seperti berikut:</p>
+<pre><code class="language-text">error[E0106]: missing lifetime specifier
+ --&gt; src\main.rs:2:11
+  |
+2 |     name: &amp;str,
+  |           ^ expected named lifetime parameter
+  |
+help: consider introducing a named lifetime parameter
+  |
+1 | struct Adventurer&lt;'a&gt; {
+2 |     name: &amp;'a str,
+  |
+</code></pre>
+<p>Compiler menyarankan untuk melakukan: menulis <code>&lt;'a&gt;</code> setelah Adventurer, dan <code>&amp;'a str</code>. Jadi kita akan melakukan saran tersebut:</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+struct Adventurer&lt;'a&gt; {
+    name: &amp;'a str,
+    hit_points: u32,
+}
+
+impl Adventurer {
+    fn take_damage(&amp;mut self) {
+        self.hit_points -= 20;
+        println!(&quot;{} has {} hit points left!&quot;, self.name, self.hit_points);
+    }
+}
+
+impl std::fmt::Display for Adventurer {
+        fn fmt(&amp;self, f: &amp;mut std::fmt::Formatter&lt;'_&gt;) -&gt; std::fmt::Result {
+            write!(f, &quot;{} has {} hit points.&quot;, self.name, self.hit_points)
+        }
+}
+
+fn main() {}
+</code></pre></pre>
+<p>Sekarang, bagian yang sebelumnya dikomplain oleh compiler sudah berjalan dengan baik, tapi kemudian compiler akan menanyakan kita perihal block <code>impl</code>. Compiler ingin kita menyebutkan bahwa impl tersebut sedang menggunakan reference:</p>
+<pre><code class="language-text">error[E0726]: implicit elided lifetime not allowed here
+ --&gt; src\main.rs:6:6
+  |
+6 | impl Adventurer {
+  |      ^^^^^^^^^^- help: indicate the anonymous lifetime: `&lt;'_&gt;`
+
+error[E0726]: implicit elided lifetime not allowed here
+  --&gt; src\main.rs:12:28
+   |
+12 | impl std::fmt::Display for Adventurer {
+   |                            ^^^^^^^^^^- help: indicate the anonymous lifetime: `&lt;'_&gt;`
+</code></pre>
+<p>Okay, akan kita tuliskan apa yang disarankan tersebut... dan sekarang codenya bekerja! Sekarang kita bisa membuat <code>Adventurer</code> dan melakukan sesuatu terhadapnya.</p>
+<pre><pre class="playground"><code class="language-rust">struct Adventurer&lt;'a&gt; {
+    name: &amp;'a str,
+    hit_points: u32,
+}
+
+impl Adventurer&lt;'_&gt; {
+    fn take_damage(&amp;mut self) {
+        self.hit_points -= 20;
+        println!(&quot;{} has {} hit points left!&quot;, self.name, self.hit_points);
+    }
+}
+
+impl std::fmt::Display for Adventurer&lt;'_&gt; {
+
+        fn fmt(&amp;self, f: &amp;mut std::fmt::Formatter&lt;'_&gt;) -&gt; std::fmt::Result {
+            write!(f, &quot;{} has {} hit points.&quot;, self.name, self.hit_points)
+        }
+}
+
+fn main() {
+    let mut billy = Adventurer {
+        name: &quot;Billy&quot;,
+        hit_points: 100_000,
+    };
+    println!(&quot;{}&quot;, billy);
+    billy.take_damage();
+}
+</code></pre></pre>
+<p>Hasilnya adalah:</p>
+<pre><code class="language-text">Billy has 100000 hit points.
+Billy has 99980 hit points left!
+</code></pre>
+<p>Jadi, Anda bisa melihat bahwa lifetimes yang dituliskan itu adalah hal dimana compiler seringkali hanya ingin memastikan seberapa lama suatu variabel hidup. Dan compiler biasanya cukup cerdas untuk menebak hampir semua lifetime yang Anda inginkan, dan hanya perlu Anda memberitahukannya sehingga lifetimenya bisa dipastikan.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="Chapter_40.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="Chapter_42.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="Chapter_40.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="Chapter_42.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

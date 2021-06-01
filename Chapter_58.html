@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> Crates and modules - Easy Rust</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong> Update</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong> Who am I?</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong> Catatan dari translator</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong> Writing Rust in Easy English</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong> Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong> 🚧 and ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong> Comments</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong> Types</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong> Type inference</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong> Printing 'hello, world!'</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong> Display and debug</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong> Mutability (changing)</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong> The stack, the heap, and pointers</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong> More about printing</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong> Strings</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong> const and static</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong> More on references</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong> Mutable references</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong> Giving references to functions</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong> Copy types</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong> Collection types</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong> Vectors</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong> Structs</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong> Enums</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong> Loops</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong> Implementing structs and enums</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong> Destructuring</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong> References and the dot operator</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong> Generics</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong> Option and Result</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong> Other collections</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong> The ? operator</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong> Traits</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong> Chaining methods</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong> Closures</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong> The dbg! macro and .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong> Types of &amp;str</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong> Lifetimes</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong> Interior mutability</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong> Cow</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong> Type aliases</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong> The todo! macro</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong> Rc</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong> Multiple threads</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong> Closures in functions</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong> impl Trait</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong> Arc</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong> Channels</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong> Reading Rust documentation</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong> Box</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong> Box around traits</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong> Default and the builder pattern</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong> Deref and DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_58.html" class="active"><strong aria-hidden="true">59.</strong> Crates and modules</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong> Testing</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong> External crates</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong> A tour of the standard library</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong> Writing macros</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong> cargo</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong> Taking user input</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong> Using files</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong> cargo doc</a></li><li class="chapter-item expanded "><a href="Chapter_67.html"><strong aria-hidden="true">68.</strong> The end?</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="crates-and-modules"><a class="header" href="#crates-and-modules">Crates and modules</a></h2>
+<p>Setiap kali kita menuliskan code di Rust, kita menuliskannya di dalam <code>crate</code>. <code>crate</code> adalah sebuah file, atau banyak file, yang berjalan bersama code kita. Di dalam file yang Anda tulis, Anda juga bisa membuat <code>mod</code>. <code>mod</code> adalah wadah untuk function, struct, dll. Dan ia digunakan untuk beberapa alasan:</p>
+<ul>
+<li>Menuliskan code: ia membantu Anda untuk memikirkan tentang gambara besar dari code yang ingin Anda buat. Ini menjadi sangat penting sebagaimana code Anda semakin membesar dan terus membesar.</li>
+<li>Membaca code: orang lain jadi bisa memahami code yang kita tuliskan dengan sangat mudah. Contohnya, nama <code>std::collections::HashMap</code> memberitahukan kita bahwa ia merupakan bagian dari <code>std</code> dan di dalam sebuah module bernama <code>collections</code>. Ini memberikan Anda petunjuk bahwa mungkin ada lebih banyak type collection di dalam <code>collections</code> yang bisa Anda coba.</li>
+<li>Privasi: semua dimulai dengan private. Hal ini memungkinkan Anda untuk mencegah pengguna menggunakan function secara langsung.</li>
+</ul>
+<p>Untuk membuat <code>mod</code>, cukup tuliskan <code>mod</code> dan mulai code block dengan menggunakan <code>{}</code>. Kita akan membuat sebuah mod bernama <code>print_things</code> yang memiliki beberapa function yang berkaitan dengan cetak-mencetak.</p>
+<pre><pre class="playground"><code class="language-rust">mod print_things {
+    use std::fmt::Display;
+
+    fn prints_one_thing&lt;T: Display&gt;(input: T) { // Print apapun yang mengimplementasikan Display
+        println!(&quot;{}&quot;, input)
+    }
+}
+
+fn main() {}
+</code></pre></pre>
+<p>Anda bisa melihat bahwa kita menuliskan <code>use std::fmt::Display;</code> di dalam <code>print_things</code>, karena ia adalah tempat yang terpisah. Jika Anda menuliskan <code>use std::fmt::Display;</code> di dalam <code>main()</code>, hal itu tidaklah berguna. Juga, sekarang ini kita tidak bisa memanggil function <code>prints_one_thing</code> dari function <code>main()</code>. Tanpa menggunakan keyword <code>pub</code> di depan <code>fn</code> ia akan tetap bersifat private. Mari kita coba memanggilnya tanpa <code>pub</code>. Ini adalah salah satu cara untuk menuliskannya:</p>
+<pre><pre class="playground"><code class="language-rust">// 🚧
+fn main() {
+    crate::print_things::prints_one_thing(6);
+}
+</code></pre></pre>
+<p><code>crate</code> artinya &quot;di dalam project ini&quot;, atau dengan bahasa yang lebih sederhana &quot;di dalam file ini&quot;. Di dalam <code>crate</code> tersebut terdapat mod bernama <code>print_things</code>, dan kemudian ada function <code>prints_one_thing()</code>. Anda bisa menuliskannya seperti itu setiap saat, atau Anda bisa menuliskannnya menggunakan <code>use</code> mengimportnya. Sekarang kita bisa melihat error yang mengatakan bahwa ia bersifat private:</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+mod print_things {
+    use std::fmt::Display;
+
+    fn prints_one_thing&lt;T: Display&gt;(input: T) {
+        println!(&quot;{}&quot;, input)
+    }
+}
+
+fn main() {
+    use crate::print_things::prints_one_thing;
+
+    prints_one_thing(6);
+    prints_one_thing(&quot;Trying to print a string...&quot;.to_string());
+}
+</code></pre></pre>
+<p>Berikut adalah pesan errornya:</p>
+<pre><code class="language-text">error[E0603]: function `prints_one_thing` is private
+  --&gt; src\main.rs:10:30
+   |
+10 |     use crate::print_things::prints_one_thing;
+   |                              ^^^^^^^^^^^^^^^^ private function
+   |
+note: the function `prints_one_thing` is defined here
+  --&gt; src\main.rs:4:5
+   |
+4  |     fn prints_one_thing&lt;T: Display&gt;(input: T) {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+</code></pre>
+<p>Sangatlah mudah untuk memahami bahwa function <code>print_one_thing</code> adalah private. Pesan error tersebut juga menuliskan <code>src\main.rs:4:5</code> yaitu letak dimana functionnya berada. Ini cukup membantu karena Anda bisa menulis <code>mod</code> tidak hanya dalam satu file, tetapi bisa ditulisakn di banyak file juga.</p>
+<p>Sekarang kita menuliskan <code>pub fn</code> menggantikan <code>fn</code>, dan codenya bekerja.</p>
+<pre><pre class="playground"><code class="language-rust">mod print_things {
+    use std::fmt::Display;
+
+    pub fn prints_one_thing&lt;T: Display&gt;(input: T) {
+        println!(&quot;{}&quot;, input)
+    }
+}
+
+fn main() {
+    use crate::print_things::prints_one_thing;
+
+    prints_one_thing(6);
+    prints_one_thing(&quot;Trying to print a string...&quot;.to_string());
+}
+</code></pre></pre>
+<p>Hasil printnya adalah:</p>
+<pre><code class="language-text">6
+Trying to print a string...
+</code></pre>
+<p>Bagaimana <code>pub</code> pada sebuah struct, enum, trait, ataua module? <code>pub</code> bekerja seperti ini untuk mereka masing-masing:</p>
+<ul>
+<li><code>pub</code> pada sebuah struct: ia membbuat structnya menjadi public, namun item-item di dalamnya tidaklah public. Untuk membuat itemnya public, Anda perlu menuliskan <code>pub</code> pada setiap item tersebut.</li>
+<li><code>pub</code> pada sebuah enum atau trait: semuanya menjadi public. Ini sangatlah masuk akal, karena trait adalah tentang memberikan perilaku yang sama pada sesuatu. Dan enum adalah tentang memilih salah satu dari banyaknya item, dan Anda perlu melihat semua pilihan tersebut untuk memilihnya.</li>
+<li><code>pub</code> pada sebuah module: top level module semestinya akan menjadi <code>pub</code> karena jika ia bukanlah pub maka tidak ada yang bisa menyentuh apapun yang berada di dalamnya. Tapi module yang berada di dalam module memerlukan <code>pub</code> untuk menjadi public.</li>
+</ul>
+<p>Jadi, mari kita tambahkan sebuah struct bernama <code>Billy</code> di dalam <code>print_things</code>. Struct ini hampir semua isinya akan menjadi bersifat public, namun tidak sepenuhnya. Struct sendiri adalah public, sehingga tentu saja kita nantinya akan menuliskan <code>pub struct Billy</code>. Di dalam strust tersebut terdapat field <code>name</code> dan <code>times_to_print</code>. <code>name</code> tidaklah public, karena kita hanya menginginkan user membuat struct dengan nama <code>&quot;Billy&quot;.to_string()</code>. Tapi pengguna dapat memilih berapa kali untuk mencetak, sehingga <code>times_to_print</code> akan menjadi publik. Codenya terlihat seperti ini:</p>
+<pre><pre class="playground"><code class="language-rust">mod print_things {
+    use std::fmt::{Display, Debug};
+
+    #[derive(Debug)]
+    pub struct Billy { // Billy adalah public
+        name: String, // name adalah private.
+        pub times_to_print: u32,
+    }
+
+    impl Billy {
+        pub fn new(times_to_print: u32) -&gt; Self { // Ini artinya user perlu untuk menggunakan new untuk membuat Billy. User hanya bisa mengubah angka dari times_to_print
+            Self {
+                name: &quot;Billy&quot;.to_string(), // Kita pilihkan namanya - user tidak bisa memilihkannya
+                times_to_print,
+            }
+        }
+
+        pub fn print_billy(&amp;self) { // function ini akan mencetak Billy
+            for _ in 0..self.times_to_print {
+                println!(&quot;{:?}&quot;, self.name);
+            }
+        }
+    }
+
+    pub fn prints_one_thing&lt;T: Display&gt;(input: T) {
+        println!(&quot;{}&quot;, input)
+    }
+}
+
+fn main() {
+    use crate::print_things::*; // Sekarang kita menggunakan *. Ini mengimport semua dari print_things
+
+    let my_billy = Billy::new(3);
+    my_billy.print_billy();
+}
+</code></pre></pre>
+<p>This will print:</p>
+<pre><code class="language-text">&quot;Billy&quot;
+&quot;Billy&quot;
+&quot;Billy&quot;
+</code></pre>
+<p>Ah ya, tanda <code>*</code> yang digunakan untuk mengimport semuanya disebut sebagai &quot;glob operator&quot;. Glob artinya &quot;global&quot;, sehingga itu berarti seluruhnya/semuanya.</p>
+<p>Di dalam sebuah <code>mod</code> Anda bisa membuat mod yang lain. Child mod (mod yang berada di dalam mod) selalu bisa menggunakan apapun yang ada di dalam parent mod. Anda bisa melihat ini pada contoh selanjutnya dimana kita memiliki <code>mod city</code> di dalam <code>mod province</code> di dalam <code>mod country</code>.</p>
+<p>Anda bisa membayangkan strukturnya seperti ini: Meskipun Anda berada di sebuah negara, itu bukan berarti Anda berada di sebuah provinsinya. Dan bahkan jika Anda berada di sebuah provinsi, bukan berarti Anda di dalam kota. Tapi jika Anda berada di dalam kota, maka sudah dipastikan bahwa Anda berada di dalam suatu provinsi dan berada di dalam suatu negara.</p>
+<pre><pre class="playground"><code class="language-rust">mod country { // mod utama tidak memerlukan pub
+    fn print_country(country: &amp;str) { // Catatan: function ini tidaklah public
+        println!(&quot;We are in the country of {}&quot;, country);
+    }
+    pub mod province { // buat mod ini menjadi mod public
+
+        fn print_province(province: &amp;str) { // Catatan: function ini bukanlah public
+            println!(&quot;in the province of {}&quot;, province);
+        }
+
+        pub mod city { // buat mod ini menjadi mod public
+            pub fn print_city(country: &amp;str, province: &amp;str, city: &amp;str) {  // function ini bersifat public
+                crate::country::print_country(country);
+                crate::country::province::print_province(province);
+                println!(&quot;in the city of {}&quot;, city);
+            }
+        }
+    }
+}
+
+fn main() {
+    crate::country::province::city::print_city(&quot;Canada&quot;, &quot;New Brunswick&quot;, &quot;Moncton&quot;);
+}
+</code></pre></pre>
+<p>Bagian menariknya adalah bahwa <code>print_city</code> bisa mengakses <code>print_province</code> dan <code>print_country</code>. Itu dikarenakan <code>mod city</code> berada di dalam mod-mod lainnya. Ia tidak memerlukan <code>pub</code> di depan <code>print_province</code> untuk menggunakannya. Dan ini sangatlah masuk akal: city tidaklah perlu melakukan apapun untuk berada di dalam province dan di dalam country.</p>
+<p>Anda juga mungkin menyadari bahwa <code>crate::country::province::print_province(province);</code> sangatlah panjang. Di saat kita berada di dalam sebuah module, kita bisa menggunakan <code>super</code> untuk membawa item yang berada di level atas. Sebenarnya kata <code>super</code> sendiri artinya adalah &quot;atas&quot;, seperti pada kata &quot;superior&quot; (peringkat atas). Pada contoh kita ini, kita hanya menggunakan functionnya sekali saja. Namun jika Anda menggunakannya lebih dari sekali, adalah ide yang bagus untuk mengimportnya. Dan tentu saja ini merupakan hal yang baik pula jika membuat codenya menjadi lebih mudah untuk dibaca, meskipun Anda hanya menggunakan fungsinya hanya satu kali saja. Code yang ada di bawah ini hampir sama, tapi sedikit lebih mudah dibaca:</p>
+<pre><pre class="playground"><code class="language-rust">mod country {
+    fn print_country(country: &amp;str) {
+        println!(&quot;We are in the country of {}&quot;, country);
+    }
+    pub mod province {
+        fn print_province(province: &amp;str) {
+            println!(&quot;in the province of {}&quot;, province);
+        }
+
+        pub mod city {
+            use super::super::*; // gunakan semua yang berada di &quot;above above&quot;: yang mana itu artinya adalah mod country
+            use super::*;        // gunakan semua yang berada di &quot;above&quot;: yang artinya itu adalah mod province
+
+            pub fn print_city(country: &amp;str, province: &amp;str, city: &amp;str) {
+                print_country(country);
+                print_province(province);
+                println!(&quot;in the city of {}&quot;, city);
+            }
+        }
+    }
+}
+
+fn main() {
+    use crate::country::province::city::print_city; // bawa functionnya ke sini
+
+    print_city(&quot;Canada&quot;, &quot;New Brunswick&quot;, &quot;Moncton&quot;);
+    print_city(&quot;Korea&quot;, &quot;Gyeonggi-do&quot;, &quot;Gwangju&quot;); // Dengan cara seperti ini, kita tidak perlu menuliskannya secara panjang jika ingin menggunakannya lagi
+}
+</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="Chapter_57.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="Chapter_59.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="Chapter_57.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="Chapter_59.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

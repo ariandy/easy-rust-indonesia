@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> Copy types - Easy Rust</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong> Update</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong> Who am I?</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong> Catatan dari translator</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong> Writing Rust in Easy English</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong> Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong> 🚧 and ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong> Comments</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong> Types</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong> Type inference</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong> Printing 'hello, world!'</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong> Display and debug</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong> Mutability (changing)</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong> The stack, the heap, and pointers</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong> More about printing</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong> Strings</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong> const and static</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong> More on references</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong> Mutable references</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong> Giving references to functions</a></li><li class="chapter-item expanded "><a href="Chapter_20.html" class="active"><strong aria-hidden="true">21.</strong> Copy types</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong> Collection types</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong> Vectors</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong> Structs</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong> Enums</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong> Loops</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong> Implementing structs and enums</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong> Destructuring</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong> References and the dot operator</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong> Generics</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong> Option and Result</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong> Other collections</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong> The ? operator</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong> Traits</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong> Chaining methods</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong> Closures</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong> The dbg! macro and .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong> Types of &amp;str</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong> Lifetimes</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong> Interior mutability</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong> Cow</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong> Type aliases</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong> The todo! macro</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong> Rc</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong> Multiple threads</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong> Closures in functions</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong> impl Trait</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong> Arc</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong> Channels</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong> Reading Rust documentation</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong> Box</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong> Box around traits</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong> Default and the builder pattern</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong> Deref and DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong> Crates and modules</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong> Testing</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong> External crates</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong> A tour of the standard library</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong> Writing macros</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong> cargo</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong> Taking user input</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong> Using files</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong> cargo doc</a></li><li class="chapter-item expanded "><a href="Chapter_67.html"><strong aria-hidden="true">68.</strong> The end?</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="copy-types"><a class="header" href="#copy-types">Copy types</a></h2>
+<p>Beberapa type di Rust benar-benar sangat simple. Mereka biasa disebut sebagai <strong>copy types</strong>. Simple types ini semuanya disimpan pada stack, dan compiler tahu ukuran mereka. Yang artinya bahwa mereka bisa dengan mudah untuk di-copy, jadi compiler selalu meng-copy di saat Anda mengirimnya ke sebuah function. Ia selalu meng-copy karena mereka cukup kecil dan mudah sehingga tidak ada alasan untuk tidak meng-copynya. Jadi Anda tidak perlu khawatir tentang ownership pada type-type ini.</p>
+<p>Type-type yang dimaksud ini adalah: integer, float, boolean (<code>true</code> dan <code>false</code>), dan <code>char</code>.</p>
+<p>Bagaimana kita bisa tahu jika sebuah type <strong>mengimplementasikan</strong> copy? (implementasi = menerapkan) Kita bisa periksa hal ini pada dokumentasi. Contohnya, ini adalah dokumentasi untuk char:</p>
+<p><a href="https://doc.rust-lang.org/std/primitive.char.html">https://doc.rust-lang.org/std/primitive.char.html</a></p>
+<p>Pada bagian kiri dari dokumentasi tersebut, Anda bisa menemukan section <strong>Trait Implementations</strong>. Di situ, Anda akan melihat contoh implementation seperti <strong>Copy</strong>, <strong>Debug</strong>, dan <strong>Display</strong>. Dari dokumentasi itu, kita jadi tahu bahwa <code>char</code>:</p>
+<ul>
+<li>akan melakukan copy di saat Anda mengirimnya ke function (<strong>Copy</strong>)</li>
+<li>bisa melakukan print dengan menggunakan <code>{}</code> (<strong>Display</strong>)</li>
+<li>bisa melakukan print dengan menggunakan <code>{:?}</code> (<strong>Debug</strong>)</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn prints_number(number: i32) { // Pada fungsi ini, tidak ada -&gt; sehingga ia tidak me-return apapun
+                             // Jika number bukan copy type, ia akan mengambilnya dan kita tidak bisa menggunakannya lagi
+    println!(&quot;{}&quot;, number);
+}
+
+fn main() {
+    let my_number = 8;
+    prints_number(my_number); // Cetak 8. prints_number mengambil copy dari my_number
+    prints_number(my_number); // Cetak 8 lagi.
+                              // Tidak ada problem, karena my_number adalah copy type!
+}
+</code></pre></pre>
+<p>Tapi jika kita melihat dokumentasi dari String, ia bukanlah copy type.</p>
+<p><a href="https://doc.rust-lang.org/std/string/struct.String.html">https://doc.rust-lang.org/std/string/struct.String.html</a></p>
+<p>Pada bagian kiri dari dokumentasi tersebut <strong>Trait Implementations</strong>, Anda bisa melihatnya secara alphabetical order. A, B, C... dan di sana tidak ada <strong>Copy</strong> di C. Yang ada di sana justru adalah <strong>Clone</strong>. <strong>Clone</strong> mirip dengan <strong>Copy</strong>, tapi biasanya memerlukan memori yang lebih. Juga, Anda perlu memanggilnya menggunakan method <code>.clone()</code> - ia tidak akan melakukan clone dengan sendirinya.</p>
+<p>Di contoh ini, <code>prints_country()</code> akan mencetak nama negara, yang mana adalah sebuah <code>String</code>. Kita ingin mencetaknya 2 kali, tapi kita tidak bisa melakukannya:</p>
+<pre><pre class="playground"><code class="language-rust">fn prints_country(country_name: String) {
+    println!(&quot;{}&quot;, country_name);
+}
+
+fn main() {
+    let country = String::from(&quot;Kiribati&quot;);
+    prints_country(country);
+    prints_country(country); // ⚠️
+}
+</code></pre></pre>
+<p>Tapi sekarang kita mengerti mengapa pesan ini muncul.</p>
+<pre><code class="language-text">error[E0382]: use of moved value: `country`
+ --&gt; src\main.rs:4:20
+  |
+2 |     let country = String::from(&quot;Kiribati&quot;);
+  |         ------- move occurs because `country` has type `std::string::String`, which does not implement the `Copy` trait
+3 |     prints_country(country);
+  |                    ------- value moved here
+4 |     prints_country(country);
+  |                    ^^^^^^^ value used here after move
+</code></pre>
+<p>Bagian terpentingnya adalah <code>which does not implement the Copy trait</code>. Sedangkan di dokumentasi kita bisa lihat bahwa mengimplementasikan trait (sifat) <code>Clone</code>. Jadi kita bisa menambahkan <code>.clone()</code> ke code tersebut. Hal ini akan membuat sebuah clone, dan kita kirimkan clone tersebut ke function. Sekarang <code>country</code> tetap hidup, sehingga kita bisa menggunakannya.</p>
+<pre><pre class="playground"><code class="language-rust">fn prints_country(country_name: String) {
+    println!(&quot;{}&quot;, country_name);
+}
+
+fn main() {
+    let country = String::from(&quot;Kiribati&quot;);
+    prints_country(country.clone()); // buat clonenya berikan clone tersebut ke function. Hanya clonenya saja yang masuk ke function, dan variabel country tetap hidup
+    prints_country(country);
+}
+</code></pre></pre>
+<p>Dan tentu saja, jika <code>String</code> sangat besar, <code>.clone()</code> bisa menggunakan banyak memory. Satu <code>String</code> bisa saja panjangnya sama seperti isi dari sebuah buku yang tebal, dan setiap kita menggunakan <code>.clone()</code>, ia akan menyalin buku tersebut. Jadi, menggunakan <code>&amp;</code> untuk membuat reference jauh lebih cepat, kalau memang memungkinkan untuk dilakukan. Contohnya, code di bawah akan melakukan <code>.push_str()</code> terhadap sebuah <code>&amp;str</code> ke dalam <code>String</code> dan kemudian membuat clone setiap ia digunakan oleh function:</p>
+<pre><pre class="playground"><code class="language-rust">fn get_length(input: String) { // mengambil ownership dari String
+    println!(&quot;It's {} words long.&quot;, input.split_whitespace().count()); // lakukan split untuk menghitung jumlah kata
+}
+
+fn main() {
+    let mut my_string = String::new();
+    for _ in 0..50 {
+        my_string.push_str(&quot;Here are some more words &quot;); // push kalimat (&amp;str)
+        get_length(my_string.clone()); // buat clonenya setiap saat (setiap ia digunkan oleh fungsi)
+    }
+}
+</code></pre></pre>
+<p>Hasil cetaknya adalah:</p>
+<pre><code class="language-text">It's 5 words long.
+It's 10 words long.
+...
+It's 250 words long.
+</code></pre>
+<p>Cara di atas menggunakan 50 clone, dimana clonenya dilakukan setelah melakukan push. Sehingga, setiap iterasi selalu memakan memori dua kali lebih besar dari panjang <code>my_string</code>. Ini adalah cara dimana kita menggunakan reference untuk melakukan hal yang sama, dimana cara yang ini lebih baik daripada melakukan clone:</p>
+<pre><pre class="playground"><code class="language-rust">fn get_length(input: &amp;String) {
+    println!(&quot;It's {} words long.&quot;, input.split_whitespace().count());
+}
+
+fn main() {
+    let mut my_string = String::new();
+    for _ in 0..50 {
+        my_string.push_str(&quot;Here are some more words &quot;);
+        get_length(&amp;my_string);
+    }
+}
+</code></pre></pre>
+<p>Alih-alih membuat 50 clone seperti cara sebelumnya, code yang ini justru sama sekali tidak perlu membuat salinan (menyalinnya berkali kali seperti pada <code>.clone()</code>).</p>
+<h3 id="variables-without-values"><a class="header" href="#variables-without-values">Variables without values</a></h3>
+<p>Variabel tanpa sebuah value disebut sebagai &quot;uninitialized&quot; variable. Uninitialized artinya &quot;tidak diinisialisasi&quot; atau &quot;belum dimulai&quot;. Cukup mudah untuk membuatnya: cukup tuliskan <code>let</code> dan nama variabelnya:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_variable; // ⚠️
+}
+</code></pre></pre>
+<p>Namun Anda tidak bisa menggunakannya untuk saat ini, dan Rust tidak bisa meng-compilenya apabila ada sesuatu yang uninitialized.</p>
+<p>Tapi terkadang variabel yang tidak diinisialisasi ini sangat berguna. Contohnya adalah di saat Anda menemukan kasus seperti:</p>
+<ul>
+<li>Anda memiliki code block dan di dalam code block tersebut terdapat variabel yang memiliki value, dan</li>
+<li>Variabel tersebut perlu untuk tetap hidup di luar dari code block.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn loop_then_return(mut counter: i32) -&gt; i32 {
+    loop {
+        counter += 1;
+        if counter % 50 == 0 {
+            break;
+        }
+    }
+    counter
+}
+
+fn main() {
+    let my_number;
+
+    {
+        // Anggap saja kita memerlukan code block pada bagian ini
+        let number = {
+            // Anggap saja pada bagian ini adalah proses untuk memproses angka
+            // Dan dari proses ini, akhirnya kita mendapatkan hasil akhirnya
+            57
+        };
+
+        my_number = loop_then_return(number);
+    }
+
+    println!(&quot;{}&quot;, my_number);
+}
+</code></pre></pre>
+<p>Maka program tersebut akan mencetak <code>100</code>.</p>
+<p>Anda bisa melihat bahwa <code>my_number</code> dideklarasikan di dalam fungsi <code>main()</code>, jadinya ia akan tetap hidup sampai bagian akhir program. Akan tetapi, ia mengambil valuenya dari dalam loop. Namun, value tersebut (hasil dari fungsi loop) akan tetap hidup selama <code>my_number</code> juga tetap hidup, karena <code>my_number</code> yang memiliki valuenya. Dan jika Anda justru menulis <code>let my_number = loop_then_return(number)</code> di dalam block tersebut, maka valuenya akan mati (hangus).</p>
+<p>Untuk membantu mempermudah Anda membayangkannya, kita buat satu contoh kasus lagi. Kita sama-sama tahu bahwa<code>loop_then_return(number)</code> memberikan result 100, jadi kitaa hapus saja fungsi tersebut dan kita ganti menjadi <code>100</code>. Juga, sekarang kita tidak memerlukan <code>number</code> jadinya kita hapus juga variabelnya. Maka, sekarang codenya akan terlihat seperti ini:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number;
+    {
+        my_number = 100;
+    }
+
+    println!(&quot;{}&quot;, my_number);
+}
+</code></pre></pre>
+<p>Jadi, cara kerjanya hampir mirip seperti dengan <code>let my_number = { 100 };</code>.</p>
+<p>Dan juga, yang perlu dicatat adalah <code>my_number</code> bukan <code>mut</code>. Kembali ke contoh yang sebelumnya (yang menggunakan fungsi loop), kita tidak memberikan value apapun sampai akhirnya kita memberikannya angka berkelipatan 50, jadi sebenarnya nilainya tidak pernah berubah. Pada akhirnya, code dari <code>my_number</code> itu hanya <code>let my_number = 100;</code>, hanya saja pada kasus uninitialized variable ini, <code>my_number</code> menunggu untuk diinisialisasi.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="Chapter_19.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="Chapter_21.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="Chapter_19.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="Chapter_21.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

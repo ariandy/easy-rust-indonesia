@@ -1,0 +1,512 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> Deref and DerefMut - Easy Rust</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong> Update</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong> Who am I?</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong> Catatan dari translator</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong> Writing Rust in Easy English</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong> Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong> 🚧 and ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong> Comments</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong> Types</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong> Type inference</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong> Printing 'hello, world!'</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong> Display and debug</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong> Mutability (changing)</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong> The stack, the heap, and pointers</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong> More about printing</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong> Strings</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong> const and static</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong> More on references</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong> Mutable references</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong> Giving references to functions</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong> Copy types</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong> Collection types</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong> Vectors</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong> Structs</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong> Enums</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong> Loops</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong> Implementing structs and enums</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong> Destructuring</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong> References and the dot operator</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong> Generics</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong> Option and Result</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong> Other collections</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong> The ? operator</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong> Traits</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong> Chaining methods</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong> Closures</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong> The dbg! macro and .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong> Types of &amp;str</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong> Lifetimes</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong> Interior mutability</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong> Cow</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong> Type aliases</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong> The todo! macro</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong> Rc</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong> Multiple threads</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong> Closures in functions</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong> impl Trait</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong> Arc</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong> Channels</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong> Reading Rust documentation</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong> Box</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong> Box around traits</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong> Default and the builder pattern</a></li><li class="chapter-item expanded "><a href="Chapter_57.html" class="active"><strong aria-hidden="true">58.</strong> Deref and DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong> Crates and modules</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong> Testing</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong> External crates</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong> A tour of the standard library</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong> Writing macros</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong> cargo</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong> Taking user input</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong> Using files</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong> cargo doc</a></li><li class="chapter-item expanded "><a href="Chapter_67.html"><strong aria-hidden="true">68.</strong> The end?</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="deref-and-derefmut"><a class="header" href="#deref-and-derefmut">Deref and DerefMut</a></h2>
+<p><code>Deref</code> adalah trait yang memungkinkan Anda untuk menggunakan <code>*</code> untuk melakukan dereference. Kita tahu bahwa reference tidaklah sama dengan value:</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+fn main() {
+    let value = 7; // Ini bertype i32
+    let reference = &amp;7; // Ini bertype &amp;i32
+    println!(&quot;{}&quot;, value == reference);
+}
+</code></pre></pre>
+<p>Dan Rust bahkan tidak akan memberikan <code>false</code> karena keduanya tidak bisa dibandingkan.</p>
+<pre><code class="language-text">error[E0277]: can't compare `{integer}` with `&amp;{integer}`
+ --&gt; src\main.rs:4:26
+  |
+4 |     println!(&quot;{}&quot;, value == reference);
+  |                          ^^ no implementation for `{integer} == &amp;{integer}`
+</code></pre>
+<p>Tentu saja, solusinya adalah menggunakan <code>*</code>. Sehingga programnya akan mencetak <code>true</code>:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let value = 7;
+    let reference = &amp;7;
+    println!(&quot;{}&quot;, value == *reference);
+}
+</code></pre></pre>
+<p>Sekarang mari kita bayangkan type struct sederhana yang hanya menampung angka. Ia akan menjadi mirip seperti <code>Box</code>, dan kita memiliki ide untuk menambahkan beberapa function tambahan untuk struct tersebut. Tapi jika kita hanya memberikannya angka, kita tidak bisa berbuat banyak pada struct tersebut.</p>
+<p>Kita tidak bisa menggunakan <code>*</code> sebagaimana kita bisa melakukannya dengan <code>Box</code>:</p>
+<pre><pre class="playground"><code class="language-rust">// ⚠️
+struct HoldsANumber(u8);
+
+fn main() {
+    let my_number = HoldsANumber(20);
+    println!(&quot;{}&quot;, *my_number + 20);
+}
+</code></pre></pre>
+<p>Errornya adalah seperti berikut:</p>
+<pre><code class="language-text">error[E0614]: type `HoldsANumber` cannot be dereferenced
+  --&gt; src\main.rs:24:22
+   |
+24 |     println!(&quot;{:?}&quot;, *my_number + 20);
+</code></pre>
+<p>Tentu saja kita bisa melakukannya dengan cara seperti ini: <code>println!(&quot;{:?}&quot;, my_number.0 + 20);</code>. Kita hanya ingin menambahkan isi dari struct yang bertype <code>u8</code> dengan 20. Alangkah baiknya jika kita bisa langsung menjumlahkannya dengan menggunakan <code>*</code>. Pesan <code>cannot be dereferenced</code> memberikan kita petunjuk: kita perlu mengimplementasikan <code>Deref</code>. Sesuatu yang mengimplementasikan <code>Deref</code> terkadang disebut sebagai &quot;smart pointer&quot;. Smart pointer bisa merujuk pada sebuah item, memiliki informasi tentang item tersebut, dan bisa menggunakan method-method yang tersedia untuk item tersebut. Karena untuk sekarang ini, kita bisa menggunakan <code>my_number.0</code>, yang mana bertype <code>u8</code>, namun kita tidak bisa berbuat banyak dengan <code>HoldsANumber</code>: satu-satunya yang kita miliki sejauh ini hanyalah <code>Debug</code>.</p>
+<p>Fakta menariknya adalah: <code>String</code> adalah smart pointer dari <code>&amp;str</code> dan <code>Vec</code> adalah smart pointer dari array (atau type lainnya). Jadi sebenarnya kita telah menggunakan smart pointer sejak awal.</p>
+<p>Mengimplementasikan <code>Deref</code> tidaklah terlalu sulit dan contohnya di standard library cukup mudah. <a href="https://doc.rust-lang.org/std/ops/trait.Deref.html">Ini adalah contoh code dari standard library</a>:</p>
+<pre><pre class="playground"><code class="language-rust">use std::ops::Deref;
+
+struct DerefExample&lt;T&gt; {
+    value: T
+}
+
+impl&lt;T&gt; Deref for DerefExample&lt;T&gt; {
+    type Target = T;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.value
+    }
+}
+
+fn main() {
+    let x = DerefExample { value: 'a' };
+    assert_eq!('a', *x);
+}
+</code></pre></pre>
+<p>Jadi kita mengikuti contoh tersebut dan sekarang <code>Deref</code> kita menjadi seperti berikut:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 🚧
+impl Deref for HoldsANumber {
+    type Target = u8; // Ingat, ini adalah &quot;associated type&quot;: type yang ikut dijalankan bersama.
+                      // Anda harus menggunakan type Target yang tepat = (type yang ingin Anda kembalikan)
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target { // Rust menggunakan .deref() di saat Anda menggunakan *. Kita hanya mendefinisikan Target sebagai u8, Sehingga ia menjadi mudah untuk dipahami
+        &amp;self.0   // Kita memilih &amp;self.0 karena ia adalah struct tuple. Di dalam struct yang bernama, ia akan menjadi seperti &quot;&amp;self.number&quot;
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Dan sekarang kita bisa menjalankan ini dengan menggunakan <code>*</code>:</p>
+<pre><pre class="playground"><code class="language-rust">use std::ops::Deref;
+#[derive(Debug)]
+struct HoldsANumber(u8);
+
+impl Deref for HoldsANumber {
+    type Target = u8;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.0
+    }
+}
+
+fn main() {
+    let my_number = HoldsANumber(20);
+    println!(&quot;{:?}&quot;, *my_number + 20);
+}
+</code></pre></pre>
+<p>Maka ia akan mencetak <code>40</code> dan kita tidak perlu untuk menulis <code>my_number.0</code>. Ini artinya kita mendapatkan method dari <code>u8</code> dan kita bisa menuliskan method kita sendiri untuk <code>HoldsANumber</code>. Kita akan menambahkan method sederhana buatan kita sendiri dan menggunakan method lainnya yang kita dapatkan dari <code>u8</code> yang bernama <code>.checked_sub()</code>. Method <code>.checked_sub()</code> adalah operasi pengurangan yang safe, yang mana kembaliannya adalah <code>Option</code>. Jika ia berhasil melakukan pengurangan, maka ia akan memberikan hasilnya terbungkus di dalam <code>Some</code>. Dan apabila ia tidak bisa melakukannya, maka ia akan mengembalikan <code>None</code>. Ingatlah,  <code>u8</code> tidak bisa negatif sehingga akan lebih safe untuk menggunakan <code>.checked_sub()</code> sehingga tidak menimbulkan panic.</p>
+<pre><pre class="playground"><code class="language-rust">use std::ops::Deref;
+
+struct HoldsANumber(u8);
+
+impl HoldsANumber {
+    fn prints_the_number_times_two(&amp;self) {
+        println!(&quot;{}&quot;, self.0 * 2);
+    }
+}
+
+impl Deref for HoldsANumber {
+    type Target = u8;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.0
+    }
+}
+
+fn main() {
+    let my_number = HoldsANumber(20);
+    println!(&quot;{:?}&quot;, my_number.checked_sub(100)); // Method yang ini diambil dari u8
+    my_number.prints_the_number_times_two(); // Ini adalah method buatan kita sendiri
+}
+</code></pre></pre>
+<p>Hasilnya adalah:</p>
+<pre><code class="language-text">None
+40
+</code></pre>
+<p>Kita juga bisa mengimplementasikan <code>DerefMut</code> sehingga kita bisa mengubah valuenya melalui <code>*</code>. Ini terlihat hampir sama. Anda membutuhkan <code>Deref</code> sebelum Anda bisa mengimplement <code>DerefMut</code>.</p>
+<pre><pre class="playground"><code class="language-rust">use std::ops::{Deref, DerefMut};
+
+struct HoldsANumber(u8);
+
+impl HoldsANumber {
+    fn prints_the_number_times_two(&amp;self) {
+        println!(&quot;{}&quot;, self.0 * 2);
+    }
+}
+
+impl Deref for HoldsANumber {
+    type Target = u8;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.0
+    }
+}
+
+impl DerefMut for HoldsANumber { // Anda tidak memerlukan type Target = u8; dibagian ini, karena ia sudah mengetahuinya. Thanks to Deref :D
+    fn deref_mut(&amp;mut self) -&gt; &amp;mut Self::Target { // Semua yang tertulis di sini adalah sama seperti yang tertulis di Deref. Yang berbeda adalah disini diselipkan mut dimana-mana
+        &amp;mut self.0
+    }
+}
+
+fn main() {
+    let mut my_number = HoldsANumber(20);
+    *my_number = 30; // DerefMut memungkinkan kita untuk melakukan ini
+    println!(&quot;{:?}&quot;, my_number.checked_sub(100));
+    my_number.prints_the_number_times_two();
+}
+</code></pre></pre>
+<p>Jadi, kita bisa melihat bahwa <code>Deref</code> memberikan kemampuan lebih kepada type yang kita buat.</p>
+<p>Ini juga alasan mengapa standard library mengatakan: <code>Deref should only be implemented for smart pointers to avoid confusion</code>. Hal itu dikarenakan Anda bisa melakukan suatu hal yang aneh menggunakan <code>Deref</code> untuk type yang rumit. Mari kita bayangkan contoh yang sangat membingungkan untuk memahami apa yang dimaksud oleh kalimat di standard library tersebut. Kita mulai dengan struct <code>Character</code> untuk sebuah game. <code>Character</code> baru memerlukan stats seperti intelligence dan strength. Jadi, inilah karakter pertama kita:</p>
+<pre><pre class="playground"><code class="language-rust">struct Character {
+    name: String,
+    strength: u8,
+    dexterity: u8,
+    health: u8,
+    intelligence: u8,
+    wisdom: u8,
+    charm: u8,
+    hit_points: i8,
+    alignment: Alignment,
+}
+
+impl Character {
+    fn new(
+        name: String,
+        strength: u8,
+        dexterity: u8,
+        health: u8,
+        intelligence: u8,
+        wisdom: u8,
+        charm: u8,
+        hit_points: i8,
+        alignment: Alignment,
+    ) -&gt; Self {
+        Self {
+            name,
+            strength,
+            dexterity,
+            health,
+            intelligence,
+            wisdom,
+            charm,
+            hit_points,
+            alignment,
+        }
+    }
+}
+
+enum Alignment {
+    Good,
+    Neutral,
+    Evil,
+}
+
+fn main() {
+    let billy = Character::new(&quot;Billy&quot;.to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good);
+}
+</code></pre></pre>
+<p>Sekarang mari bayangkan bahwa kita ingin untuk menyimpan hit points karakter tersebut di dalam vec yang besar. Mungkin kita akan menempatkan data monster di sana juga, dan menyimpan semuanya bersama-sama menjadi satu. Karena <code>hit_points</code> adalah <code>i8</code>, kita implementasikan <code>Deref</code> sehingga kita bisa melakukan segala macam operasi matematika kepadanya. Tapi lihatlah dan perhatikan baik-baik, betapa anehnya codenya pada function <code>main()</code> sekarang ini:</p>
+<pre><pre class="playground"><code class="language-rust">use std::ops::Deref;
+
+// Semua code yang ada di sini sama, kecuali setelah enum Alignment
+struct Character {
+    name: String,
+    strength: u8,
+    dexterity: u8,
+    health: u8,
+    intelligence: u8,
+    wisdom: u8,
+    charm: u8,
+    hit_points: i8,
+    alignment: Alignment,
+}
+
+impl Character {
+    fn new(
+        name: String,
+        strength: u8,
+        dexterity: u8,
+        health: u8,
+        intelligence: u8,
+        wisdom: u8,
+        charm: u8,
+        hit_points: i8,
+        alignment: Alignment,
+    ) -&gt; Self {
+        Self {
+            name,
+            strength,
+            dexterity,
+            health,
+            intelligence,
+            wisdom,
+            charm,
+            hit_points,
+            alignment,
+        }
+    }
+}
+
+enum Alignment {
+    Good,
+    Neutral,
+    Evil,
+}
+
+impl Deref for Character { // impl Deref for Character. Sekarang kita bisa melakukan operasi matematis (untuk integer) yang kita inginkan!
+    type Target = i8;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.hit_points
+    }
+}
+
+
+
+fn main() {
+    let billy = Character::new(&quot;Billy&quot;.to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good); // buat dua buah karakter, billy dan brandy
+    let brandy = Character::new(&quot;Brandy&quot;.to_string(), 9, 8, 7, 10, 19, 19, 5, Alignment::Good);
+
+    let mut hit_points_vec = vec![]; // masukkan data hit pointnya ke dalam vec ini
+    hit_points_vec.push(*billy);     // Push *billy ?
+    hit_points_vec.push(*brandy);    // Push *brandy ?
+
+    println!(&quot;{:?}&quot;, hit_points_vec);
+}
+</code></pre></pre>
+<p>Ia akan mencetak <code>[5, 5]</code>. Code yang kita buat di atas sangatlah aneh untuk dibaca oleh orang lain. Kita bisa membaca <code>Deref</code> di bagian atas <code>main()</code> dan mengetahui bahwa <code>*billy</code> itu adalah <code>i8</code>, tapi bagaimana jika codenya menjadi sangat banyak? Mungkin code kita panjangnya adalah 2000 baris, dan tiba-tiba kita harus mencari tahu mengapa kita melakukan <code>.push()</code> kepada <code>*billy</code>. <code>Character</code> tentu lebih dari sekedar smart pointer untuk <code>i8</code>.</p>
+<p>Tentu saja, tidaklah ilegal/haram/terlarang (atau apapun itu :D) untuk menuliskan <code>hit_points_vec.push(*billy)</code>, tapi itu membuat codenya jadi terlihat aneh. Mungkin dengan membuat method sederhana <code>.get_hp()</code> akan membuatnya jauh lebih baik. Atau juga bisa dengan cara membuat struct lain yang menyimpan karakter-karakter tersebut. Lalu kemudian Anda bisa mengiterasinya dan melakukan push setiap <code>hit_points</code> yang ada pada karakter tersebut. <code>Deref</code> memberikan Anda keleluasaan dan kemampuan lebih, tapi akan lebih baik untuk memastikan bahwa code yang kita buat itu logis untuk dipahami oleh kita sendiri dan orang lain.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="Chapter_56.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="Chapter_58.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="Chapter_56.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="Chapter_58.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

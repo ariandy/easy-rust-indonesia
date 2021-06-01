@@ -1,0 +1,494 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> The ? operator - Easy Rust</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong> Update</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong> Who am I?</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong> Catatan dari translator</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong> Writing Rust in Easy English</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong> Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong> 🚧 and ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong> Comments</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong> Types</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong> Type inference</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong> Printing 'hello, world!'</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong> Display and debug</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong> Mutability (changing)</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong> The stack, the heap, and pointers</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong> More about printing</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong> Strings</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong> const and static</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong> More on references</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong> Mutable references</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong> Giving references to functions</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong> Copy types</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong> Collection types</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong> Vectors</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong> Structs</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong> Enums</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong> Loops</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong> Implementing structs and enums</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong> Destructuring</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong> References and the dot operator</a></li><li class="chapter-item expanded "><a href="Chapter_31.html"><strong aria-hidden="true">32.</strong> Generics</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong> Option and Result</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong> Other collections</a></li><li class="chapter-item expanded "><a href="Chapter_34.html" class="active"><strong aria-hidden="true">35.</strong> The ? operator</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong> Traits</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong> Chaining methods</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong> Closures</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong> The dbg! macro and .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong> Types of &amp;str</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong> Lifetimes</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong> Interior mutability</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong> Cow</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong> Type aliases</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong> The todo! macro</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong> Rc</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong> Multiple threads</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong> Closures in functions</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong> impl Trait</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong> Arc</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong> Channels</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong> Reading Rust documentation</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong> Box</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong> Box around traits</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong> Default and the builder pattern</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong> Deref and DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong> Crates and modules</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong> Testing</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong> External crates</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong> A tour of the standard library</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong> Writing macros</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong> cargo</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong> Taking user input</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong> Using files</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong> cargo doc</a></li><li class="chapter-item expanded "><a href="Chapter_67.html"><strong aria-hidden="true">68.</strong> The end?</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="the--operator"><a class="header" href="#the--operator">The ? operator</a></h2>
+<p>Ada cara yang lebih pendek untuk menghandle <code>Result</code> (dan <code>Option</code>), lebih pendek daripada <code>match</code> dan bahkan lebih pendek daripada <code>if let</code>. Ia biasa disebut sebagai &quot;question mark operator&quot;, dan Anda benar-benar hanya cukup menuliskan <code>?</code>. Setelah menuliskan function yang me-return sebuah result, Anda bisa menambahkan <code>?</code>. Ia akan melakukan:</p>
+<ul>
+<li>me-return apa yang ada di dalam <code>Result</code> jika ia <code>Ok</code></li>
+<li>Lewati saja jika ia <code>Err</code></li>
+</ul>
+<p>Dengan kata lain, <code>?</code> melakukan hampir segalanya untuk Anda.</p>
+<p>Kita bisa mencoba menggunakannya menggunakan <code>.parse()</code>. Kita akan menuliskan sebuah function bernama <code>parse_str</code> yang mana akan mencoba mengubah <code>&amp;str</code> menjadi <code>i32</code>. Codenya seperti ini:</p>
+<pre><pre class="playground"><code class="language-rust">use std::num::ParseIntError;
+
+fn parse_str(input: &amp;str) -&gt; Result&lt;i32, ParseIntError&gt; {
+    let parsed_number = input.parse::&lt;i32&gt;()?; // Disinilah `?` digunakan
+    Ok(parsed_number)
+}
+
+fn main() {}
+</code></pre></pre>
+<p>Function ini akan mengambil <code>&amp;str</code>. Jika ia <code>Ok</code>, ia akan mengembalikan <code>i32</code> yang terbungkus dengan <code>Ok</code>. Jika ia adalah <code>Err</code>, ia akan mengembalikan <code>ParseIntError</code>. Kemudian kita mencoba untuk melakukan parsing ke angka, dan menggunakan <code>?</code>. Yang artinya &quot;periksa apakah ia sebuah error, dan berikan kami hasilnya jika isinya aman&quot;. Jika status kembaliannya tidak Ok, ia akan mengembalikan error dan selesai. Tapi jika Ok, ia akan ke baris yang selanjutnya. Pada baris selanjutnya adalah angka yang terbungkus dengan <code>Ok()</code>. Kita perlu membungkusnya dengan <code>Ok</code> karena returnnya adalah <code>Result&lt;i32, ParseIntError&gt;</code>, bukan <code>i32</code>.</p>
+<p>Sekarang, kita bisa menggunakan function yang telah kita buat. Mari kita liha tapa yang ia lakukan terhadap vec dengan element <code>&amp;str</code>.</p>
+<pre><pre class="playground"><code class="language-rust">fn parse_str(input: &amp;str) -&gt; Result&lt;i32, std::num::ParseIntError&gt; {
+    let parsed_number = input.parse::&lt;i32&gt;()?;
+    Ok(parsed_number)
+}
+
+fn main() {
+    let str_vec = vec![&quot;Seven&quot;, &quot;8&quot;, &quot;9.0&quot;, &quot;nice&quot;, &quot;6060&quot;];
+    for item in str_vec {
+        let parsed = parse_str(item);
+        println!(&quot;{:?}&quot;, parsed);
+    }
+}
+</code></pre></pre>
+<p>Hasilnya adalah:</p>
+<pre><code class="language-text">Err(ParseIntError { kind: InvalidDigit })
+Ok(8)
+Err(ParseIntError { kind: InvalidDigit })
+Err(ParseIntError { kind: InvalidDigit })
+Ok(6060)
+</code></pre>
+<p>Bagaimana kita menemukan <code>std::num::ParseIntError</code>? Salah satu cara termudahnya adalah dengan cara &quot;menanyakannya&quot; kepada compiler.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let failure = &quot;Not a number&quot;.parse::&lt;i32&gt;();
+    failure.rbrbrb(); // ⚠️ Compiler: &quot;Apa itu rbrbrb()???&quot;
+}
+</code></pre></pre>
+<p>Compiler tidak memahami code tersebut, dan mengatakan:</p>
+<pre><code class="language-text">error[E0599]: no method named `rbrbrb` found for enum `std::result::Result&lt;i32, std::num::ParseIntError&gt;` in the current scope
+ --&gt; src\main.rs:3:13
+  |
+3 |     failure.rbrbrb();
+  |             ^^^^^^ method not found in `std::result::Result&lt;i32, std::num::ParseIntError&gt;`
+</code></pre>
+<p>Jadinya <code>std::result::Result&lt;i32, std::num::ParseIntError&gt;</code> adalah signature yang kita perlukan.</p>
+<p>Kita tidak perlu menuliskan <code>std::result::Result</code> karena <code>Result</code> selalu &quot;in scope&quot; (in scope = siap untuk digunakan / siap pakai). Rust melakukan ini ke semua type yang sering kita gunakan, sehingga kita tidak perlu lagi menulis <code>std::result::Result</code>, <code>std::collections::Vec</code>, dan seterusnya.</p>
+<p>Kita belum berurusan dengan program yang mengharuskan kita menghandle file, oleh karena itu operator <code>?</code> belum terlalu terlihat berguna untuk sekarang ini. Namun ini adalah contoh singkat (yang sedikit kurang berguna) yang menunjukkan bagaimana Anda bisa menggunakannya dalam satu baris. Alih-alih hanya membuat<code>i32</code> menggunakan <code>.parse()</code>, justru kita melakukan hal yang agak lebih rumit lagi. Kita membuatnya ke <code>u16</code>, dan mengubahnya lagi ke <code>String</code>, kemudian diubah ke <code>u32</code>, kemudian ke <code>String</code> lagi, dan akhirnya diubah ke <code>i32</code>.</p>
+<pre><pre class="playground"><code class="language-rust">use std::num::ParseIntError;
+
+fn parse_str(input: &amp;str) -&gt; Result&lt;i32, ParseIntError&gt; {
+    let parsed_number = input.parse::&lt;u16&gt;()?.to_string().parse::&lt;u32&gt;()?.to_string().parse::&lt;i32&gt;()?; // Tambahkan ? setiap mengecek dan pass ke method selanjutnya
+    Ok(parsed_number)
+}
+
+fn main() {
+    let str_vec = vec![&quot;Seven&quot;, &quot;8&quot;, &quot;9.0&quot;, &quot;nice&quot;, &quot;6060&quot;];
+    for item in str_vec {
+        let parsed = parse_str(item);
+        println!(&quot;{:?}&quot;, parsed);
+    }
+}
+</code></pre></pre>
+<p>Program ini juga mencetak hal yang sama, tapi untuk yang ini kita meng-handle tiga <code>Result</code> dalam satu baris. Nantinya kita akan menggunakan cara ini saat berurusan dengan file, karena hal yang berurusan dengan file akan selalu me-return <code>Result</code> karena banyak sekali kemungkinan untuk melakukan kesalahan.</p>
+<p>Bayangkan hal ini: Anda ingin membuka sebuah file, menulis sesuatu di file tersebut, dan menutupnya. Pertama-tama, Anda perlu berhasil menemukan filenya (tentunya ini memerlukan <code>Result</code>). Kemudian Anda harus berhasil menuliskan sesuatu didalamnya (dan ini juga <code>Result</code>). Dengan <code>?</code> Anda bisa melakukannya dengan satu baris saja.</p>
+<h3 id="when-panic-and-unwrap-are-good"><a class="header" href="#when-panic-and-unwrap-are-good">When panic and unwrap are good</a></h3>
+<p>Rust memiliki macro <code>panic!</code> yang mana bisa Anda gunakan untuk membuat panic. Ia cukup mudah untuk digunakan:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    panic!(&quot;Time to panic!&quot;);
+}
+</code></pre></pre>
+<p>Pesan <code>&quot;Time to panic!&quot;</code> muncul saat Anda menjalankan programnya: <code>thread 'main' panicked at 'Time to panic!', src\main.rs:2:3</code></p>
+<p>Anda akan mengingat bahwa <code>src\main.rs</code> adalah nama folder dan file, dan <code>2:3</code> adalah baris and kolom. Dengan informasi ini, Anda bisa menemukan codenya dan memperbaikinya.</p>
+<p><code>panic!</code> adalah macro yang baik digunakan untuk memastikan bahwa Anda tahu bahwa ada sesuatu yang berubah. Contohnya, function yang bernama <code>prints_three_things</code> selalu mencetak index [0], [1], dan [2] dari sebuah vector. Semuanya baik-baik saja karena kita selalu memberikan vector dengan tiga item:</p>
+<pre><pre class="playground"><code class="language-rust">fn prints_three_things(vector: Vec&lt;i32&gt;) {
+    println!(&quot;{}, {}, {}&quot;, vector[0], vector[1], vector[2]);
+}
+
+fn main() {
+    let my_vec = vec![8, 9, 10];
+    prints_three_things(my_vec);
+}
+</code></pre></pre>
+<p>Program tersebut akan mencetak <code>8, 9, 10</code> dan semuanya baik-baik saja.</p>
+<p>Tapi bayangkan bahwa kemudian kita menulis code menjadi lebih panjang, dan melupakan bahwa <code>my_vec</code> tepatnya hanya untuk vec dengan panjang 3 element. Sekarang <code>my_vec</code> pada code dibawah ini memiliki 6 element:</p>
+<pre><pre class="playground"><code class="language-rust">fn prints_three_things(vector: Vec&lt;i32&gt;) {
+  println!(&quot;{}, {}, {}&quot;, vector[0], vector[1], vector[2]);
+}
+
+fn main() {
+  let my_vec = vec![8, 9, 10, 10, 55, 99]; // Sekarang my_vec memiliki 6 element
+  prints_three_things(my_vec);
+}
+</code></pre></pre>
+<p>Tentu saja tidak terjadi errorapapun, karena [0] dan [1] dan [2] mampu dicapai oleh <code>Vec</code> yang lebih panjang. Namun bagaimana jika menjadi sangat penting untuk tetap menggunakan <code>Vec</code> dengan panjang tiga elemen? Kita pun tidak tahu bahwa ini adalah sebuah masalah karena compiler pun tidak memberikan panic. Untuk menyelesaikan problem ini, kita harus melakukan hal seperti berikut:</p>
+<pre><pre class="playground"><code class="language-rust">fn prints_three_things(vector: Vec&lt;i32&gt;) {
+    if vector.len() != 3 {
+        panic!(&quot;my_vec must always have three items&quot;) // akan panic jika panjang elementnya bukan 3
+    }
+    println!(&quot;{}, {}, {}&quot;, vector[0], vector[1], vector[2]);
+}
+
+fn main() {
+    let my_vec = vec![8, 9, 10];
+    prints_three_things(my_vec);
+}
+</code></pre></pre>
+<p>Sekarang kita akan tahu apabila vectornya memiliki panjang 6 element karena ia akan memberikan pesan panic seperti yang kita tuliskan:</p>
+<pre><pre class="playground"><code class="language-rust">    // ⚠️
+fn prints_three_things(vector: Vec&lt;i32&gt;) {
+    if vector.len() != 3 {
+        panic!(&quot;my_vec must always have three items&quot;)
+    }
+    println!(&quot;{}, {}, {}&quot;, vector[0], vector[1], vector[2]);
+}
+
+fn main() {
+    let my_vec = vec![8, 9, 10, 10, 55, 99];
+    prints_three_things(my_vec);
+}
+</code></pre></pre>
+<p>Pesan yang diberikan oleh program tersebut adlaah <code>thread 'main' panicked at 'my_vec must always have three items', src\main.rs:8:9</code>. Bersyukurlah dengan adanya <code>panic!</code>, sekarang kita mengingat bahwa <code>my_vec</code> seharusnya hanya berisi tiga element saja. Jadinya <code>panic!</code> adalah macro yang baik untuk membuat pengingat pada code yang Anda buat.</p>
+<p>Ada 3 macro lainnya yang mirip dengan <code>panic!</code> yang akan sering Anda gunakan pada saat melakukan testing. Mereka adalah: <code>assert!</code>, <code>assert_eq!</code>, dan <code>assert_ne!</code>.</p>
+<p>Berikut adalah penjelasannya:</p>
+<ul>
+<li><code>assert!()</code>: jika sesuatu yang berada di dalam <code>()</code> bukanlah true, program akan panic.</li>
+<li><code>assert_eq!()</code>: 2 buah item di dalam <code>()</code> harus sama.</li>
+<li><code>assert_ne!()</code>: 2 buah item di dalam <code>()</code> harus tidak sama. (<em>ne</em> artinya not equal / tidak sama)</li>
+</ul>
+<p>Contohnya:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_name = &quot;Loki Laufeyson&quot;;
+
+    assert!(my_name == &quot;Loki Laufeyson&quot;);
+    assert_eq!(my_name, &quot;Loki Laufeyson&quot;);
+    assert_ne!(my_name, &quot;Mithridates&quot;);
+}
+</code></pre></pre>
+<p>Program di atas tidak akan melakukan, karena semua macro assertnya sesuai. (Inilah yang kita inginkan)</p>
+<p>Anda juga bisa menambahkan pesan jika Anda menginginkannya.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_name = &quot;Loki Laufeyson&quot;;
+
+    assert!(
+        my_name == &quot;Loki Laufeyson&quot;,
+        &quot;{} should be Loki Laufeyson&quot;,
+        my_name
+    );
+    assert_eq!(
+        my_name, &quot;Loki Laufeyson&quot;,
+        &quot;{} and Loki Laufeyson should be equal&quot;,
+        my_name
+    );
+    assert_ne!(
+        my_name, &quot;Mithridates&quot;,
+        &quot;You entered {}. Input must not equal Mithridates&quot;,
+        my_name
+    );
+}
+</code></pre></pre>
+<p>Pesan yang ditulis tersebut hanya akan muncul apabila programnya panic. Sehingga jika Anda menjalankan ini:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_name = &quot;Mithridates&quot;;
+
+    assert_ne!(
+        my_name, &quot;Mithridates&quot;,
+        &quot;You enter {}. Input must not equal Mithridates&quot;,
+        my_name
+    );
+}
+</code></pre></pre>
+<p>Ia akan menampilkan:</p>
+<pre><code class="language-text">thread 'main' panicked at 'assertion failed: `(left != right)`
+  left: `&quot;Mithridates&quot;`,
+ right: `&quot;Mithridates&quot;`: You entered Mithridates. Input must not equal Mithridates', src\main.rs:4:5
+</code></pre>
+<p>Jadi, compiler mengatakan &quot;Kamu bilang bahwa kiri != kanan, tapi hasilnya justru kiri == kanan&quot;. Dan ia memunculkan pesan yang telah kita tuliskan, <code>You entered Mithridates. Input must not equal Mithridates</code>.</p>
+<p><code>unwrap</code> juga bagus di saat Anda menulis code dan membuatnya crash apabila ada problem pada code tersebut. Kemudian, di saat code yang Anda tulis telah selesai, ada baiknya mengubah <code>unwrap</code> ke sesuatu yang lainnya yang tidak menybabkan crash pada program.</p>
+<p>Anda juga bisa menggunakan <code>expect</code>, yang mana mirip seperti <code>unwrap</code>, namun agak lebih baik, karena Anda bisa memnentukan sendiri apa pesan errornya. Textbooks pun biasanya memberika saran seperti ini: &quot;Jika Anda banyak menggunakan <code>.unwrap()</code>, setidaknya gunakan <code>.expect()</code> untuk pesan error yang lebih baik.&quot;</p>
+<p>Program di bawah ini akan crash:</p>
+<pre><pre class="playground"><code class="language-rust">   // ⚠️
+fn get_fourth(input: &amp;Vec&lt;i32&gt;) -&gt; i32 {
+    let fourth = input.get(3).unwrap();
+    *fourth
+}
+
+fn main() {
+    let my_vec = vec![9, 0, 10];
+    let fourth = get_fourth(&amp;my_vec);
+}
+</code></pre></pre>
+<p>Pesan errornya adalah <code>thread 'main' panicked at 'called Option::unwrap() on a None value', src\main.rs:7:18</code>.</p>
+<p>Sekarang kita tuliskan pesannya menggunakan <code>expect</code>:</p>
+<pre><pre class="playground"><code class="language-rust">   // ⚠️
+fn get_fourth(input: &amp;Vec&lt;i32&gt;) -&gt; i32 {
+    let fourth = input.get(3).expect(&quot;Input vector needs at least 4 items&quot;);
+    *fourth
+}
+
+fn main() {
+    let my_vec = vec![9, 0, 10];
+    let fourth = get_fourth(&amp;my_vec);
+}
+</code></pre></pre>
+<p>Tentu saja program yang inipun akan crash juga, namun dengan pesan error yang lebih baik: <code>thread 'main' panicked at 'Input vector needs at least 4 items', src\main.rs:7:18</code>. <code>.expect()</code> sedikit lebih baik daripada <code>.unwrap()</code> karena hal ini, tapi ia akan tetap panic saat membuka <code>None</code>. Sekarang, kita akan mencontohkan sebuah bad practice, yaitu function yang mencoba untuk melakukan unwrap dua kali. Ia mengambil <code>Vec&lt;Option&lt;i32&gt;&gt;</code> sebagai parameter, sehingga mungkin beberapa bagiannya akan menghasilkan <code>Some&lt;i32&gt;</code> atau juga <code>None</code>.</p>
+<pre><pre class="playground"><code class="language-rust">fn try_two_unwraps(input: Vec&lt;Option&lt;i32&gt;&gt;) {
+    println!(&quot;Index 0 is: {}&quot;, input[0].unwrap());
+    println!(&quot;Index 1 is: {}&quot;, input[1].unwrap());
+}
+
+fn main() {
+    let vector = vec![None, Some(1000)]; // Vector ini menghasilkan None, sehingga ia akan panic
+    try_two_unwraps(vector);
+}
+</code></pre></pre>
+<p>Pesan errornya adalah: <code>thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src\main.rs:2:32</code>. Kita tidak yakin apakah errornya muncul dari <code>.unwrap()</code> yang pertama ataukah <code>.unwrap()</code> yang kedua sampai kita memeriksa baris codenya. Ini akan lebih baik apabila kita melakukan pengecekan terhadap panjang vectornya dan juga tidak melakukannya dengan unwrap. Dengan <code>.expect()</code> setidaknya program kita akan menjadi <em>sedikit</em> lebih baik. Inilah contoh codenya apabila kita menggunakan <code>.expect()</code>:</p>
+<pre><pre class="playground"><code class="language-rust">fn try_two_unwraps(input: Vec&lt;Option&lt;i32&gt;&gt;) {
+    println!(&quot;Index 0 is: {}&quot;, input[0].expect(&quot;The first unwrap had a None!&quot;));
+    println!(&quot;Index 1 is: {}&quot;, input[1].expect(&quot;The second unwrap had a None!&quot;));
+}
+
+fn main() {
+    let vector = vec![None, Some(1000)];
+    try_two_unwraps(vector);
+}
+</code></pre></pre>
+<p>Sehingga errornya menjadi lebih baik: <code>thread 'main' panicked at 'The first unwrap had a None!', src\main.rs:2:32</code>. Kita diberikan informasi tentang unwrap yang mana yang menghasilkan error sehingga kita bisa dengan mudah menemukannya dan memperbaikinya.</p>
+<p>Anda juga bisa menggunakan <code>unwrap_or</code> jika Anda ingin selalu memiliki nilai yang ingin Anda pilih. Jika Anda melakukan ini maka ia tidak akan pernah panic. Yang perlu dicatat adalah:</p>
+<ul>
+<li>
+<ol>
+<li>Ini bagus karena program menjadi tidak akan panic, namun</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Mungkin saja tidak bagus apabila Anda menginginkan program menjadi panic jika terdapat problem pada code tersebut.</li>
+</ol>
+</li>
+</ul>
+<p>Tapi biasanya kita tidak ingin program yang kita buat menjadi panic, jadinya <code>unwrap_or</code> adalah cara yang baik untuk digunakan.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_vec = vec![8, 9, 10];
+
+    let fourth = my_vec.get(3).unwrap_or(&amp;0); // Jika .get tidak bekerja, kita akan membuat value &amp;0.
+                                              // .get mengembalikan sebuah reference, sehingga kita perlu &amp;0, bukan 0
+    println!(&quot;{}&quot;, fourth);                   // Anda bisa menulis &quot;*fourth&quot; jika Anda ingin fourth menjadi
+                                              // 0 dan bukan &amp;0, tapi disini kita hanya mencetaknya saja, sehingga hal itu tidaklah penting
+}
+</code></pre></pre>
+<p>Ia akan mencetak <code>0</code> karena <code>.unwrap_or(&amp;0)</code> memberikan 0 meskipun <code>.get()</code> memberikan <code>None</code>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="Chapter_33.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="Chapter_35.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="Chapter_33.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="Chapter_35.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

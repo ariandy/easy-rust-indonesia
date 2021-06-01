@@ -1,0 +1,399 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title> Generics - Easy Rust</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapter_0.html"><strong aria-hidden="true">1.</strong> Update</a></li><li class="chapter-item expanded "><a href="Chapter_1.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Chapter_2.html"><strong aria-hidden="true">3.</strong> Who am I?</a></li><li class="chapter-item expanded "><a href="Chapter_3.html"><strong aria-hidden="true">4.</strong> Catatan dari translator</a></li><li class="chapter-item expanded "><a href="Chapter_4.html"><strong aria-hidden="true">5.</strong> Writing Rust in Easy English</a></li><li class="chapter-item expanded "><a href="Chapter_5.html"><strong aria-hidden="true">6.</strong> Rust Playground</a></li><li class="chapter-item expanded "><a href="Chapter_6.html"><strong aria-hidden="true">7.</strong> 🚧 and ⚠️</a></li><li class="chapter-item expanded "><a href="Chapter_7.html"><strong aria-hidden="true">8.</strong> Comments</a></li><li class="chapter-item expanded "><a href="Chapter_8.html"><strong aria-hidden="true">9.</strong> Types</a></li><li class="chapter-item expanded "><a href="Chapter_9.html"><strong aria-hidden="true">10.</strong> Type inference</a></li><li class="chapter-item expanded "><a href="Chapter_10.html"><strong aria-hidden="true">11.</strong> Printing 'hello, world!'</a></li><li class="chapter-item expanded "><a href="Chapter_11.html"><strong aria-hidden="true">12.</strong> Display and debug</a></li><li class="chapter-item expanded "><a href="Chapter_12.html"><strong aria-hidden="true">13.</strong> Mutability (changing)</a></li><li class="chapter-item expanded "><a href="Chapter_13.html"><strong aria-hidden="true">14.</strong> The stack, the heap, and pointers</a></li><li class="chapter-item expanded "><a href="Chapter_14.html"><strong aria-hidden="true">15.</strong> More about printing</a></li><li class="chapter-item expanded "><a href="Chapter_15.html"><strong aria-hidden="true">16.</strong> Strings</a></li><li class="chapter-item expanded "><a href="Chapter_16.html"><strong aria-hidden="true">17.</strong> const and static</a></li><li class="chapter-item expanded "><a href="Chapter_17.html"><strong aria-hidden="true">18.</strong> More on references</a></li><li class="chapter-item expanded "><a href="Chapter_18.html"><strong aria-hidden="true">19.</strong> Mutable references</a></li><li class="chapter-item expanded "><a href="Chapter_19.html"><strong aria-hidden="true">20.</strong> Giving references to functions</a></li><li class="chapter-item expanded "><a href="Chapter_20.html"><strong aria-hidden="true">21.</strong> Copy types</a></li><li class="chapter-item expanded "><a href="Chapter_21.html"><strong aria-hidden="true">22.</strong> Collection types</a></li><li class="chapter-item expanded "><a href="Chapter_22.html"><strong aria-hidden="true">23.</strong> Vectors</a></li><li class="chapter-item expanded "><a href="Chapter_23.html"><strong aria-hidden="true">24.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="Chapter_24.html"><strong aria-hidden="true">25.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="Chapter_25.html"><strong aria-hidden="true">26.</strong> Structs</a></li><li class="chapter-item expanded "><a href="Chapter_26.html"><strong aria-hidden="true">27.</strong> Enums</a></li><li class="chapter-item expanded "><a href="Chapter_27.html"><strong aria-hidden="true">28.</strong> Loops</a></li><li class="chapter-item expanded "><a href="Chapter_28.html"><strong aria-hidden="true">29.</strong> Implementing structs and enums</a></li><li class="chapter-item expanded "><a href="Chapter_29.html"><strong aria-hidden="true">30.</strong> Destructuring</a></li><li class="chapter-item expanded "><a href="Chapter_30.html"><strong aria-hidden="true">31.</strong> References and the dot operator</a></li><li class="chapter-item expanded "><a href="Chapter_31.html" class="active"><strong aria-hidden="true">32.</strong> Generics</a></li><li class="chapter-item expanded "><a href="Chapter_32.html"><strong aria-hidden="true">33.</strong> Option and Result</a></li><li class="chapter-item expanded "><a href="Chapter_33.html"><strong aria-hidden="true">34.</strong> Other collections</a></li><li class="chapter-item expanded "><a href="Chapter_34.html"><strong aria-hidden="true">35.</strong> The ? operator</a></li><li class="chapter-item expanded "><a href="Chapter_35.html"><strong aria-hidden="true">36.</strong> Traits</a></li><li class="chapter-item expanded "><a href="Chapter_36.html"><strong aria-hidden="true">37.</strong> Chaining methods</a></li><li class="chapter-item expanded "><a href="Chapter_37.html"><strong aria-hidden="true">38.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="Chapter_38.html"><strong aria-hidden="true">39.</strong> Closures</a></li><li class="chapter-item expanded "><a href="Chapter_39.html"><strong aria-hidden="true">40.</strong> The dbg! macro and .inspect</a></li><li class="chapter-item expanded "><a href="Chapter_40.html"><strong aria-hidden="true">41.</strong> Types of &amp;str</a></li><li class="chapter-item expanded "><a href="Chapter_41.html"><strong aria-hidden="true">42.</strong> Lifetimes</a></li><li class="chapter-item expanded "><a href="Chapter_42.html"><strong aria-hidden="true">43.</strong> Interior mutability</a></li><li class="chapter-item expanded "><a href="Chapter_43.html"><strong aria-hidden="true">44.</strong> Cow</a></li><li class="chapter-item expanded "><a href="Chapter_44.html"><strong aria-hidden="true">45.</strong> Type aliases</a></li><li class="chapter-item expanded "><a href="Chapter_45.html"><strong aria-hidden="true">46.</strong> The todo! macro</a></li><li class="chapter-item expanded "><a href="Chapter_46.html"><strong aria-hidden="true">47.</strong> Rc</a></li><li class="chapter-item expanded "><a href="Chapter_47.html"><strong aria-hidden="true">48.</strong> Multiple threads</a></li><li class="chapter-item expanded "><a href="Chapter_48.html"><strong aria-hidden="true">49.</strong> Closures in functions</a></li><li class="chapter-item expanded "><a href="Chapter_49.html"><strong aria-hidden="true">50.</strong> impl Trait</a></li><li class="chapter-item expanded "><a href="Chapter_50.html"><strong aria-hidden="true">51.</strong> Arc</a></li><li class="chapter-item expanded "><a href="Chapter_51.html"><strong aria-hidden="true">52.</strong> Channels</a></li><li class="chapter-item expanded "><a href="Chapter_52.html"><strong aria-hidden="true">53.</strong> Reading Rust documentation</a></li><li class="chapter-item expanded "><a href="Chapter_53.html"><strong aria-hidden="true">54.</strong> Attributes</a></li><li class="chapter-item expanded "><a href="Chapter_54.html"><strong aria-hidden="true">55.</strong> Box</a></li><li class="chapter-item expanded "><a href="Chapter_55.html"><strong aria-hidden="true">56.</strong> Box around traits</a></li><li class="chapter-item expanded "><a href="Chapter_56.html"><strong aria-hidden="true">57.</strong> Default and the builder pattern</a></li><li class="chapter-item expanded "><a href="Chapter_57.html"><strong aria-hidden="true">58.</strong> Deref and DerefMut</a></li><li class="chapter-item expanded "><a href="Chapter_58.html"><strong aria-hidden="true">59.</strong> Crates and modules</a></li><li class="chapter-item expanded "><a href="Chapter_59.html"><strong aria-hidden="true">60.</strong> Testing</a></li><li class="chapter-item expanded "><a href="Chapter_60.html"><strong aria-hidden="true">61.</strong> External crates</a></li><li class="chapter-item expanded "><a href="Chapter_61.html"><strong aria-hidden="true">62.</strong> A tour of the standard library</a></li><li class="chapter-item expanded "><a href="Chapter_62.html"><strong aria-hidden="true">63.</strong> Writing macros</a></li><li class="chapter-item expanded "><a href="Chapter_63.html"><strong aria-hidden="true">64.</strong> cargo</a></li><li class="chapter-item expanded "><a href="Chapter_64.html"><strong aria-hidden="true">65.</strong> Taking user input</a></li><li class="chapter-item expanded "><a href="Chapter_65.html"><strong aria-hidden="true">66.</strong> Using files</a></li><li class="chapter-item expanded "><a href="Chapter_66.html"><strong aria-hidden="true">67.</strong> cargo doc</a></li><li class="chapter-item expanded "><a href="Chapter_67.html"><strong aria-hidden="true">68.</strong> The end?</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Easy Rust</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="generics"><a class="header" href="#generics">Generics</a></h2>
+<p>Pada function, Anda biasanya menuliskan apa type yang akan diambil sebagai input:</p>
+<pre><pre class="playground"><code class="language-rust">fn return_number(number: i32) -&gt; i32 {
+    println!(&quot;Here is your number.&quot;);
+    number
+}
+
+fn main() {
+    let number = return_number(5);
+}
+</code></pre></pre>
+<p>Tapi bagaimana apabila kita juga ingin mengambil inputnya selain dari type <code>i32</code>? Kita bisa menggunakan generics untuk hal ini. Generics artinya &quot;mungkin satu type, atau mungkin juga type yang lain&quot;.</p>
+<p>Untuk menggunakan generics, kita menggunakan angle brackets dengan menuliskan type didalamnya, seperti ini: <code>&lt;T&gt;</code>. Ini artinya &quot;type apa pun yang Anda masukkan ke dalam function&quot;. Biasanya, generics menggunakan type dengan satu huruf besar (T, U, V, dsb.), meskipun sebenarnya Anda tidak harus hanya menggunakan satu huruf saja.</p>
+<p>Contoh berikut menunjukkan bagaimana cara untuk mengubah sebuah function menjadi generic type:</p>
+<pre><pre class="playground"><code class="language-rust">fn return_number&lt;T&gt;(number: T) -&gt; T {
+    println!(&quot;Here is your number.&quot;);
+    number
+}
+
+fn main() {
+    let number = return_number(5);
+}
+</code></pre></pre>
+<p>Bagian terpentinya adalah <code>&lt;T&gt;</code> yang ditulis setelah nama function. Tanpa ini, Rust akan berpikir bahwa T adalah concrete type (concrete = bukan generic), seperti <code>String</code> atau <code>i8</code>.</p>
+<p>Ini lebih mudah untuk dimengerti jika kita menuliskan sebuah nama type. Lihatlah apa yang terjadi saat kita mengubah <code>T</code> menjadi <code>MyType</code>:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn return_number(number: MyType) -&gt; MyType { // ⚠️
+    println!(&quot;Here is your number.&quot;);
+    number
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Seperti yang kita lihat, <code>MyType</code> adalah concrete, bukan generic. Sehingga kita perlu untuk menuliskan ini untuk menjadikannya generic:</p>
+<pre><pre class="playground"><code class="language-rust">fn return_number&lt;MyType&gt;(number: MyType) -&gt; MyType {
+    println!(&quot;Here is your number.&quot;);
+    number
+}
+
+fn main() {
+    let number = return_number(5);
+}
+</code></pre></pre>
+<p>Jadi, huruf tunggal <code>T</code> itu adalah untuk memudahkan &quot;mata&quot; programmer untuk mengetahui bahwa itu adalah generic. Sedangkan bagian yang ditulis setelah nama function <code>&lt; &gt;</code> adalah untuk &quot;mata&quot; compiler Rust. Tanpa itu, maka ia bukanlah generic.</p>
+<p>Sekarang kita kembali ke type <code>T</code>, karena code yang ditulis pada Rust biasanya menggunakan <code>T</code>.</p>
+<p>Anda akan mengingat bahwa beberapa type yang ada di Rust memiliki trait <strong>Copy</strong>, beberapanya memiliki trait <strong>Clone</strong>, beberapa lagi memiliki <strong>Display</strong>, <strong>Debug</strong>, dan seterusnya. Dengan <strong>Debug</strong>, kita bisa melakukan print menggunakan <code>{:?}</code>. Jadi sekarang kita bisa melihat bahwa kita memiliki sebuah problem jika kita ingin mencetak output <code>T</code>:</p>
+<pre><pre class="playground"><code class="language-rust">fn print_number&lt;T&gt;(number: T) {
+    println!(&quot;Here is your number: {:?}&quot;, number); // ⚠️
+}
+
+fn main() {
+    print_number(5);
+}
+</code></pre></pre>
+<p><code>print_number</code> memerlukan <strong>Debug</strong> untuk mencetak <code>number</code>. Tapi, apakah <code>T</code> adalah type yang memiliki trait <code>Debug</code>? Mungkin tidak. Mungkin ia tidak memiliki <code>#[derive(Debug)]</code>, siapa yang tahu. Bahkan compiler pun tidak bisa mengetahuinya, sehingga hal ini akan memberikan pesan error:</p>
+<pre><code class="language-text">error[E0277]: `T` doesn't implement `std::fmt::Debug`
+  --&gt; src\main.rs:29:43
+   |
+29 |     println!(&quot;Here is your number: {:?}&quot;, number);
+   |                                           ^^^^^^ `T` cannot be formatted using `{:?}` because it doesn't implement `std::fmt::Debug`
+</code></pre>
+<p>T tidak mengimplementasikan trait <strong>Debug</strong>. Jadi, apakah kita akan mengimplementasikan Debug untuk T? Tidak, karena kita pun tidak tahu apa sebenarnya T tersebut. Tapi kita bisa memberitahu function tersebut: &quot;Jangan khawatir, karena apapun type T yang berada pada function ini akan memiliki Debug&quot;.</p>
+<pre><pre class="playground"><code class="language-rust">use std::fmt::Debug; // Debug berada pada std::fmt::Debug. Jadi sekarang kita cukup menulisnya 'Debug'.
+
+fn print_number&lt;T: Debug&gt;(number: T) { // &lt;T: Debug&gt; adalah bagian terpenting
+    println!(&quot;Here is your number: {:?}&quot;, number);
+}
+
+fn main() {
+    print_number(5);
+}
+</code></pre></pre>
+<p>Jadi sekarang compiler tahu: &quot;Okay, type T ini akan memiliki Debug&quot;. Sekarang codenya berjalan, karena <code>i32</code> memiliki Debug. Sekarang kita bisa memberikan inputan dari beberapa type, seperti: <code>String</code>, <code>&amp;str</code>, dan seterusnya, karena mereka semua memiliki Debug.</p>
+<p>Sekarang kita bisa membuat struct dan memberinya Debug dengan #[derive(Debug)], sehingga sekarang kita bisa mencetaknya juga. Function kita bisa mengambil <code>i32</code>, struct Animal, dan lainnya:</p>
+<pre><pre class="playground"><code class="language-rust">use std::fmt::Debug;
+
+#[derive(Debug)]
+struct Animal {
+    name: String,
+    age: u8,
+}
+
+fn print_item&lt;T: Debug&gt;(item: T) {
+    println!(&quot;Here is your item: {:?}&quot;, item);
+}
+
+fn main() {
+    let charlie = Animal {
+        name: &quot;Charlie&quot;.to_string(),
+        age: 1,
+    };
+
+    let number = 55;
+
+    print_item(charlie);
+    print_item(number);
+}
+</code></pre></pre>
+<p>Dan hasilnya adalah:</p>
+<pre><code class="language-text">Here is your item: Animal { name: &quot;Charlie&quot;, age: 1 }
+Here is your item: 55
+</code></pre>
+<p>Terkadang kita memerlukan lebih dari satu type pada generic function. Kita perlu untuk menuliskan setiap nama typenya, dan memikirkan tentang bagaimana kita ingin menggunakannya. Pada contoh ini, kita ingin menggunakan 2 type. Pertama kita ingin untuk mencetak statement pada type T. Print menggunakan <code>{}</code> terlihat lebih bagus, jadinya kita memerlukan <code>Display</code> untuk <code>T</code>.</p>
+<p>Selanjutnya adalah type U, dan 2 variablel (<code>num_1</code> dan <code>num_2</code>) menggunakan type U (U adalah semacam angka). Kita akan membandingkan keduanya, sehingga kita menggunakan <code>PartialOrd</code>. Trait ini memperbolehkan kita untuk menggunakan operator seperti <code>&lt;</code>, <code>&gt;</code>, <code>==</code>, dan yang lainnya. Dan kita ingin ingin mencetaknya juga, jadi kita juga memerlukan <code>Display</code> untuk type <code>U</code>.</p>
+<pre><pre class="playground"><code class="language-rust">use std::fmt::Display;
+use std::cmp::PartialOrd;
+
+fn compare_and_display&lt;T: Display, U: Display + PartialOrd&gt;(statement: T, num_1: U, num_2: U) {
+    println!(&quot;{}! Is {} greater than {}? {}&quot;, statement, num_1, num_2, num_1 &gt; num_2);
+}
+
+fn main() {
+    compare_and_display(&quot;Listen up!&quot;, 9, 8);
+}
+</code></pre></pre>
+<p>Hasil cetaknya adalah <code>Listen up!! Is 9 greater than 8? true</code>.</p>
+<p>Jadi <code>fn compare_and_display&lt;T: Display, U: Display + PartialOrd&gt;(statement: T, num_1: U, num_2: U)</code> seakan mengatakan bahwa:</p>
+<ul>
+<li>Nama functionnya adalah <code>compare_and_display</code>,</li>
+<li>Type pertama adalah T, dan ia adalah generic. Ia haruslah type yang bisa melakukan print menggunakan {}.</li>
+<li>Type kedua adalah U, and ia pula adalah generic. Ia haruslah type yang bisa melakukan print menggunakan {}. Juga, ia haruslah type yang bisa melakukan perbandingan/komparasi (menggunakan <code>&gt;</code>, <code>&lt;</code>, dan <code>==</code>).</li>
+</ul>
+<p>Sekarang kita bisa memberikan <code>compare_and_display</code> type yang berbeda. <code>statement</code> bisa saja sebuah <code>String</code>, bisa saja <code>&amp;str</code>, atau apapun yang memiliki trait Display.</p>
+<p>Untuk membuat generic function menjadi lebih mudah untuk dibaca, kita bisa juga menuliskannya seperti dibawah ini menggunakan <code>where</code> tepat sebelum penulisan code block:</p>
+<pre><pre class="playground"><code class="language-rust">use std::cmp::PartialOrd;
+use std::fmt::Display;
+
+fn compare_and_display&lt;T, U&gt;(statement: T, num_1: U, num_2: U)
+where
+    T: Display,
+    U: Display + PartialOrd,
+{
+    println!(&quot;{}! Is {} greater than {}? {}&quot;, statement, num_1, num_2, num_1 &gt; num_2);
+}
+
+fn main() {
+    compare_and_display(&quot;Listen up!&quot;, 9, 8);
+}
+</code></pre></pre>
+<p>Menggunakan <code>where</code> adalah ide yang bagus apabila Anda memiliki lebih dari satu generic type.</p>
+<p>Dan juga, perlu diingat:</p>
+<ul>
+<li>Jika Anda memiliki variabel dengan type T dan type lainnya juga T, maka keduanya pasti sama.</li>
+<li>Jika Anda memiliki variabel dengan type T dan type lainnya adalah U, maka keduanya bisa berbeda. Namun keduanya juga bisa sama.</li>
+</ul>
+<p>Sebagai contoh:</p>
+<pre><pre class="playground"><code class="language-rust">use std::fmt::Display;
+
+fn say_two&lt;T: Display, U: Display&gt;(statement_1: T, statement_2: U) { // Type T memerlukan Display, type U juga memerlukan Display
+    println!(&quot;I have two things to say: {} and {}&quot;, statement_1, statement_2);
+}
+
+fn main() {
+
+    say_two(&quot;Hello there!&quot;, String::from(&quot;I hate sand.&quot;)); // Type T adalah &amp;str, namun type U adalah String.
+    say_two(String::from(&quot;Where is Padme?&quot;), String::from(&quot;Is she all right?&quot;)); // Keduanya bertype String.
+}
+</code></pre></pre>
+<p>Hasilnya adalah:</p>
+<pre><code class="language-text">I have two things to say: Hello there! and I hate sand.
+I have two things to say: Where is Padme? and Is she all right?
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="Chapter_30.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="Chapter_32.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="Chapter_30.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="Chapter_32.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
