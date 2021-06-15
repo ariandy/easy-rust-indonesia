@@ -3020,8 +3020,8 @@ Not much green.
 
 Ini adalah dimana kita bisa mulai untuk memberikan *kekuatan* kepada structs dan enums. Untuk memanggil fungsi pada `struct` atau `enum`, kita bisa menggunakan block `impl`. Fungsi ini biasanya disebut sebagai **methods**. Ada 2 macam method di dalam block `impl`.
 
-- Regular methods: ia menggunakan **self** (atau **&self** atau juga **&mut self**). Regular methods menggunakan `.` (period/titik). `.clone()` adalah contoh dari sebuah regular method.
-- Associated methods (atau "static" methods): ia tidak menggunakan self. Associated berarti "berhubungan dengan". Ia ditulis dengan cara yang berbeda, yaitu menggunakan `::`. `String::from()` adalah contoh dari associated method, dan begitu juga dengan `Vec::new()`. Anda biasanya melihat associated methods digunakan untuk membuat variabel baru.
+- Methods: ia menggunakan **self** (atau **&self** atau juga **&mut self**). Regular methods menggunakan `.` (period/titik). `.clone()` adalah contoh dari sebuah regular method.
+- Associated functions (atau biasa dikenal sebagai "static" methods di beberapa bahasa pemrograman yang lain): ia tidak menggunakan self. Associated berarti "berhubungan dengan". Ia ditulis dengan cara yang berbeda, yaitu menggunakan `::`. `String::from()` adalah contoh dari associated function, dan begitu juga dengan `Vec::new()`. Anda biasanya akan sering melihat associated functions digunakan untuk membuat variabel baru.
 
 Pada contoh yang kita gunakan ini kita akan membuat impl Animal dan membuat hasil printnya.
 
@@ -3078,7 +3078,7 @@ impl Animal {
 
 
 fn main() {
-    let mut new_animal = Animal::new(); // Associated method untuk membuat animal yang baru
+    let mut new_animal = Animal::new(); // Associated function untuk membuat animal yang baru
                                         // Secara default, ia adalah kucing yang berusia 10 tahun
     new_animal.check_type();
     new_animal.change_to_dog();
