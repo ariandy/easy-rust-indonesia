@@ -47,7 +47,7 @@ Selamat membaca!
 
 ## Writing Rust in Easy English
 
-*Rust in Easy English* ditulis dari Juli sampai dengan Agustus 2020, dan memiliki panjang 400 halaman. Anda bisa menghubungi saya disini atau melalui [LinkedIn](https://www.linkedin.com/in/davemacleod) atau [Twitter](https://twitter.com/mithridates) jika Anda memiliki pertanyaan. Jika Anda melihat ada yang salah atau ingin membuat pull request, silahkan beri tahu saya. Lebih dari 20 orang telah membantu berpartisipasi dengan cara memperbaiki typo dan problem pada codenya, dan kamu juga bisa berpartisipasi seperti itu. Saya bukanlah ahli Rust terbaik di dunia, jadi saya selalu suka dan terbuka untuk mendengarkan ide-ide baru atau mengetahui apa saja yang saya harus saya lakukan untuk membuat textbook ini menjadi lebih baik.
+*Rust in Easy English* ditulis dari Juli sampai dengan Agustus 2020, dan memiliki panjang 400 halaman. Anda bisa menghubungi saya disini atau melalui [LinkedIn](https://www.linkedin.com/in/davemacleod) atau [Twitter](https://twitter.com/mithridates) jika Anda memiliki pertanyaan. Jika Anda melihat ada yang salah atau ingin membuat pull request, silahkan beri tahu saya. Lebih dari 20 orang telah membantu berpartisipasi dengan cara memperbaiki typo dan problem pada codenya, dan kamu juga bisa berpartisipasi seperti itu. Saya bukanlah ahli Rust terbaik di dunia, jadi saya selalu suka dan terbuka untuk mendengarkan ide-ide baru atau mengetahui apa saja yang harus saya lakukan untuk membuat textbook ini menjadi lebih baik.
 
 
 
