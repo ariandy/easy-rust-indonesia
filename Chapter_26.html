@@ -287,7 +287,7 @@ fn main() {
 2
 3
 </code></pre>
-<p>Anda juga bisa merepresentasikannya menggunakan angka yang lain, jika Anda menginginkannya. Rust tidak begitu peduli dalam hal ini dan Anda bisa menampilkannya dengan cara yang sama. Cukup tambahakan <code>=</code> juga angka yang Anda inginkan ke variant yang ingin Anda representasikan dengan angka. Anda tidak perlu merepresentasikan semua variant tersebut dengan angka. Namun jika Anda tidak menuliskan representasi integernya secara manual, Rust akan mengambil nilai representasi integer dari variant yang sebelumnya, menambahkannya dengan 1, dan hasilnya dijadikan representasi pada variant yang tidak direpresentasikan secara manual tersebut.</p>
+<p>Anda juga bisa merepresentasikannya menggunakan angka yang lain, jika Anda menginginkannya. Rust tidak begitu peduli dalam hal ini dan Anda bisa menampilkannya dengan cara yang sama. Cukup tambahakan <code>=</code>, juga angka yang Anda inginkan ke variant yang ingin Anda representasikan dengan angka. Anda tidak perlu merepresentasikan semua variant tersebut dengan angka. Namun jika Anda tidak menuliskan representasi integernya secara manual, Rust akan mengambil nilai representasi integer dari variant yang sebelumnya, menambahkannya dengan 1, dan hasilnya dijadikan representasi pada variant yang tidak direpresentasikan secara manual tersebut.</p>
 <pre><pre class="playground"><code class="language-rust">enum Star {
     BrownDwarf = 10,
     RedDwarf = 50,

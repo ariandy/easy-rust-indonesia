@@ -1661,7 +1661,7 @@ end at five: {:?}
 everything: {:?}&quot;, three_to_five, start_at_two, end_at_five, everything);
 }
 </code></pre></pre>
-<p>Karena vec lebih lambat dibandingkan dengan array, kita bisa menggunakan suatu cara untuk membuatnya menjadi cepat. Vector memiliki <strong>kapasitas</strong>, yang artinya adalah ruang yang diberikan kepada vector. Di saat Anda push item baru ke dalam vector, ia akan mendekati dan terus mendekati ke batas kapasitasnya. Maka, jika item yang ter-push melebihi batas kapasitasnya, maka ia akan membuat kapasitasnya menjadi dua kali lipat dan menyalin semua item di dalamnya ke dalam ruang yang baru. Ini biasa disebut sebagai reallocation. Kita akan menggunakan method <code>.capacity()</code> untuk melihat kapasitas dari vector saat kita menambahkan item ke dalamnya.</p>
+<p>Karena vec lebih lambat dibandingkan dengan array, kita bisa menggunakan suatu cara untuk membuatnya menjadi cepat. Vector memiliki <strong>kapasitas</strong>, yang artinya adalah ruang yang diberikan kepada vector. Di saat Anda push item baru ke dalam vector, ia akan mendekati dan terus mendekati ke batas kapasitasnya. Maka, jika item yang ter-push telah melebihi batas kapasitasnya, maka ia akan membuat kapasitasnya menjadi dua kali lipat dan menyalin semua item di dalamnya ke dalam ruang yang baru. Ini biasa disebut sebagai reallocation. Kita akan menggunakan method <code>.capacity()</code> untuk melihat kapasitas dari vector saat kita menambahkan item ke dalamnya.</p>
 <p>Berikut contohnya:</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let mut num_vec = Vec::new();
@@ -2212,7 +2212,7 @@ fn main() {
 2
 3
 </code></pre>
-<p>Anda juga bisa merepresentasikannya menggunakan angka yang lain, jika Anda menginginkannya. Rust tidak begitu peduli dalam hal ini dan Anda bisa menampilkannya dengan cara yang sama. Cukup tambahakan <code>=</code> juga angka yang Anda inginkan ke variant yang ingin Anda representasikan dengan angka. Anda tidak perlu merepresentasikan semua variant tersebut dengan angka. Namun jika Anda tidak menuliskan representasi integernya secara manual, Rust akan mengambil nilai representasi integer dari variant yang sebelumnya, menambahkannya dengan 1, dan hasilnya dijadikan representasi pada variant yang tidak direpresentasikan secara manual tersebut.</p>
+<p>Anda juga bisa merepresentasikannya menggunakan angka yang lain, jika Anda menginginkannya. Rust tidak begitu peduli dalam hal ini dan Anda bisa menampilkannya dengan cara yang sama. Cukup tambahakan <code>=</code>, juga angka yang Anda inginkan ke variant yang ingin Anda representasikan dengan angka. Anda tidak perlu merepresentasikan semua variant tersebut dengan angka. Namun jika Anda tidak menuliskan representasi integernya secara manual, Rust akan mengambil nilai representasi integer dari variant yang sebelumnya, menambahkannya dengan 1, dan hasilnya dijadikan representasi pada variant yang tidak direpresentasikan secara manual tersebut.</p>
 <pre><pre class="playground"><code class="language-rust">enum Star {
     BrownDwarf = 10,
     RedDwarf = 50,
@@ -9263,10 +9263,10 @@ test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 <ul>
 <li>Pertama, kita tuliskan semua test yang terbersit di pikiran kita.</li>
 <li>Kemudian kita mulai menuliskan codenya.</li>
-<li>Di saat proses penulisan code, gita mendapatkan ide untuk menambahkan test-test baru.</li>
+<li>Di saat proses penulisan code, kita mendapatkan ide untuk menambahkan test-test baru.</li>
 <li>Anda tambahkan lagi testnya, dan testnya terus bertambah seiring codenya bertambah. Semakin banyak test yang Anda miliki, semakin sering code Anda diperiksa.</li>
 </ul>
-<p>Tentu saja, test tidak memeriksa semuanya dan salah jika kita berpikir bahwa &quot;lolos semua test = codenya sempurna&quot;. Tapi test sangatlah berguna di saat code kita mengalami perubahan. Apabila Anda mengubah codenya kemudian dan menjalankan testnya, jika ada salah satunya yang tidak bekerja maka kita akan tahu yang mana yang semestinya kita perbaiki.</p>
+<p>Tentu saja, test tidak memeriksa semuanya dan salah jika kita berpikir bahwa &quot;lolos di semua test = codenya sempurna&quot;. Tapi test sangatlah berguna di saat code kita mengalami perubahan. Apabila Anda mengubah codenya kemudian dan menjalankan testnya, jika ada salah satunya yang tidak bekerja maka kita akan tahu yang mana yang semestinya kita perbaiki.</p>
 <p>Sekarang kita bisa melakukan refactor codenya sedikit demi sedikit. Salah satu cara yang baik untuk melakukan refactor adalah menggunakan clippy. Jika Anda menginstall Rust maka Anda bisa menuliskan perintah <code>cargo clippy</code>, dan jika Anda menggunakan Playground maka klik pada <code>TOOLS</code> dan pilih Clippy. Clippy melihat pada code yang kita buat dan memberikan kita tips untuk membuat codenya menjadi lebih sederhana. Code yang kita buat tidak memiliki kesalahan, namun kita bisa membuatnya menjadi lebih baik.</p>
 <p>Clippy memberi tahu kita tentang dua hal:</p>
 <pre><code class="language-text">warning: this loop could be written as a `for` loop
