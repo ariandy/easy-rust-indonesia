@@ -1978,7 +1978,7 @@ everything: {:?}", three_to_five, start_at_two, end_at_five, everything);
 }
 ```
 
-Karena vec lebih lambat dibandingkan dengan array, kita bisa menggunakan suatu cara untuk membuatnya menjadi cepat. Vector memiliki **kapasitas**, yang artinya adalah ruang yang diberikan kepada vector. Di saat Anda push item baru ke dalam vector, ia akan mendekati dan terus mendekati ke batas kapasitasnya. Maka, jika Anda batas kapasitasnya, maka ia akan membuat kapasitasnya menjadi dua kali lipat dan menyalin semua item di dalamnya ke dalam ruang yang baru. Ini biasa disebut sebagai reallocation. Kita akan menggunakan method `.capacity()` untuk melihat kapasitas dari vector saat kita menambahkan item ke dalamnya.
+Karena vec lebih lambat dibandingkan dengan array, kita bisa menggunakan suatu cara untuk membuatnya menjadi cepat. Vector memiliki **kapasitas**, yang artinya adalah ruang yang diberikan kepada vector. Di saat Anda push item baru ke dalam vector, ia akan mendekati dan terus mendekati ke batas kapasitasnya. Maka, jika item yang ter-push melebihi batas kapasitasnya, maka ia akan membuat kapasitasnya menjadi dua kali lipat dan menyalin semua item di dalamnya ke dalam ruang yang baru. Ini biasa disebut sebagai reallocation. Kita akan menggunakan method `.capacity()` untuk melihat kapasitas dari vector saat kita menambahkan item ke dalamnya.
 
 Berikut contohnya:
 
