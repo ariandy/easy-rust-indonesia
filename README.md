@@ -2663,7 +2663,7 @@ fn main() {
 ```
 
 
-`enum` juga bisa direpresentasikan sebagai integer. Ini dikarenakan Rust memberikan angka pada setiap variant di `enum` yang dimulai dengan 0. Anda bisa melakukan hal ini jika enum yang Anda buat tidak memiliki type apapun dalamnya.
+`enum` juga bisa direpresentasikan sebagai integer. Ini dikarenakan Rust memberikan angka pada setiap variant di `enum` yang dimulai dengan 0. Anda bisa melakukan hal ini jika enum yang Anda buat tidak memiliki type apapun didalamnya.
 
 ```rust
 enum Season {
