@@ -1978,7 +1978,7 @@ everything: {:?}", three_to_five, start_at_two, end_at_five, everything);
 }
 ```
 
-Karena vec lebih lambat dibandingkan dengan array, kita bisa menggunakan suatu cara untuk membuatnya menjadi cepat. Vector memiliki **kapasitas**, yang artinya adalah ruang yang diberikan kepada vector. Di saat Anda push item baru ke dalam vector, ia akan mendekati dan terus mendekati ke batas kapasitasnya. Maka, jika item yang ter-push melebihi batas kapasitasnya, maka ia akan membuat kapasitasnya menjadi dua kali lipat dan menyalin semua item di dalamnya ke dalam ruang yang baru. Ini biasa disebut sebagai reallocation. Kita akan menggunakan method `.capacity()` untuk melihat kapasitas dari vector saat kita menambahkan item ke dalamnya.
+Karena vec lebih lambat dibandingkan dengan array, kita bisa menggunakan suatu cara untuk membuatnya menjadi cepat. Vector memiliki **kapasitas**, yang artinya adalah ruang yang diberikan kepada vector. Di saat Anda push item baru ke dalam vector, ia akan mendekati dan terus mendekati ke batas kapasitasnya. Maka, jika item yang ter-push telah melebihi batas kapasitasnya, maka ia akan membuat kapasitasnya menjadi dua kali lipat dan menyalin semua item di dalamnya ke dalam ruang yang baru. Ini biasa disebut sebagai reallocation. Kita akan menggunakan method `.capacity()` untuk melihat kapasitas dari vector saat kita menambahkan item ke dalamnya.
 
 Berikut contohnya:
 
@@ -2691,7 +2691,7 @@ Berikut adalah hasilnya:
 3
 ```
 
-Anda juga bisa merepresentasikannya menggunakan angka yang lain, jika Anda menginginkannya. Rust tidak begitu peduli dalam hal ini dan Anda bisa menampilkannya dengan cara yang sama. Cukup tambahakan `=` juga angka yang Anda inginkan ke variant yang ingin Anda representasikan dengan angka. Anda tidak perlu merepresentasikan semua variant tersebut dengan angka. Namun jika Anda tidak menuliskan representasi integernya secara manual, Rust akan mengambil nilai representasi integer dari variant yang sebelumnya, menambahkannya dengan 1, dan hasilnya dijadikan representasi pada variant yang tidak direpresentasikan secara manual tersebut.
+Anda juga bisa merepresentasikannya menggunakan angka yang lain, jika Anda menginginkannya. Rust tidak begitu peduli dalam hal ini dan Anda bisa menampilkannya dengan cara yang sama. Cukup tambahakan `=`, juga angka yang Anda inginkan ke variant yang ingin Anda representasikan dengan angka. Anda tidak perlu merepresentasikan semua variant tersebut dengan angka. Namun jika Anda tidak menuliskan representasi integernya secara manual, Rust akan mengambil nilai representasi integer dari variant yang sebelumnya, menambahkannya dengan 1, dan hasilnya dijadikan representasi pada variant yang tidak direpresentasikan secara manual tersebut.
 
 ```rust
 enum Star {
@@ -11263,10 +11263,10 @@ Anda bisa melihat bahwa ada proses "bolak-balik" di saat kita melakukan test-dri
 
 - Pertama, kita tuliskan semua test yang terbersit di pikiran kita.
 - Kemudian kita mulai menuliskan codenya.
-- Di saat proses penulisan code, gita mendapatkan ide untuk menambahkan test-test baru.
+- Di saat proses penulisan code, kita mendapatkan ide untuk menambahkan test-test baru.
 - Anda tambahkan lagi testnya, dan testnya terus bertambah seiring codenya bertambah. Semakin banyak test yang Anda miliki, semakin sering code Anda diperiksa.
 
-Tentu saja, test tidak memeriksa semuanya dan salah jika kita berpikir bahwa "lolos semua test = codenya sempurna". Tapi test sangatlah berguna di saat code kita mengalami perubahan. Apabila Anda mengubah codenya kemudian dan menjalankan testnya, jika ada salah satunya yang tidak bekerja maka kita akan tahu yang mana yang semestinya kita perbaiki.
+Tentu saja, test tidak memeriksa semuanya dan salah jika kita berpikir bahwa "lolos di semua test = codenya sempurna". Tapi test sangatlah berguna di saat code kita mengalami perubahan. Apabila Anda mengubah codenya kemudian dan menjalankan testnya, jika ada salah satunya yang tidak bekerja maka kita akan tahu yang mana yang semestinya kita perbaiki.
 
 Sekarang kita bisa melakukan refactor codenya sedikit demi sedikit. Salah satu cara yang baik untuk melakukan refactor adalah menggunakan clippy. Jika Anda menginstall Rust maka Anda bisa menuliskan perintah `cargo clippy`, dan jika Anda menggunakan Playground maka klik pada `TOOLS` dan pilih Clippy. Clippy melihat pada code yang kita buat dan memberikan kita tips untuk membuat codenya menjadi lebih sederhana. Code yang kita buat tidak memiliki kesalahan, namun kita bisa membuatnya menjadi lebih baik.
 
