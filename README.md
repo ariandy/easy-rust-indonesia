@@ -884,7 +884,7 @@ Stack, heap, dan pointer sangatlah penting di Rust.
 
 Stack dan heap adalah 2 tempat penyimpanan di komputer. Perbedaannya yang menonjol adalah sebagai berikut:
 
-- Stack sangat cepat, sedangkan heap tidak terlalu cepat. Bukan berarti heap terlalu lambat, hanya saja stack selalu lebih cepat. Sayangnya, kita kita tidak bisa hanya menggunakan stack setiap saat, karena:
+- Stack sangat cepat, sedangkan heap tidak terlalu cepat. Bukan berarti heap terlalu lambat, hanya saja stack selalu lebih cepat. Sayangnya, kita tidak bisa hanya menggunakan stack setiap saat, karena:
 - Rust perlu untuk mengetahui ukuran sebuah variabel pada saat compile time. Sehingga variabel sederhana seperti `i32` akan ditaruh di stack, karena kita tahu berapa ukuran mereka secara tepat. Anda pasti mengetahui bahwa sebuah `i32` akan menggunakan 4 bytes, karena 32 bits = 4 byte. Jadinya `i32` bisa selalu ditaruh pada stack.
 - Tapi ada beberapa type yang tidak bisa kita ketahui ukurannya pada compile time. Sedangkan stack perlu tahu berapa ukurannya secara tepat. Jadi apa yang kita lakukan? Pertama, kita taruh datanya pada heap, karena heap bisa menyimpan data dengan berbagai macam ukuran. Dan setelahnya, pointer (alamat dimana data diletakkan pada heap) disimpan ke stack. Cara ini sangatlah masuk akal karena kita selalu tahu ukuran dari sebuah pointer. Jadi, pada dasarnya komputer akan menuju ke stack, baca pointernya (mecari alamat dari data yang ada di heap), dan menuju ke heap dimana data tersebut disimpan.
 
