@@ -393,7 +393,7 @@ ceiling: -19
 rounded: -20
 truncated: -19
 </code></pre>
-<p><code>f32</code> dan <code>f64</code> memiliki method bernama <code>.max()</code> dan <code>.min()</code> yang memberikan Anda nilai tertinggi atau nilai terendah dari dua buah angka. (Untuk type yang lain, Anda bisa menggunakan <code>std::cmp::max</code> dan <code>std::cmp::min</code>.) Berikut ini adalah cara menggunakan method-method tersebut dengan method <code>.fold()</code> untuk mendapatkan nilai tertinggi atau terendah. Anda bisa melihat lagi bahwa methid <code>.fold()</code> tidak hanya digunakan untuk menambahkan angka.</p>
+<p><code>f32</code> dan <code>f64</code> memiliki method bernama <code>.max()</code> dan <code>.min()</code> yang memberikan Anda nilai tertinggi atau nilai terendah dari dua buah angka. (Untuk type yang lain, Anda bisa menggunakan <code>std::cmp::max</code> dan <code>std::cmp::min</code>.) Berikut ini adalah cara menggunakan method-method tersebut dengan method <code>.fold()</code> untuk mendapatkan nilai tertinggi atau terendah. Anda bisa melihat lagi bahwa method <code>.fold()</code> tidak hanya digunakan untuk menambahkan angka.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let my_vec = vec![8.0_f64, 7.6, 9.4, 10.0, 22.0, 77.345, 10.22, 3.2, -7.77, -10.0];
     let maximum = my_vec.iter().fold(f64::MIN, |current_number, next_number| current_number.max(*next_number)); // Catatan: mulai dengan angka terkecil di f64.

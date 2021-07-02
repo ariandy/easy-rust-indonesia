@@ -545,7 +545,7 @@ fn main() {
     }
 }
 </code></pre></pre>
-<p>Sekarang ia menjadai lebih cepat, dan pada Playground ia dijalankan pada hitungan detik alih-alih terhenti ditengah jalan.</p>
+<p>Sekarang ia menjadi lebih cepat, dan pada Playground ia dijalankan pada hitungan detik alih-alih terhenti ditengah jalan.</p>
 <p>Pada contoh selanjutnya, kita memiliki <code>Vec</code> yang berisi list to-do. Kemudian kita buat sebuah <code>VecDeque</code> dan menggunakan <code>.push_front()</code> meletakkan mereka dari depan, jadinya item pertama yang kita tambahkan akan berada di sebelah kanan. Tapi setiap item yang kita push typenya adalah <code>(&amp;str, bool)</code>: <code>&amp;str</code> adalah deskripsi dan <code>false</code> berarti tasknya belum dikerjakan. Kita buat dan gunakan function <code>done()</code> untuk melakukan pop item yang berada di belakang, namun kita tidak ingin menghapusnya. Alih-alih menghapusnya, kita ubah <code>false</code> menjadi <code>true</code> dan mem-pushnya ke bagian depan sehingga kita masih tetap menyimpannya.</p>
 <p>Codenya seperti berikut:</p>
 <pre><pre class="playground"><code class="language-rust">use std::collections::VecDeque;

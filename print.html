@@ -3591,7 +3591,7 @@ fn main() {
     }
 }
 </code></pre></pre>
-<p>Sekarang ia menjadai lebih cepat, dan pada Playground ia dijalankan pada hitungan detik alih-alih terhenti ditengah jalan.</p>
+<p>Sekarang ia menjadi lebih cepat, dan pada Playground ia dijalankan pada hitungan detik alih-alih terhenti ditengah jalan.</p>
 <p>Pada contoh selanjutnya, kita memiliki <code>Vec</code> yang berisi list to-do. Kemudian kita buat sebuah <code>VecDeque</code> dan menggunakan <code>.push_front()</code> meletakkan mereka dari depan, jadinya item pertama yang kita tambahkan akan berada di sebelah kanan. Tapi setiap item yang kita push typenya adalah <code>(&amp;str, bool)</code>: <code>&amp;str</code> adalah deskripsi dan <code>false</code> berarti tasknya belum dikerjakan. Kita buat dan gunakan function <code>done()</code> untuk melakukan pop item yang berada di belakang, namun kita tidak ingin menghapusnya. Alih-alih menghapusnya, kita ubah <code>false</code> menjadi <code>true</code> dan mem-pushnya ke bagian depan sehingga kita masih tetap menyimpannya.</p>
 <p>Codenya seperti berikut:</p>
 <pre><pre class="playground"><code class="language-rust">use std::collections::VecDeque;
@@ -10031,7 +10031,7 @@ ceiling: -19
 rounded: -20
 truncated: -19
 </code></pre>
-<p><code>f32</code> dan <code>f64</code> memiliki method bernama <code>.max()</code> dan <code>.min()</code> yang memberikan Anda nilai tertinggi atau nilai terendah dari dua buah angka. (Untuk type yang lain, Anda bisa menggunakan <code>std::cmp::max</code> dan <code>std::cmp::min</code>.) Berikut ini adalah cara menggunakan method-method tersebut dengan method <code>.fold()</code> untuk mendapatkan nilai tertinggi atau terendah. Anda bisa melihat lagi bahwa methid <code>.fold()</code> tidak hanya digunakan untuk menambahkan angka.</p>
+<p><code>f32</code> dan <code>f64</code> memiliki method bernama <code>.max()</code> dan <code>.min()</code> yang memberikan Anda nilai tertinggi atau nilai terendah dari dua buah angka. (Untuk type yang lain, Anda bisa menggunakan <code>std::cmp::max</code> dan <code>std::cmp::min</code>.) Berikut ini adalah cara menggunakan method-method tersebut dengan method <code>.fold()</code> untuk mendapatkan nilai tertinggi atau terendah. Anda bisa melihat lagi bahwa method <code>.fold()</code> tidak hanya digunakan untuk menambahkan angka.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let my_vec = vec![8.0_f64, 7.6, 9.4, 10.0, 22.0, 77.345, 10.22, 3.2, -7.77, -10.0];
     let maximum = my_vec.iter().fold(f64::MIN, |current_number, next_number| current_number.max(*next_number)); // Catatan: mulai dengan angka terkecil di f64.
