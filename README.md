@@ -4432,7 +4432,7 @@ fn main() {
 }
 ```
 
-Sekarang ia menjadai lebih cepat, dan pada Playground ia dijalankan pada hitungan detik alih-alih terhenti ditengah jalan.
+Sekarang ia menjadi lebih cepat, dan pada Playground ia dijalankan pada hitungan detik alih-alih terhenti ditengah jalan.
 
 Pada contoh selanjutnya, kita memiliki `Vec` yang berisi list to-do. Kemudian kita buat sebuah `VecDeque` dan menggunakan `.push_front()` meletakkan mereka dari depan, jadinya item pertama yang kita tambahkan akan berada di sebelah kanan. Tapi setiap item yang kita push typenya adalah `(&str, bool)`: `&str` adalah deskripsi dan `false` berarti tasknya belum dikerjakan. Kita buat dan gunakan function `done()` untuk melakukan pop item yang berada di belakang, namun kita tidak ingin menghapusnya. Alih-alih menghapusnya, kita ubah `false` menjadi `true` dan mem-pushnya ke bagian depan sehingga kita masih tetap menyimpannya.
 
@@ -12150,7 +12150,7 @@ rounded: -20
 truncated: -19
 ```
 
-`f32` dan `f64` memiliki method bernama `.max()` dan `.min()` yang memberikan Anda nilai tertinggi atau nilai terendah dari dua buah angka. (Untuk type yang lain, Anda bisa menggunakan `std::cmp::max` dan `std::cmp::min`.) Berikut ini adalah cara menggunakan method-method tersebut dengan method `.fold()` untuk mendapatkan nilai tertinggi atau terendah. Anda bisa melihat lagi bahwa methid `.fold()` tidak hanya digunakan untuk menambahkan angka.
+`f32` dan `f64` memiliki method bernama `.max()` dan `.min()` yang memberikan Anda nilai tertinggi atau nilai terendah dari dua buah angka. (Untuk type yang lain, Anda bisa menggunakan `std::cmp::max` dan `std::cmp::min`.) Berikut ini adalah cara menggunakan method-method tersebut dengan method `.fold()` untuk mendapatkan nilai tertinggi atau terendah. Anda bisa melihat lagi bahwa method `.fold()` tidak hanya digunakan untuk menambahkan angka.
 
 ```rust
 fn main() {
