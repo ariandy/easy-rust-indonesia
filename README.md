@@ -4505,7 +4505,7 @@ fn main() {}
 
 Function ini akan mengambil `&str`. Jika ia `Ok`, ia akan mengembalikan `i32` yang terbungkus dengan `Ok`. Jika ia adalah `Err`, ia akan mengembalikan `ParseIntError`. Kemudian kita mencoba untuk melakukan parsing ke angka, dan menggunakan `?`. Yang artinya "periksa apakah ia sebuah error, dan berikan kami hasilnya jika isinya aman". Jika status kembaliannya tidak Ok, ia akan mengembalikan error dan selesai. Tapi jika Ok, ia akan ke baris yang selanjutnya. Pada baris selanjutnya adalah angka yang terbungkus dengan `Ok()`. Kita perlu membungkusnya dengan `Ok` karena returnnya adalah `Result<i32, ParseIntError>`, bukan `i32`.
 
-Sekarang, kita bisa menggunakan function yang telah kita buat. Mari kita liha tapa yang ia lakukan terhadap vec dengan element `&str`.
+Sekarang, kita bisa menggunakan function yang telah kita buat. Mari kita lihat apa yang ia lakukan terhadap vec dengan element `&str`.
 
 ```rust
 fn parse_str(input: &str) -> Result<i32, std::num::ParseIntError> {
