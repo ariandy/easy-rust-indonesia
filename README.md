@@ -4073,7 +4073,7 @@ fn main() {
 
 Ia akan mencetak `Some("Eye of the World")`, karena value tersebut adalah value yang terakhir dimasukkan menggunakan `.insert()`.
 
-Adalah hal yang mudah untuk memeriksa apakah sebuah entry exist atau tidak, karena Anda bisa memeriksanya dengan menggunakan `.get()` yuang mana iak akan memberikan kita `Option`:
+Adalah hal yang mudah untuk memeriksa apakah sebuah entry exist atau tidak, karena Anda bisa memeriksanya dengan menggunakan `.get()` yang mana ia akan memberikan kita `Option`:
 
 ```rust
 use std::collections::HashMap;
