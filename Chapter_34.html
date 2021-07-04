@@ -161,7 +161,7 @@ fn parse_str(input: &amp;str) -&gt; Result&lt;i32, ParseIntError&gt; {
 fn main() {}
 </code></pre></pre>
 <p>Function ini akan mengambil <code>&amp;str</code>. Jika ia <code>Ok</code>, ia akan mengembalikan <code>i32</code> yang terbungkus dengan <code>Ok</code>. Jika ia adalah <code>Err</code>, ia akan mengembalikan <code>ParseIntError</code>. Kemudian kita mencoba untuk melakukan parsing ke angka, dan menggunakan <code>?</code>. Yang artinya &quot;periksa apakah ia sebuah error, dan berikan kami hasilnya jika isinya aman&quot;. Jika status kembaliannya tidak Ok, ia akan mengembalikan error dan selesai. Tapi jika Ok, ia akan ke baris yang selanjutnya. Pada baris selanjutnya adalah angka yang terbungkus dengan <code>Ok()</code>. Kita perlu membungkusnya dengan <code>Ok</code> karena returnnya adalah <code>Result&lt;i32, ParseIntError&gt;</code>, bukan <code>i32</code>.</p>
-<p>Sekarang, kita bisa menggunakan function yang telah kita buat. Mari kita liha tapa yang ia lakukan terhadap vec dengan element <code>&amp;str</code>.</p>
+<p>Sekarang, kita bisa menggunakan function yang telah kita buat. Mari kita lihat apa yang ia lakukan terhadap vec dengan element <code>&amp;str</code>.</p>
 <pre><pre class="playground"><code class="language-rust">fn parse_str(input: &amp;str) -&gt; Result&lt;i32, std::num::ParseIntError&gt; {
     let parsed_number = input.parse::&lt;i32&gt;()?;
     Ok(parsed_number)
