@@ -4675,7 +4675,7 @@ fn main() {
 }
 ```
 
-Program di atas tidak akan melakukan, karena semua macro assertnya sesuai. (Inilah yang kita inginkan)
+Program di atas tidak akan melakukan apapun (atau menampilkan apapun), karena semua macro assertnya sesuai. (Inilah yang kita inginkan)
 
 Anda juga bisa menambahkan pesan jika Anda menginginkannya.
 
