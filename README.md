@@ -6241,7 +6241,7 @@ fn main() {
 
 Hasilnya adalah `["Unknown", "Doug Suttles"]`.
 
-Kita tahu bahwa `.filter_map()` memerlukan `Option`, bagaimana kalau `Result`? Tidak apa-apa: ada method bernama `.ok()` yang akan mengubah `Result` menjadi `Option`. Ia dinamakan `.ok()` karena semua yang ia kirimkan adalah result `Ok` (informasi `Err` dihilangkan). Kita ingat bahwa `Option` adalah `Option<T>`, sedangkan `Result` adalah `Result<T, E>` dengan informasi mengenai `Ok` dan juga `Err`. Jadi di saat Anda menggunkaan `.ok()`, semua `Err` akan menghilang dan menjadi `None`.
+Kita tahu bahwa `.filter_map()` memerlukan `Option`, bagaimana kalau `Result`? Tidak apa-apa: ada method bernama `.ok()` yang akan mengubah `Result` menjadi `Option`. Ia dinamakan `.ok()` karena semua yang ia kirimkan adalah result `Ok` (informasi `Err` dihilangkan). Kita ingat bahwa `Option` adalah `Option<T>`, sedangkan `Result` adalah `Result<T, E>` dengan informasi mengenai `Ok` dan juga `Err`. Jadi di saat Anda menggunakan `.ok()`, semua `Err` akan menghilang dan menjadi `None`.
 
 Menggunakan `.parse()` adalah contoh mudah untuk hal ini, dimana kita mencoba untuk melakukan parse input dari user. `.parse()` ini akan mengambil `&str` dan mencoba mengubahnya menjadi `f32`. Ia akan me-return `Result`, namun kita menggunakan `filter_map()`, jadi kita hanya membuang errornya saja. Semua yang `Err` akan dijadikan `None` dan selanjutnya akan difilter oleh `.filter_map()`.
 
