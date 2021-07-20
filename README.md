@@ -6142,7 +6142,7 @@ Hasilnya adalah `140     399     923     481     800     622     623     218    
 
 Terkadang Anda akan menemukan `|_|` pada sebuah closure. Ini artinya bahwa closure tersebut memerlukan argument/parameter (seperti `x`), tetapi Anda tidak ingin menggunakannya. Jadinya, `|_|` berarti "Okay, closure ini mengambil argument, tapi saya tidak memberikannya nama karena saya tidak peduli tentang hal itu".
 
-Ini adalah contoh dimana akan mucul error saat Anda tidak melakukan hal tersebut:
+Ini adalah contoh dimana akan muncul error saat Anda tidak melakukan hal tersebut:
 
 ```rust
 fn main() {
