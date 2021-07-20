@@ -240,7 +240,7 @@ fn returns_just_a_trait() -&gt; Box&lt;dyn JustATrait&gt; {
 </span></code></pre></pre>
 <p>Dan sekarang codenya berjalan, karena yang berada di stack adalah <code>Box</code> dan kita mengetahui ukuran dari <code>Box</code>.</p>
 <p>Anda akan sering melihat hal ini dalam bentuk <code>Box&lt;dyn Error&gt;</code>, karena terkadang Anda bisa memiliki lebih dari satu kemungkinan error.</p>
-<p>Kita bisa membuat dua buah type error untuk menunjukkan ini. Untuk membuat type error (yang resmi disediakan oleh Rust), Anda perlu untuk mengimplementasikan <code>std::error::Error</code>. Hal ini sangatlah mudah: cukup tuliskan impl <code>std::error::Error {}</code>. Tapi error juga memerlukan <code>Debug</code> dan <code>Display</code> sehinga ia bisa memberikan informasi tentang problem yang muncul. <code>Debug</code> bisa digunakan dengan mudah menggunakan <code>#[derive(Debug)]</code>, namun <code>Display</code> memerlukan method <code>.fmt()</code>. Kita sudah pernah melakukannya sekali sebelumnya.</p>
+<p>Kita bisa membuat dua buah type error untuk menunjukkan ini. Untuk membuat type error (yang resmi disediakan oleh Rust), Anda perlu untuk mengimplementasikan <code>std::error::Error</code>. Hal ini sangatlah mudah: cukup tuliskan <code>impl std::error::Error {}</code>. Tapi error juga memerlukan <code>Debug</code> dan <code>Display</code> sehinga ia bisa memberikan informasi tentang problem yang muncul. <code>Debug</code> bisa digunakan dengan mudah menggunakan <code>#[derive(Debug)]</code>, namun <code>Display</code> memerlukan method <code>.fmt()</code>. Kita sudah pernah melakukannya sekali sebelumnya.</p>
 <p>Codenya adalah seperti berikut:</p>
 <pre><pre class="playground"><code class="language-rust">use std::error::Error;
 use std::fmt;
