@@ -8610,10 +8610,10 @@ where
 }
 
 fn main() {
+    let some_vec = vec![9, 8, 10];
     do_something(|| {
-        let some_vec = vec![9, 8, 10];
         some_vec
-            .iter()
+            .into_iter()
             .for_each(|x| println!("The number is: {}", x));
     })
 }
