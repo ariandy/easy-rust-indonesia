@@ -16,6 +16,12 @@
 
 ![](Easy_Rust_sample_image.png)
 
+## Penyelarasan Isi & Translasi
+
+Isi dan translasi pada buku ini telah diselaraskan dengan commit [2ff96aa](https://github.com/Dhghomon/easy_rust/commit/2ff96aa67a1d6ca29dd5228303a3fa328152929c) yang ada pada repositori [Dhghomon
+/
+easy_rust](https://github.com/Dhghomon/easy_rust)
+
 ## Introduction
 
 Rust adalah bahasa baru yang telah memiliki textbook yang mumpuni. Namun terkadang textbooknya sendiri cukup sulit untuk dipahami karena textbook tersebut ditulis untuk native-English speaker. Sekarang, beberapa perusahaan dan individu mempelajari Rust, dan mungkin saja mereka bisa mempelajarinya lebih cepat apabila menggunakan textbook yang bahasa Inggrisnya lebih mudah. Untuk itulah textbook ini diperuntukkan bagi mereka yang ingin mempelajari Rust dengan bahasa Inggris yang sederhana (mudah dipahami).
