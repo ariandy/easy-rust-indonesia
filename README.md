@@ -1,4 +1,4 @@
-## Update
+## Updates
 ![example workflow name](https://github.com/Dhghomon/easy_rust/workflows/github%20pages/badge.svg)
 
 
@@ -15,12 +15,6 @@
 
 
 ![](Easy_Rust_sample_image.png)
-
-## Penyelarasan Isi & Translasi
-
-Isi dan translasi pada buku ini telah diselaraskan dengan commit [2ff96aa](https://github.com/Dhghomon/easy_rust/commit/2ff96aa67a1d6ca29dd5228303a3fa328152929c) yang ada pada repositori [Dhghomon
-/
-easy_rust](https://github.com/Dhghomon/easy_rust)
 
 ## Introduction
 
@@ -45,11 +39,15 @@ Jika Anda menemukan kesalahan-kesalahan tersebut, Anda bisa menghubungi saya via
 - Sebelum membaca buku ini, ada baiknya apabila sebelumnya Anda telah menggunakan bahasa pemrograman yang lain. Karena ada beberapa istilah teknis yang tetap saya biarkan saja. Karena bagi saya akan lebih mudah dipahami jika term tersebut dibiarkan begitu saja dibandingkan setelah diterjemahkan. Beberapa contohnya, saya tidak akan menerjemahkan "method", "closure", "statement", "trait" atau juga "compiler", dll. Akan aneh rasanya di saat saya menerjemahkan "compiler" menjadi "kompilator".
 
 ### Catatan lain
-- Proses translasi yang saya lakukan benar-benar spontan, sehingga ada beberapa terjemahan yang sifatnya tidak konsisten. Contohnya, terkadang saya membiarkan "return" tidak diterjemahkan. Sedangkan di tempat lainnya saya terjemahkan menjadi "kembalian". Begitu juga dengan "print". Di beberapa tulisan, saya biarkan ia tetap tertulis "print", namun di tulisan yang lain, saya menerjemahkannya dengan "cetak". Saya masih memikirkan apakah ke depannya ini perlu diseragamkan (jika diterjemahkan, semuanya ikut diterjemahkan, dan sebaliknya), ataukah tetap dibiarkan seperti itu saja.
+- Proses translasi yang saya lakukan benar-benar spontan, sehingga ada beberapa terjemahan yang sifatnya tidak konsisten. Contohnya, terkadang saya membiarkan "return" tidak diterjemahkan. Sedangkan di tempat lainnya saya terjemahkan menjadi "kembalian". Begitu juga dengan "print". Di beberapa tulisan, saya biarkan ia tetap tertulis "print", namun di tulisan yang lain, saya menerjemahkannya dengan "cetak". Saya masih memikirkan apakah ke depannya ini perlu diseragamkan (jika diterjemahkan, semuanya ikut diterjemahkan, atau bila tidak diterjemahkan, maka semuanya tidak diterjemahkan), ataukah tetap dibiarkan seperti itu saja.
 - Karena saya menerjemahkannya dan menuliskannya secara spontan pula, banyak penulisan yang melanggar kaidah EYD. Contohnya, ada beberapa bagian saya menulis "di" yang semestinya dipisah menjadi "di" yang disambung . Hal ini pun akan saya perbaiki.
-- Judul dari setiap bab untuk sementara ini akan saya biarkan dalam bahasa Inggris (kecuali judul untuk bab ini).
+- Judul dari setiap bab pada buku ini akan saya biarkan dalam bahasa Inggris (kecuali judul untuk bab ini).
 
 Selamat membaca!
+
+### Penyelarasan Isi & Translasi
+
+Isi dan translasi pada buku ini telah diselaraskan dengan commit [2ff96aa](https://github.com/Dhghomon/easy_rust/commit/2ff96aa67a1d6ca29dd5228303a3fa328152929c) yang ada pada repositori [Dhghomon/easy_rust](https://github.com/Dhghomon/easy_rust)
 
 ## Writing Rust in Easy English
 
