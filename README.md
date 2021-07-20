@@ -13837,7 +13837,7 @@ UNDERSTAND
 NOW
 ```
 
-Input: `cargo run LOWERCASE Does this work too`
+Input: `cargo run lowercase Does this work too`
 
 ```text
 Does
