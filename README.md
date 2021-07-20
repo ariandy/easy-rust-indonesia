@@ -9754,7 +9754,7 @@ Dan sekarang codenya berjalan, karena yang berada di stack adalah `Box` dan kita
 
 Anda akan sering melihat hal ini dalam bentuk `Box<dyn Error>`, karena terkadang Anda bisa memiliki lebih dari satu kemungkinan error.
 
-Kita bisa membuat dua buah type error untuk menunjukkan ini. Untuk membuat type error (yang resmi disediakan oleh Rust), Anda perlu untuk mengimplementasikan `std::error::Error`. Hal ini sangatlah mudah: cukup tuliskan impl `std::error::Error {}`. Tapi error juga memerlukan `Debug` dan `Display` sehinga ia bisa memberikan informasi tentang problem yang muncul. `Debug` bisa digunakan dengan mudah menggunakan `#[derive(Debug)]`, namun `Display` memerlukan method `.fmt()`. Kita sudah pernah melakukannya sekali sebelumnya.
+Kita bisa membuat dua buah type error untuk menunjukkan ini. Untuk membuat type error (yang resmi disediakan oleh Rust), Anda perlu untuk mengimplementasikan `std::error::Error`. Hal ini sangatlah mudah: cukup tuliskan `impl std::error::Error {}`. Tapi error juga memerlukan `Debug` dan `Display` sehinga ia bisa memberikan informasi tentang problem yang muncul. `Debug` bisa digunakan dengan mudah menggunakan `#[derive(Debug)]`, namun `Display` memerlukan method `.fmt()`. Kita sudah pernah melakukannya sekali sebelumnya.
 
 Codenya adalah seperti berikut:
 
