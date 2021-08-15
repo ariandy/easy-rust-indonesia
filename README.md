@@ -2370,7 +2370,7 @@ fn main() {
 }
 ```
 
-Anda juga bisa menggunakan `@` untuk memberikan nama ke value dari sebuah ekspresi `match`, dan Anda bisa menggunakannya. Pada contoh ini kita mencocokkan input `i32` ke dalam function. Jika ia bernilai 4 atau 13, kita ingin menggunakan angka teresebut ke dalam statement `println!`. Sebaliknya, kita tidak perlu untuk menggunakannya.
+Anda juga bisa menggunakan `@` untuk memberikan nama ke value dari sebuah ekspresi `match`, dan Anda bisa menggunakannya. Pada contoh ini kita mencocokkan input `i32` ke dalam function. Jika ia bernilai 4 atau 13, kita ingin menggunakan angka tersebut ke dalam statement `println!`. Sebaliknya, kita tidak perlu untuk menggunakannya.
 
 ```rust
 fn match_number(input: i32) {
@@ -2957,7 +2957,7 @@ warning: unused variable: `number`
   |         ^^^^^^ help: if this is intentional, prefix it with an underscore: `_number`
 ```
 
-Rust menyarankan Anda untuk `_number` daripada menuliskan `_`. Menulis `_` di depan nama variabel berarti "munkin nanti Saya akan membutuhkannya". Tapi kalau Anda hanya menggunakan `_` artinya "Saya sama sekali tidak peduli dengan variabel ini". Jadi Anda bisa menambahkan `_` di depan nama variabel jika mungkin Anda akan menggunakannya kemudian dan tidak ingin compiler memberikan warning tentang itu.
+Rust menyarankan Anda untuk `_number` daripada menuliskan `_`. Menulis `_` di depan nama variabel berarti "mungkin nanti Saya akan membutuhkannya". Tapi kalau Anda hanya menggunakan `_` artinya "Saya sama sekali tidak peduli dengan variabel ini". Jadi Anda bisa menambahkan `_` di depan nama variabel jika mungkin Anda akan menggunakannya kemudian dan tidak ingin compiler memberikan warning tentang itu.
 
 Anda juga bisa menggunakan `break` untuk me-return value. Anda menuliskan valuenya tepat setelah `break` dan menggunakan `;`. Ini adalah contoh `loop` dan break yang mengisi value ke variabel `my_number`.
 
