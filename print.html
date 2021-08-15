@@ -734,7 +734,7 @@ fn main() {
 <div style="break-before: page; page-break-before: always;"></div><h2 id="display-and-debug"><a class="header" href="#display-and-debug">Display and debug</a></h2>
 <p><strong><a href="https://youtu.be/jd3pC248c0o">See this chapter on YouTube</a></strong></p>
 <p>Variabel sederhana di Rust bisa di-print/dicetak menggunakan <code>{}</code> di dalam <code>println!</code>. Namun beberapa variabel tidak bisa, dan Anda perlu menggunakan <strong>debug print</strong>. Debug print adalah print untuk keperluan si programmer, karena debug print biasanya memunculkan lebih banyak informasi. Terkadang debug terlihat tidak nyaman dipandang, namun itu dikarenakan ia memiliki informasi ekstra untuk membantu Anda.</p>
-<p>Bagaimana kita mengetahui jika kita membutuhkan <code>{:?}</code>, bukan <code>{}</code>? Compiler akan memberi tahukannya untuk Anda. Sebagai contoh:</p>
+<p>Bagaimana kita mengetahui jika kita membutuhkan <code>{:?}</code>, bukan <code>{}</code>? Compiler akan memberitahukannya untuk Anda. Sebagai contoh:</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let doesnt_print = ();
     println!(&quot;This will not print: {}&quot;, doesnt_print); // ⚠️
@@ -1202,7 +1202,7 @@ And 'Adrian Fahrenheit Țepeș' is 25 bytes. It is not Sized.
 </ul>
 <p>Jadi, bisa dibilang bahwa keduanya hampir sama. Meskipun programmer Rust lebih sering menggunakan <code>const</code>.</p>
 <p>Keduanya ditulis dengan HURUF_KAPITAL, dan biasanya ditulis di luar <code>main</code>, sehingga mereka tidak hangus diseluruh bagian code program.</p>
-<p>Baginilah contohnya: <code>const NUMBER_OF_MONTHS: u32 = 12;</code> dan <code>static SEASONS: [&amp;str; 4] = [&quot;Spring&quot;, &quot;Summer&quot;, &quot;Fall&quot;, &quot;Winter&quot;];</code></p>
+<p>Beginilah contohnya: <code>const NUMBER_OF_MONTHS: u32 = 12;</code> dan <code>static SEASONS: [&amp;str; 4] = [&quot;Spring&quot;, &quot;Summer&quot;, &quot;Fall&quot;, &quot;Winter&quot;];</code></p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="more-on-references"><a class="header" href="#more-on-references">More on references</a></h2>
 <p><strong><a href="https://youtu.be/R13sQ8SNoEQ">See this chapter on YouTube</a></strong></p>
 <p>Reference sangat penting di Rust. Rust menggunakan reference untuk memastikan bahwa semua akses ke memori benar-benar aman. Kita tahu bahwa kita menggunakan <code>&amp;</code> untuk membuat reference:</p>
@@ -1699,7 +1699,7 @@ everything: {:?}&quot;, three_to_five, start_at_two, end_at_five, everything);
 }
 </code></pre></pre>
 <p>Vector pada program ini memiliki 0 reallocation, yang mana ini lebih baik. Jadi jika Anda berfikir bahwa Anda mengetahui seberapa banyak element yang Anda perlukan, Anda bisa menggunakan <code>Vec::with_capacity()</code> untuk membuatnya lebih cepat.</p>
-<p>Anda juga harus mengingat bahwa Anda bisa menggunakan <code>.into()</code> untuk membuat <code>&amp;str</code> menjadi <code>String</code>. Anda juga bisa menggunakannya untuk membuat array menjadi <code>Vec</code>. Anda harus memberi tahu kepada <code>.into()</code> bahwa Anda menginginkan <code>Vec</code>, tapi Anda tidak harus memilih type untu <code>Vec</code>nya. Jika Anda tidak ingin memilih typenya, Anda bisa menulis <code>Vec&lt;_&gt;</code>.</p>
+<p>Anda juga harus mengingat bahwa Anda bisa menggunakan <code>.into()</code> untuk membuat <code>&amp;str</code> menjadi <code>String</code>. Anda juga bisa menggunakannya untuk membuat array menjadi <code>Vec</code>. Anda harus memberi tahu kepada <code>.into()</code> bahwa Anda menginginkan <code>Vec</code>, tapi Anda tidak harus memilih type untuk <code>Vec</code>nya. Jika Anda tidak ingin memilih typenya, Anda bisa menulis <code>Vec&lt;_&gt;</code>.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let my_vec: Vec&lt;u8&gt; = [1, 2, 3].into();
     let my_vec2: Vec&lt;_&gt; = [9, 0, 10].into(); // Vec&lt;_&gt; artinya &quot;pilihkan type Vec-nya untuk saya&quot;
@@ -4373,7 +4373,7 @@ From&lt;Vec&lt;T&gt;&gt;
 From&lt;VecDeque&lt;T&gt;&gt;
 </code></pre>
 <p>Banyak sekali <code>Vec::from()</code> yang belum kita coba. Mari kita buat beberapa dan lihat apa yang terjadi.</p>
-<pre><pre class="playground"><code class="language-rust">use std::fmt::Display; // Kita akan membuat generic function unktuk mencetaknya, sehingga kita memerlukan Display
+<pre><pre class="playground"><code class="language-rust">use std::fmt::Display; // Kita akan membuat generic function untuk mencetaknya, sehingga kita memerlukan Display
 
 fn print_vec&lt;T: Display&gt;(input: &amp;Vec&lt;T&gt;) { // Ambil Vec&lt;T&gt; jika type T memiliki Display
     for item in input {
@@ -4614,7 +4614,7 @@ fn main() {
     println!(&quot;{:?}&quot;, new_vec);
 }
 </code></pre></pre>
-<p>Anda bisa menggunakan functional style secara maksimal apabila Anda mengerti closure dan juga iterator, yang mana akankita pelajari selanjutnya.</p>
+<p>Anda bisa menggunakan functional style secara maksimal apabila Anda mengerti closure dan juga iterator, yang mana akan kita pelajari selanjutnya.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="iterators"><a class="header" href="#iterators">Iterators</a></h2>
 <p>Iterator adalah konstruksi yang dapat memberi Anda item yang berada dalam collection, satu demi satu. Sebenarnya, kita telah menggunakan iterator berkali-kali: <code>for</code> loop memberikan Anda iterator. Saat Anda ingin menggunakan iterator di lain waktu, Anda harus memilih apa jenis iteratornya:</p>
 <ul>
@@ -4961,7 +4961,7 @@ fn main() {
 <p>Hasilnya adalah:</p>
 <pre><code class="language-text">For key 2 we get two.
 </code></pre>
-<p>Anda bisa melihat bahwa kita menuliskan <code>&lt;HashMap&lt;_, _&gt;&gt;</code> karena itu adalah informasi yang cukup untuk Rust menentukan apap typenya (yaitu <code>HashMap&lt;i32, &amp;str&gt;</code>). Anda bisa menuliskan <code>.collect::&lt;HashMap&lt;i32, &amp;str&gt;&gt;();</code> jika Anda menginginkannya, atau Anda dapat menuliskannya seperti ini jika Anda mau:</p>
+<p>Anda bisa melihat bahwa kita menuliskan <code>&lt;HashMap&lt;_, _&gt;&gt;</code> karena itu adalah informasi yang cukup untuk Rust menentukan apa typenya (yaitu <code>HashMap&lt;i32, &amp;str&gt;</code>). Anda bisa menuliskan <code>.collect::&lt;HashMap&lt;i32, &amp;str&gt;&gt;();</code> jika Anda menginginkannya, atau Anda dapat menuliskannya seperti ini jika Anda mau:</p>
 <pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
 
 fn main() {
@@ -6173,7 +6173,7 @@ fn main() {
     println!(&quot;{:?}&quot;, mutex_changer); // Sekarang hasilnya adalah 6
 }
 </code></pre></pre>
-<p>Tetapi <code>mutex_changer</code> tetap terkuci setelah kita melakukan perubahan. Bagaimana cara kita menghentikan pengunciannya? <code>Mutex</code> akan terbuka (unlocked) secara otomatis di saat <code>MutexGuard</code> keluar dari scope (goes out of scope). &quot;Go out of scope&quot; berarti code blocknya telah selesai. Contohnya:</p>
+<p>Tetapi <code>mutex_changer</code> tetap terkunci setelah kita melakukan perubahan. Bagaimana cara kita menghentikan pengunciannya? <code>Mutex</code> akan terbuka (unlocked) secara otomatis di saat <code>MutexGuard</code> keluar dari scope (goes out of scope). &quot;Go out of scope&quot; berarti code blocknya telah selesai. Contohnya:</p>
 <pre><pre class="playground"><code class="language-rust">use std::sync::Mutex;
 
 fn main() {
@@ -6527,7 +6527,7 @@ fn main() {}
 <pre><pre class="playground"><code class="language-rust">struct Book {} // Okay, pertama, saya memerlukan sebuah struct bernama Book.
                // Belum ada apapun di dalamnya - kita akan menambahkannya kemudian
 
-enum BookType { // Sebuah buku bisa dalam bentuk hardcover ataua softcover, sehingga kita tambahkan enum
+enum BookType { // Sebuah buku bisa dalam bentuk hardcover atau softcover, sehingga kita tambahkan enum
     HardCover,
     SoftCover,
 }
@@ -7689,7 +7689,7 @@ fn main() {
     let some_vec = vec![&quot;I&quot;, &quot;am&quot;, &quot;just&quot;, &quot;a&quot;, &quot;vec&quot;];
 }
 </code></pre></pre>
-<p>Tentu saja, berurusan dengan dead code dan unused variables sangatlah penting. Tapi terkadan Anda menginginkan compiler &quot;untuk tetap diam&quot; sementara waktu. Atau mungkin Anda perlu menunjukkan beberapa bagian code ke orang lain. Atau mungkin juga Anda ingin mengajarkan orang lain tentang Rust dan Anda tidak ingin membingungkan mereka dengan pesan yang ditampilkan oleh compiler.</p>
+<p>Tentu saja, berurusan dengan dead code dan unused variables sangatlah penting. Tapi terkadang Anda menginginkan compiler &quot;untuk tetap diam&quot; sementara waktu. Atau mungkin Anda perlu menunjukkan beberapa bagian code ke orang lain. Atau mungkin juga Anda ingin mengajarkan orang lain tentang Rust dan Anda tidak ingin membingungkan mereka dengan pesan yang ditampilkan oleh compiler.</p>
 <p><code>#[derive(TraitName)]</code> memungkinkan kita untuk men-derive (menurunkan) beberapa trait untuk struct dan enum yang kita buat. Attribute ini bekerja pada banyak trait-trait umum yang dapat diturunkan secara otomatis. Beberapa seperti <code>Display</code> tidak bisa diturunkan secara otomatis. Karena, untuk <code>Display</code>, Anda perlu memilih bagaimana cara menampilkannya:</p>
 <pre><pre class="playground"><code class="language-rust">// ⚠️
 #[derive(Display)]
@@ -8757,7 +8757,7 @@ fn main() {
 <pre><code class="language-text">6
 Trying to print a string...
 </code></pre>
-<p>Bagaimana <code>pub</code> pada sebuah struct, enum, trait, ataua module? <code>pub</code> bekerja seperti ini untuk mereka masing-masing:</p>
+<p>Bagaimana <code>pub</code> pada sebuah struct, enum, trait, atau module? <code>pub</code> bekerja seperti ini untuk mereka masing-masing:</p>
 <ul>
 <li><code>pub</code> pada sebuah struct: ia membbuat structnya menjadi public, namun item-item di dalamnya tidaklah public. Untuk membuat itemnya public, Anda perlu menuliskan <code>pub</code> pada setiap item tersebut.</li>
 <li><code>pub</code> pada sebuah enum atau trait: semuanya menjadi public. Ini sangatlah masuk akal, karena trait adalah tentang memberikan perilaku yang sama pada sesuatu. Dan enum adalah tentang memilih salah satu dari banyaknya item, dan Anda perlu melihat semua pilihan tersebut untuk memilihnya.</li>
@@ -9214,7 +9214,7 @@ fn math(input: &amp;str) -&gt; i32 {
             adds = true;  // Setelah melakukan pengurangan, ubah kembali addsnya menjadi true.
         }
     }
-    total // Akhrnya, return totalnya
+    total // Akhirnya, return totalnya
 }
    /// Kita akan menambahkan beberapa test untuk memastikan program kita telah berjalan dengan benar
 
@@ -11023,7 +11023,7 @@ this, is, really, nice
 <p>Jadi untuk menggunakannya, Anda perlu memasukkan ini:</p>
 <ul>
 <li>sebuah expression (<code>expr</code>) yang mengambil nama variabel <code>$dst</code>.</li>
-<li>apapu yang ada setelahnya. Jika disitu tertulis <code>$arg:tt</code> maka ia hanya bisa mengambil satu argument, tapi karena disitu tertulis <code>$($arg:tt)*</code> ia akan mengambil nol, satu, atau banyak argument.</li>
+<li>apapun yang ada setelahnya. Jika disitu tertulis <code>$arg:tt</code> maka ia hanya bisa mengambil satu argument, tapi karena disitu tertulis <code>$($arg:tt)*</code> ia akan mengambil nol, satu, atau banyak argument.</li>
 </ul>
 <p>Kemudian ia mengambil <code>$dst</code> dan menggunakan method <code>write_fmt</code> pada <code>$dst</code> tersebut. Di dalamnya, ia menggunakan macro lainnya yang bernama <code>format_args!</code> yang mengambil semua <code>$($arg)*</code>, atau semua argument yang kita masukkan.</p>
 <p>Sekarang saatnya kita melihat isi dari macro <code>todo!</code>. Macro ini digunakan ketika Anda menginginkan programnya tercompile namun beberapa bagian codenya belum dituliskan. Berikut isi dari macro tersebut:</p>

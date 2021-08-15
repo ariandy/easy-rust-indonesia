@@ -359,7 +359,7 @@ this, is, really, nice
 <p>Jadi untuk menggunakannya, Anda perlu memasukkan ini:</p>
 <ul>
 <li>sebuah expression (<code>expr</code>) yang mengambil nama variabel <code>$dst</code>.</li>
-<li>apapu yang ada setelahnya. Jika disitu tertulis <code>$arg:tt</code> maka ia hanya bisa mengambil satu argument, tapi karena disitu tertulis <code>$($arg:tt)*</code> ia akan mengambil nol, satu, atau banyak argument.</li>
+<li>apapun yang ada setelahnya. Jika disitu tertulis <code>$arg:tt</code> maka ia hanya bisa mengambil satu argument, tapi karena disitu tertulis <code>$($arg:tt)*</code> ia akan mengambil nol, satu, atau banyak argument.</li>
 </ul>
 <p>Kemudian ia mengambil <code>$dst</code> dan menggunakan method <code>write_fmt</code> pada <code>$dst</code> tersebut. Di dalamnya, ia menggunakan macro lainnya yang bernama <code>format_args!</code> yang mengambil semua <code>$($arg)*</code>, atau semua argument yang kita masukkan.</p>
 <p>Sekarang saatnya kita melihat isi dari macro <code>todo!</code>. Macro ini digunakan ketika Anda menginginkan programnya tercompile namun beberapa bagian codenya belum dituliskan. Berikut isi dari macro tersebut:</p>

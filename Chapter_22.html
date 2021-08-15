@@ -228,7 +228,7 @@ everything: {:?}&quot;, three_to_five, start_at_two, end_at_five, everything);
 }
 </code></pre></pre>
 <p>Vector pada program ini memiliki 0 reallocation, yang mana ini lebih baik. Jadi jika Anda berfikir bahwa Anda mengetahui seberapa banyak element yang Anda perlukan, Anda bisa menggunakan <code>Vec::with_capacity()</code> untuk membuatnya lebih cepat.</p>
-<p>Anda juga harus mengingat bahwa Anda bisa menggunakan <code>.into()</code> untuk membuat <code>&amp;str</code> menjadi <code>String</code>. Anda juga bisa menggunakannya untuk membuat array menjadi <code>Vec</code>. Anda harus memberi tahu kepada <code>.into()</code> bahwa Anda menginginkan <code>Vec</code>, tapi Anda tidak harus memilih type untu <code>Vec</code>nya. Jika Anda tidak ingin memilih typenya, Anda bisa menulis <code>Vec&lt;_&gt;</code>.</p>
+<p>Anda juga harus mengingat bahwa Anda bisa menggunakan <code>.into()</code> untuk membuat <code>&amp;str</code> menjadi <code>String</code>. Anda juga bisa menggunakannya untuk membuat array menjadi <code>Vec</code>. Anda harus memberi tahu kepada <code>.into()</code> bahwa Anda menginginkan <code>Vec</code>, tapi Anda tidak harus memilih type untuk <code>Vec</code>nya. Jika Anda tidak ingin memilih typenya, Anda bisa menulis <code>Vec&lt;_&gt;</code>.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let my_vec: Vec&lt;u8&gt; = [1, 2, 3].into();
     let my_vec2: Vec&lt;_&gt; = [9, 0, 10].into(); // Vec&lt;_&gt; artinya &quot;pilihkan type Vec-nya untuk saya&quot;

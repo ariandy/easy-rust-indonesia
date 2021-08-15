@@ -624,7 +624,7 @@ From&lt;Vec&lt;T&gt;&gt;
 From&lt;VecDeque&lt;T&gt;&gt;
 </code></pre>
 <p>Banyak sekali <code>Vec::from()</code> yang belum kita coba. Mari kita buat beberapa dan lihat apa yang terjadi.</p>
-<pre><pre class="playground"><code class="language-rust">use std::fmt::Display; // Kita akan membuat generic function unktuk mencetaknya, sehingga kita memerlukan Display
+<pre><pre class="playground"><code class="language-rust">use std::fmt::Display; // Kita akan membuat generic function untuk mencetaknya, sehingga kita memerlukan Display
 
 fn print_vec&lt;T: Display&gt;(input: &amp;Vec&lt;T&gt;) { // Ambil Vec&lt;T&gt; jika type T memiliki Display
     for item in input {

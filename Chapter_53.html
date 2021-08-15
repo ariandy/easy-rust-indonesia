@@ -194,7 +194,7 @@ fn main() {
     let some_vec = vec![&quot;I&quot;, &quot;am&quot;, &quot;just&quot;, &quot;a&quot;, &quot;vec&quot;];
 }
 </code></pre></pre>
-<p>Tentu saja, berurusan dengan dead code dan unused variables sangatlah penting. Tapi terkadan Anda menginginkan compiler &quot;untuk tetap diam&quot; sementara waktu. Atau mungkin Anda perlu menunjukkan beberapa bagian code ke orang lain. Atau mungkin juga Anda ingin mengajarkan orang lain tentang Rust dan Anda tidak ingin membingungkan mereka dengan pesan yang ditampilkan oleh compiler.</p>
+<p>Tentu saja, berurusan dengan dead code dan unused variables sangatlah penting. Tapi terkadang Anda menginginkan compiler &quot;untuk tetap diam&quot; sementara waktu. Atau mungkin Anda perlu menunjukkan beberapa bagian code ke orang lain. Atau mungkin juga Anda ingin mengajarkan orang lain tentang Rust dan Anda tidak ingin membingungkan mereka dengan pesan yang ditampilkan oleh compiler.</p>
 <p><code>#[derive(TraitName)]</code> memungkinkan kita untuk men-derive (menurunkan) beberapa trait untuk struct dan enum yang kita buat. Attribute ini bekerja pada banyak trait-trait umum yang dapat diturunkan secara otomatis. Beberapa seperti <code>Display</code> tidak bisa diturunkan secara otomatis. Karena, untuk <code>Display</code>, Anda perlu memilih bagaimana cara menampilkannya:</p>
 <pre><pre class="playground"><code class="language-rust">// ⚠️
 #[derive(Display)]

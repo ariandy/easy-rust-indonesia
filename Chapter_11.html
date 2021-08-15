@@ -146,7 +146,7 @@
                         <h2 id="display-and-debug"><a class="header" href="#display-and-debug">Display and debug</a></h2>
 <p><strong><a href="https://youtu.be/jd3pC248c0o">See this chapter on YouTube</a></strong></p>
 <p>Variabel sederhana di Rust bisa di-print/dicetak menggunakan <code>{}</code> di dalam <code>println!</code>. Namun beberapa variabel tidak bisa, dan Anda perlu menggunakan <strong>debug print</strong>. Debug print adalah print untuk keperluan si programmer, karena debug print biasanya memunculkan lebih banyak informasi. Terkadang debug terlihat tidak nyaman dipandang, namun itu dikarenakan ia memiliki informasi ekstra untuk membantu Anda.</p>
-<p>Bagaimana kita mengetahui jika kita membutuhkan <code>{:?}</code>, bukan <code>{}</code>? Compiler akan memberi tahukannya untuk Anda. Sebagai contoh:</p>
+<p>Bagaimana kita mengetahui jika kita membutuhkan <code>{:?}</code>, bukan <code>{}</code>? Compiler akan memberitahukannya untuk Anda. Sebagai contoh:</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let doesnt_print = ();
     println!(&quot;This will not print: {}&quot;, doesnt_print); // ⚠️
