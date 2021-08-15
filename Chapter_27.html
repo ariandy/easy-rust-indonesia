@@ -275,7 +275,7 @@ Printing the same thing three times
 2 |     for number in 0..3 {
   |         ^^^^^^ help: if this is intentional, prefix it with an underscore: `_number`
 </code></pre>
-<p>Rust menyarankan Anda untuk <code>_number</code> daripada menuliskan <code>_</code>. Menulis <code>_</code> di depan nama variabel berarti &quot;munkin nanti Saya akan membutuhkannya&quot;. Tapi kalau Anda hanya menggunakan <code>_</code> artinya &quot;Saya sama sekali tidak peduli dengan variabel ini&quot;. Jadi Anda bisa menambahkan <code>_</code> di depan nama variabel jika mungkin Anda akan menggunakannya kemudian dan tidak ingin compiler memberikan warning tentang itu.</p>
+<p>Rust menyarankan Anda untuk <code>_number</code> daripada menuliskan <code>_</code>. Menulis <code>_</code> di depan nama variabel berarti &quot;mungkin nanti Saya akan membutuhkannya&quot;. Tapi kalau Anda hanya menggunakan <code>_</code> artinya &quot;Saya sama sekali tidak peduli dengan variabel ini&quot;. Jadi Anda bisa menambahkan <code>_</code> di depan nama variabel jika mungkin Anda akan menggunakannya kemudian dan tidak ingin compiler memberikan warning tentang itu.</p>
 <p>Anda juga bisa menggunakan <code>break</code> untuk me-return value. Anda menuliskan valuenya tepat setelah <code>break</code> dan menggunakan <code>;</code>. Ini adalah contoh <code>loop</code> dan break yang mengisi value ke variabel <code>my_number</code>.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let mut counter = 5;

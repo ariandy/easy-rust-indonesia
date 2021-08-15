@@ -1950,7 +1950,7 @@ Not much green
     }
 }
 </code></pre></pre>
-<p>Anda juga bisa menggunakan <code>@</code> untuk memberikan nama ke value dari sebuah ekspresi <code>match</code>, dan Anda bisa menggunakannya. Pada contoh ini kita mencocokkan input <code>i32</code> ke dalam function. Jika ia bernilai 4 atau 13, kita ingin menggunakan angka teresebut ke dalam statement <code>println!</code>. Sebaliknya, kita tidak perlu untuk menggunakannya.</p>
+<p>Anda juga bisa menggunakan <code>@</code> untuk memberikan nama ke value dari sebuah ekspresi <code>match</code>, dan Anda bisa menggunakannya. Pada contoh ini kita mencocokkan input <code>i32</code> ke dalam function. Jika ia bernilai 4 atau 13, kita ingin menggunakan angka tersebut ke dalam statement <code>println!</code>. Sebaliknya, kita tidak perlu untuk menggunakannya.</p>
 <pre><pre class="playground"><code class="language-rust">fn match_number(input: i32) {
     match input {
     number @ 4 =&gt; println!(&quot;{} is an unlucky number in China (sounds close to 死)!&quot;, number),
@@ -2417,7 +2417,7 @@ Printing the same thing three times
 2 |     for number in 0..3 {
   |         ^^^^^^ help: if this is intentional, prefix it with an underscore: `_number`
 </code></pre>
-<p>Rust menyarankan Anda untuk <code>_number</code> daripada menuliskan <code>_</code>. Menulis <code>_</code> di depan nama variabel berarti &quot;munkin nanti Saya akan membutuhkannya&quot;. Tapi kalau Anda hanya menggunakan <code>_</code> artinya &quot;Saya sama sekali tidak peduli dengan variabel ini&quot;. Jadi Anda bisa menambahkan <code>_</code> di depan nama variabel jika mungkin Anda akan menggunakannya kemudian dan tidak ingin compiler memberikan warning tentang itu.</p>
+<p>Rust menyarankan Anda untuk <code>_number</code> daripada menuliskan <code>_</code>. Menulis <code>_</code> di depan nama variabel berarti &quot;mungkin nanti Saya akan membutuhkannya&quot;. Tapi kalau Anda hanya menggunakan <code>_</code> artinya &quot;Saya sama sekali tidak peduli dengan variabel ini&quot;. Jadi Anda bisa menambahkan <code>_</code> di depan nama variabel jika mungkin Anda akan menggunakannya kemudian dan tidak ingin compiler memberikan warning tentang itu.</p>
 <p>Anda juga bisa menggunakan <code>break</code> untuk me-return value. Anda menuliskan valuenya tepat setelah <code>break</code> dan menggunakan <code>;</code>. Ini adalah contoh <code>loop</code> dan break yang mengisi value ke variabel <code>my_number</code>.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let mut counter = 5;

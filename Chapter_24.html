@@ -321,7 +321,7 @@ Not much green
     }
 }
 </code></pre></pre>
-<p>Anda juga bisa menggunakan <code>@</code> untuk memberikan nama ke value dari sebuah ekspresi <code>match</code>, dan Anda bisa menggunakannya. Pada contoh ini kita mencocokkan input <code>i32</code> ke dalam function. Jika ia bernilai 4 atau 13, kita ingin menggunakan angka teresebut ke dalam statement <code>println!</code>. Sebaliknya, kita tidak perlu untuk menggunakannya.</p>
+<p>Anda juga bisa menggunakan <code>@</code> untuk memberikan nama ke value dari sebuah ekspresi <code>match</code>, dan Anda bisa menggunakannya. Pada contoh ini kita mencocokkan input <code>i32</code> ke dalam function. Jika ia bernilai 4 atau 13, kita ingin menggunakan angka tersebut ke dalam statement <code>println!</code>. Sebaliknya, kita tidak perlu untuk menggunakannya.</p>
 <pre><pre class="playground"><code class="language-rust">fn match_number(input: i32) {
     match input {
     number @ 4 =&gt; println!(&quot;{} is an unlucky number in China (sounds close to 死)!&quot;, number),
