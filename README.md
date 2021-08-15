@@ -693,7 +693,7 @@ Lantas, mengapa kita menuliskan `{:?}` dan bukan `{}`? Saatnya kita pelajari ten
 
 Variabel sederhana di Rust bisa di-print/dicetak menggunakan `{}` di dalam `println!`. Namun beberapa variabel tidak bisa, dan Anda perlu menggunakan **debug print**. Debug print adalah print untuk keperluan si programmer, karena debug print biasanya memunculkan lebih banyak informasi. Terkadang debug terlihat tidak nyaman dipandang, namun itu dikarenakan ia memiliki informasi ekstra untuk membantu Anda.
 
-Bagaimana kita mengetahui jika kita membutuhkan `{:?}`, bukan `{}`? Compiler akan memberi tahukannya untuk Anda. Sebagai contoh:
+Bagaimana kita mengetahui jika kita membutuhkan `{:?}`, bukan `{}`? Compiler akan memberitahukannya untuk Anda. Sebagai contoh:
 
 ```rust
 fn main() {
@@ -1357,7 +1357,7 @@ Jadi, bisa dibilang bahwa keduanya hampir sama. Meskipun programmer Rust lebih s
 
 Keduanya ditulis dengan HURUF_KAPITAL, dan biasanya ditulis di luar `main`, sehingga mereka tidak hangus diseluruh bagian code program.
 
-Baginilah contohnya: `const NUMBER_OF_MONTHS: u32 = 12;` dan `static SEASONS: [&str; 4] = ["Spring", "Summer", "Fall", "Winter"];`
+Beginilah contohnya: `const NUMBER_OF_MONTHS: u32 = 12;` dan `static SEASONS: [&str; 4] = ["Spring", "Summer", "Fall", "Winter"];`
 
 ## More on references
 **[See this chapter on YouTube](https://youtu.be/R13sQ8SNoEQ)**
@@ -2029,7 +2029,7 @@ fn main() {
 
 Vector pada program ini memiliki 0 reallocation, yang mana ini lebih baik. Jadi jika Anda berfikir bahwa Anda mengetahui seberapa banyak element yang Anda perlukan, Anda bisa menggunakan `Vec::with_capacity()` untuk membuatnya lebih cepat.
 
-Anda juga harus mengingat bahwa Anda bisa menggunakan `.into()` untuk membuat `&str` menjadi `String`. Anda juga bisa menggunakannya untuk membuat array menjadi `Vec`. Anda harus memberi tahu kepada `.into()` bahwa Anda menginginkan `Vec`, tapi Anda tidak harus memilih type untu `Vec`nya. Jika Anda tidak ingin memilih typenya, Anda bisa menulis `Vec<_>`.
+Anda juga harus mengingat bahwa Anda bisa menggunakan `.into()` untuk membuat `&str` menjadi `String`. Anda juga bisa menggunakannya untuk membuat array menjadi `Vec`. Anda harus memberi tahu kepada `.into()` bahwa Anda menginginkan `Vec`, tapi Anda tidak harus memilih type untuk `Vec`nya. Jika Anda tidak ingin memilih typenya, Anda bisa menulis `Vec<_>`.
 
 ```rust
 fn main() {
@@ -5376,7 +5376,7 @@ From<VecDeque<T>>
 Banyak sekali `Vec::from()` yang belum kita coba. Mari kita buat beberapa dan lihat apa yang terjadi.
 
 ```rust
-use std::fmt::Display; // Kita akan membuat generic function unktuk mencetaknya, sehingga kita memerlukan Display
+use std::fmt::Display; // Kita akan membuat generic function untuk mencetaknya, sehingga kita memerlukan Display
 
 fn print_vec<T: Display>(input: &Vec<T>) { // Ambil Vec<T> jika type T memiliki Display
     for item in input {
@@ -5665,7 +5665,7 @@ fn main() {
 }
 ```
 
-Anda bisa menggunakan functional style secara maksimal apabila Anda mengerti closure dan juga iterator, yang mana akankita pelajari selanjutnya.
+Anda bisa menggunakan functional style secara maksimal apabila Anda mengerti closure dan juga iterator, yang mana akan kita pelajari selanjutnya.
 
 ## Iterators
 
@@ -6105,7 +6105,7 @@ Hasilnya adalah:
 For key 2 we get two.
 ```
 
-Anda bisa melihat bahwa kita menuliskan `<HashMap<_, _>>` karena itu adalah informasi yang cukup untuk Rust menentukan apap typenya (yaitu `HashMap<i32, &str>`). Anda bisa menuliskan `.collect::<HashMap<i32, &str>>();` jika Anda menginginkannya, atau Anda dapat menuliskannya seperti ini jika Anda mau:
+Anda bisa melihat bahwa kita menuliskan `<HashMap<_, _>>` karena itu adalah informasi yang cukup untuk Rust menentukan apa typenya (yaitu `HashMap<i32, &str>`). Anda bisa menuliskan `.collect::<HashMap<i32, &str>>();` jika Anda menginginkannya, atau Anda dapat menuliskannya seperti ini jika Anda mau:
 
 ```rust
 use std::collections::HashMap;
@@ -7641,7 +7641,7 @@ fn main() {
 }
 ```
 
-Tetapi `mutex_changer` tetap terkuci setelah kita melakukan perubahan. Bagaimana cara kita menghentikan pengunciannya? `Mutex` akan terbuka (unlocked) secara otomatis di saat `MutexGuard` keluar dari scope (goes out of scope). "Go out of scope" berarti code blocknya telah selesai. Contohnya:
+Tetapi `mutex_changer` tetap terkunci setelah kita melakukan perubahan. Bagaimana cara kita menghentikan pengunciannya? `Mutex` akan terbuka (unlocked) secara otomatis di saat `MutexGuard` keluar dari scope (goes out of scope). "Go out of scope" berarti code blocknya telah selesai. Contohnya:
 
 ```rust
 use std::sync::Mutex;
@@ -8089,7 +8089,7 @@ Terkadang Anda ingin menulis code secara general (menggunakan pseudocode) untuk 
 struct Book {} // Okay, pertama, saya memerlukan sebuah struct bernama Book.
                // Belum ada apapun di dalamnya - kita akan menambahkannya kemudian
 
-enum BookType { // Sebuah buku bisa dalam bentuk hardcover ataua softcover, sehingga kita tambahkan enum
+enum BookType { // Sebuah buku bisa dalam bentuk hardcover atau softcover, sehingga kita tambahkan enum
     HardCover,
     SoftCover,
 }
@@ -9485,7 +9485,7 @@ fn main() {
 }
 ```
 
-Tentu saja, berurusan dengan dead code dan unused variables sangatlah penting. Tapi terkadan Anda menginginkan compiler "untuk tetap diam" sementara waktu. Atau mungkin Anda perlu menunjukkan beberapa bagian code ke orang lain. Atau mungkin juga Anda ingin mengajarkan orang lain tentang Rust dan Anda tidak ingin membingungkan mereka dengan pesan yang ditampilkan oleh compiler.
+Tentu saja, berurusan dengan dead code dan unused variables sangatlah penting. Tapi terkadang Anda menginginkan compiler "untuk tetap diam" sementara waktu. Atau mungkin Anda perlu menunjukkan beberapa bagian code ke orang lain. Atau mungkin juga Anda ingin mengajarkan orang lain tentang Rust dan Anda tidak ingin membingungkan mereka dengan pesan yang ditampilkan oleh compiler.
 
 `#[derive(TraitName)]` memungkinkan kita untuk men-derive (menurunkan) beberapa trait untuk struct dan enum yang kita buat. Attribute ini bekerja pada banyak trait-trait umum yang dapat diturunkan secara otomatis. Beberapa seperti `Display` tidak bisa diturunkan secara otomatis. Karena, untuk `Display`, Anda perlu memilih bagaimana cara menampilkannya:
 
@@ -10706,7 +10706,7 @@ Hasil printnya adalah:
 Trying to print a string...
 ```
 
-Bagaimana `pub` pada sebuah struct, enum, trait, ataua module? `pub` bekerja seperti ini untuk mereka masing-masing:
+Bagaimana `pub` pada sebuah struct, enum, trait, atau module? `pub` bekerja seperti ini untuk mereka masing-masing:
 
 - `pub` pada sebuah struct: ia membbuat structnya menjadi public, namun item-item di dalamnya tidaklah public. Untuk membuat itemnya public, Anda perlu menuliskan `pub` pada setiap item tersebut.
 - `pub` pada sebuah enum atau trait: semuanya menjadi public. Ini sangatlah masuk akal, karena trait adalah tentang memberikan perilaku yang sama pada sesuatu. Dan enum adalah tentang memilih salah satu dari banyaknya item, dan Anda perlu melihat semua pilihan tersebut untuk memilihnya.
@@ -11213,7 +11213,7 @@ fn math(input: &str) -> i32 {
             adds = true;  // Setelah melakukan pengurangan, ubah kembali addsnya menjadi true.
         }
     }
-    total // Akhrnya, return totalnya
+    total // Akhirnya, return totalnya
 }
    /// Kita akan menambahkan beberapa test untuk memastikan program kita telah berjalan dengan benar
 
@@ -13401,7 +13401,7 @@ macro_rules! write {
 Jadi untuk menggunakannya, Anda perlu memasukkan ini:
 
 - sebuah expression (`expr`) yang mengambil nama variabel `$dst`.
-- apapu yang ada setelahnya. Jika disitu tertulis `$arg:tt` maka ia hanya bisa mengambil satu argument, tapi karena disitu tertulis `$($arg:tt)*` ia akan mengambil nol, satu, atau banyak argument.
+- apapun yang ada setelahnya. Jika disitu tertulis `$arg:tt` maka ia hanya bisa mengambil satu argument, tapi karena disitu tertulis `$($arg:tt)*` ia akan mengambil nol, satu, atau banyak argument.
 
 Kemudian ia mengambil `$dst` dan menggunakan method `write_fmt` pada `$dst` tersebut. Di dalamnya, ia menggunakan macro lainnya yang bernama `format_args!` yang mengambil semua `$($arg)*`, atau semua argument yang kita masukkan.
 
