@@ -47,7 +47,7 @@ Selamat membaca!
 
 ### Penyelarasan Isi & Translasi
 
-Isi dan translasi pada buku ini telah diselaraskan dengan commit [2ff96aa](https://github.com/Dhghomon/easy_rust/commit/2ff96aa67a1d6ca29dd5228303a3fa328152929c) yang ada pada repositori [Dhghomon/easy_rust](https://github.com/Dhghomon/easy_rust)
+Isi dan translasi pada buku ini telah diselaraskan dengan commit [5ff8fe1](https://github.com/Dhghomon/easy_rust/commit/5ff8fe1088ad77d4eeb2cbb43160cb88eacbc52f) yang ada pada repositori [Dhghomon/easy_rust](https://github.com/Dhghomon/easy_rust)
 
 ## Writing Rust in Easy English
 
@@ -6213,7 +6213,7 @@ impl Company {
     fn new(name: &str, ceo: &str) -> Self {
         let ceo = match ceo {
             "" => None,
-            name => Some(name.to_string()),
+            ceo => Some(ceo.to_string()),
         }; // ceo ditentukan dengan match, dan kemudian kita return Self
         Self {
             name: name.to_string(),
@@ -6279,7 +6279,7 @@ impl Company {
     fn new(name: &str, ceo: &str) -> Self {
         let ceo = match ceo {
             "" => None,
-            name => Some(name.to_string()),
+            ceo => Some(ceo.to_string()),
         };
         Self {
             name: name.to_string(),
@@ -8486,13 +8486,13 @@ Jadi, sekarang kita kembali ke threads. Mari kita coba untuk menggunakan sebuah 
 
 ```rust
 fn main() {
-    let mut my_string = String::from("Can I go inside the thread?");
+    let my_string = String::from("Can I go inside the thread?");
 
     let handle = std::thread::spawn(|| {
         println!("{}", my_string); // ⚠️
     });
 
-    handle.join();
+    handle.join().unwrap();
 }
 ```
 
@@ -10678,7 +10678,7 @@ note: the function `prints_one_thing` is defined here
 4  |     fn prints_one_thing<T: Display>(input: T) {
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
-Sangatlah mudah untuk memahami bahwa function `print_one_thing` adalah private. Pesan error tersebut juga menuliskan `src\main.rs:4:5` yaitu letak dimana functionnya berada. Ini cukup membantu karena Anda bisa menulis `mod` tidak hanya dalam satu file, tetapi bisa ditulisakn di banyak file juga.
+Sangatlah mudah untuk memahami bahwa function `prints_one_thing` adalah private. Pesan error tersebut juga menuliskan `src\main.rs:4:5` yaitu letak dimana functionnya berada. Ini cukup membantu karena Anda bisa menulis `mod` tidak hanya dalam satu file, tetapi bisa ditulisakn di banyak file juga.
 
 Sekarang kita menuliskan `pub fn` menggantikan `fn`, dan codenya bekerja.
 
@@ -13844,7 +13844,7 @@ NOW
 Input: `cargo run lowercase Does this work too`
 
 ```text
-Does
+does
 this
 work
 too
